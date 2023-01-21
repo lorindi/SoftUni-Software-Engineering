@@ -1,0 +1,24 @@
+.my-list {
+    width: 400px;
+    background-color: #DDDDDD;
+    border: 1px solid #000000;
+    margin-left: 20px;
+    padding: 10px;
+
+}
+.my-list h1{
+    text-align: center;
+}
+.my-list p{
+    font-size: 18px;
+
+}
+.my-list p em {
+    font-style: italic;
+}
+.my-list p q::before {
+    content: open-quote;
+}
+.my-list p q::after { 
+    content: close-quote;
+}
