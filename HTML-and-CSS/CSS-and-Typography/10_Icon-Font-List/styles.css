@@ -1,0 +1,29 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+ul{
+    list-style-type: none;
+}
+ul.check i{
+    color: #2fcc71;
+    font-size: 25px;
+
+}
+ul.star i{
+    color: coral;
+    font-size: 25px;
+
+}
+ul.contact i{
+    color: #3498da;
+    font-size: 25px;
+
+}
+i{
+    margin-right: 5px;
+}

@@ -1,0 +1,28 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body{
+    font-family: Arial, serif;
+    line-height: 3;
+    font-size: 18px;
+    
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5.40px;
+    padding: 12.6px 27px 12.6px 27px;
+    
+}
+a:hover{
+    color: #eee;
+}
+i{
+    padding: 5.40px;
+
+}
+.green {
+    background-color: green;
+}
+.orange {
+    background-color: orange;
+}
