@@ -1,0 +1,48 @@
+/* * {
+    box-sizing: border-box;
+} */
+body{
+    margin: 30px 70px;
+
+}
+
+
+header {
+    font-family: Helvetica, sans-serif;
+    font-stretch: ;
+}
+
+h1{
+    display: inline-block;
+    padding-right: 40px;
+    font-size: 40px;
+}
+
+nav {
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+li {
+    padding: 0px 10px;
+    display: inline-block;
+    list-style: none;
+    color: green;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 400;
+    
+}
+
+main{
+    border-top: 1px solid black;
+    
+}
+p{
+    font-size: 13px;
+    font-family: Helvetica, sans-serif;
+    
+    
+}
