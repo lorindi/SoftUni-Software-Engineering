@@ -1,0 +1,49 @@
+/* 
+  ------
+  Block example
+  ------
+*/
+/* .block {
+  width: 50%;
+  max-width: 500px;
+} */
+
+.block .item {
+  background-color: #33A595;
+  width: 400px;
+  height: 150px;
+}
+
+/* 
+  ------
+  Inline example
+  ------
+*/
+
+/* .inline {
+  width: 50%;
+  min-width: 500px;
+} */
+.inline .item {
+  background-color: #33A595;
+  width: 400px;
+  height: 150px;
+}
+
+/* 
+  ------
+  Inline-block example
+  ------
+*/
+/* .inline-block {
+  width: 50%;
+  height: 200px;
+  overflow: hidden;
+} */
+
+.inline-block .item {
+  background-color: #33A595;
+
+  width: 400px;
+  height: 150px;
+}

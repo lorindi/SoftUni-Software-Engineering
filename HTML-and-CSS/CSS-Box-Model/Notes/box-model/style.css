@@ -1,0 +1,59 @@
+/* 
+  ------
+  Block example
+  ------
+*/
+
+.block {
+  width: 400px;
+  padding: 32px;
+  border: 3px solid red;
+  margin: 12px;
+}
+
+/* 
+  ------
+  Inline example
+  ------
+*/
+.inline {
+  width: 400px;
+  padding: 32px;
+  border: 3px solid red;
+  margin: 12px;
+}
+
+/* 
+        ------
+        Inline-block example
+        ------
+    */
+.inline-block {
+  width: 400px;
+  padding: 32px;
+  border: 3px solid red;
+  margin: 12px;
+}
+
+/* All inline */
+/* .block,
+.inline,
+.inline-block {
+  display: inline-block;
+  width: calc(30% - 2*32px - 2*4px);
+  padding: 32px;
+  border: 4px solid red;
+  margin: 0px;
+} */
+
+.block,
+.inline,
+.inline-block {
+  box-sizing: border-box;
+
+  display: inline-block;
+  width: 32%;
+  padding: 32px;
+  border: 4px solid red;
+  margin: 0px;
+}

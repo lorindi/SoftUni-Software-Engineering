@@ -1,0 +1,31 @@
+h1 {
+    padding: 40px;
+    background: yellow;
+    margin: 44px;
+    border: 5px solid black
+}
+
+.block p {
+    background: pink;
+    width: 50px;
+}
+
+.inline span {
+    background: orange;
+}
+
+/*Inline elements dont-t have margin-top margin-bottom padding-top padding-bottom properties*/
+.inline p span {
+    margin: 50px;
+    padding: 50px;
+}
+
+.inline-block p {
+    background: lightgreen;
+    display: inline-block;
+}
+
+.inline-block p:nth-child(2) {
+    margin: 50px;
+    padding: 50px;
+}

@@ -1,0 +1,9 @@
+.border{
+    border: 2px solid red;
+}
+
+
+.outline{
+    outline: 2px solid red
+}
+/* outline е просто визуален елемент и не променя големината */
