@@ -1,0 +1,40 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css);
+ 
+ 
+.viewport {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.card {
+    display: block;
+    position: absolute;
+}
+ 
+img {
+    max-width: 200px;
+    max-height: 300px;
+}
+ 
+.viewport {
+    width: 100%;
+    height: 350px;
+}
+ 
+.one {
+
+    background: linear-gradient(to right,#A83277, #D28212);
+}
+ 
+.two {
+
+    background: linear-gradient(to right, #185A9D, #42CCA1);
+}
+
+i {
+    position: relative;
+    color: #FEFEFE;
+    bottom: 10px;
+    right: 30px;
+}

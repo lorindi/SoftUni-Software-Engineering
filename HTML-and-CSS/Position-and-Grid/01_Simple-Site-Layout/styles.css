@@ -1,0 +1,44 @@
+body {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "aside main"
+    "footer footer";
+    grid-template-columns: 100px auto;
+    gap: 10px;
+}
+
+header { grid-area: header; }
+main { grid-area: main; }
+aside { grid-area: aside; }
+footer { grid-area: footer; }
+
+header, aside, main, footer {
+
+    background-color: rgb(181, 216, 255);
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
+
+body > header > h1 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+body > aside > ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 5px;
+
+}
+
+body > aside > ul > li > a {
+    display: block;
+    padding: 5px 0px;
+    color: rgb(86, 40, 129);
+    text-decoration: none;
+}
+
+
+
