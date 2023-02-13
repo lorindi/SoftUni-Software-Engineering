@@ -1,0 +1,13 @@
+body {
+    position: relative;
+}
+h1 {
+    position: absolute;
+    color: #FAEBD7;
+    text-shadow: 1px 1px 20px black;
+    top: 60px;
+    left: 180px;
+    /* bottom: 220px;
+    right: 150px; */
+    
+}
