@@ -1,0 +1,42 @@
+body {
+    margin: auto 5%;
+}
+
+header {
+    border-bottom: 2px solid rgb(0,0,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header p {
+    font-family: serif;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 600;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+nav {
+    display: flex;
+    margin-left: auto;
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+}
+
+
+li {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+
+a {
+    font-family: Georgia, serif;
+    text-decoration: none;
+    color: rgb(0, 153, 0);
+}

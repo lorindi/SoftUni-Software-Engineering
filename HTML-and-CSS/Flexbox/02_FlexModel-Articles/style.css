@@ -1,0 +1,29 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 70vw;
+    gap: 5%;
+    font-family: Helvetica, sans-serif;
+    line-height: 1.5;
+}
+article {
+    width: 300px;
+    height: 390px;
+}
+h2{
+    margin-top: 0;
+    font-size: 35px;
+    font-weight: 500;
+    font-family: Georgia, serif;
+    line-height: 1.2;
+}
+p{
+    font-size: 18px;
+}

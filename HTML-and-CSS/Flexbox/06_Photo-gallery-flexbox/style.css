@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    margin: 2rem;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: stretch;
+
+}
+
+li {
+    list-style: none;
+    display: flex;
+    padding: 2rem 1rem;
+    border: 15px solid black;
+}
+
+img {
+    object-fit: contain;
+
+
+}

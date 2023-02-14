@@ -1,0 +1,119 @@
+html {
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    max-width: 15vw;
+    height: 35rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+span {
+    display: flex;
+    border: 1px solid black;
+    width: 90px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.span1 {
+    order: 9;
+}
+
+.span2 {
+    order: 2;
+}
+
+.span3 {
+    order: 10;
+}
+
+.span4 {
+    order: 4;
+}
+
+.span5 {
+    order: 8;
+}
+
+.span6 {
+    order: 7;
+}
+
+.span7 {
+    order: 11;
+}
+
+.span8 {
+    order: 5;
+}
+
+.span9 {
+    order: 6;
+}
+
+.span10 {
+    order: 12;
+}
+
+.span11 {
+    order: 1;
+}
+
+.span12 {
+    order: 3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

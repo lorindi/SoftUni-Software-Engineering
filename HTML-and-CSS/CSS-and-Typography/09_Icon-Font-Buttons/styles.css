@@ -1,28 +1,30 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 
-body{
-    font-family: Arial, serif;
+body {
+    font-family: Aria, serif;
     line-height: 3;
     font-size: 18px;
-    
 }
-a {
+
+body p a {
     text-decoration: none;
     color: #fff;
     border-radius: 5.40px;
-    padding: 12.6px 27px 12.6px 27px;
-    
+    padding: 12.6px 27px;
 }
-a:hover{
+
+body p a:hover {
     color: #eee;
 }
-i{
-    padding: 5.40px;
 
+body p a i {
+    padding-right: 5.40px;
 }
+
 .green {
     background-color: green;
 }
+
 .orange {
     background-color: orange;
 }

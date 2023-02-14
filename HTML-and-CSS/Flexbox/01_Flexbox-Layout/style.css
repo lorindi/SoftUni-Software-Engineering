@@ -1,0 +1,92 @@
+body {
+    background-color: #EEE;
+    padding: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-style: groove;
+    
+}
+
+header, main, aside, footer {
+    padding: 2rem;
+    background-color: #FFF;
+    border-radius: 0.4rem;
+    color: #000;
+    border-style: initial;
+}
+
+header, footer {    
+    flex-basis: 100%;
+}
+
+main {
+    flex: 8 1 40rem;
+    flex-grow: 8;
+    flex-shrink: 1;
+    flex-basis: 40rem;
+    /* flex-grow заема 8 пъти повече място от други елементи.
+    flex-shrink указва колко ще се свие елементът, когато няма 
+    достатъчно място, стойност 1 означава, че ще се свие пропорционално.
+    flex-basis задава първоначалния размер на елемента, стойността на "40rem" 
+    означава 40 пъти размера на шрифта на основния елемент */
+}
+
+aside {
+    flex: 2 1 20rem;
+    flex-grow: 1;
+}
+
+main, aside {
+    height: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

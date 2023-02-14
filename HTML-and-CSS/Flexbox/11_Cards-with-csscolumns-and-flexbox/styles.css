@@ -1,0 +1,54 @@
+body {
+    background-color: rgb(238, 238, 238);
+}
+
+.card {
+    width: 230px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3,
+p {
+    margin: 15px;
+}
+
+footer {
+    border-top: 1px solid lightgray;
+    position: sticky;
+    top: 100vh;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    height: 250vh;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: auto;
+    gap: 20px;
+}
+
+.masonry {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: masonry;
+    justify-content: center;
+    width: 60%;
+    margin-left: 20%;
+}

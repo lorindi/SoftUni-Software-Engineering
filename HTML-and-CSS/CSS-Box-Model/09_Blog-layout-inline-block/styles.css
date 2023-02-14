@@ -1,3 +1,47 @@
-body {
+html {
     font-family: Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+}
+
+article {
+    color: rgb(51, 51, 51);
+    display: block;
+    padding-top: 18px;
+    padding-left: 25px;
+    width: 70%;
+}
+
+h2 {
+    padding-top: 40px;
+}
+
+img {
+    width: 70%;
+    height: auto;
+}
+
+p {
+    width: 100%;
+}
+
+aside {
+    display: block;
+    width: 30%;
+    float: right;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 18px;
+    color: rgb(51, 51, 51);
+}
+
+h3 {
+    font-size: 22px;
+}
+
+footer p {
+    color: rgb(51, 51, 51);
+    padding-left: 25px;
 }
