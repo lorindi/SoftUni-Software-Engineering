@@ -1,0 +1,101 @@
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"); */
+/* https://fontawesome.com/search */
+/* 6.3.0 */
+/* @import url("линк за изискания тип шрифт от сайта"); */
+/* https://fonts.google.com/ */
+/* font-family: 'Open Sans'; когато импортваме шрифта,
+трябва да слагаме кавички*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat;
+}
+article {
+    background-color: #F6E0B5;
+    width: 930px;
+    height: 500px;
+    padding: 55px 70px;
+    justify-content: space-evenly;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+
+    
+    width: 700px;
+}
+.top-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+.bottom-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+.card>img {
+    width: 300px;
+    height: 150px;
+    
+    
+}
+.card {
+    background-color: #66545E;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 1px 1px 30px #72644E;
+    border: 1.5px solid #362D2F;
+    
+
+}
+.card h4{
+    color: #FFFFFF;
+    margin-left: 10px;
+    font-size: 13px;
+    padding: 5px 0px;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    
+    
+}
+.right h5{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.right ul{
+    display: flex;
+
+    flex-direction: column;
+}
+.right ul li {
+   font-size: 16px;
+   font-weight: 700;
+
+}
+
+.right ul li i{
+    color: #66545E;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    
+    
+}
+
+

@@ -1,0 +1,189 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css");
+/* https://fontawesome.com/search */
+/* 6.3.0 */
+@import url("линк за изискания тип шрифт от сайта");
+/* https://fonts.google.com/ */
+/* font-family: 'Open Sans'; когато импортваме шрифта,
+трябва да слагаме кавички*/
+
+
+
+
+/* --------------BODY---------------- */
+body{
+    font-family: 'Poppins';
+
+}
+/* --------------BODY---------------- */
+
+/* --------------HEADER---------------- */
+header {
+    display: flex;
+    flex-direction: column;
+    background: url('./images/landing-photo.jpg') no-repeat center center/cover;
+    
+    background-repeat: no-repeat;
+    
+    position: relative;
+    height: 650px;
+   
+}
+header nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+  
+
+}
+
+/* --------------HEADER H1---------------- */
+header>nav>h3 {
+    font-size: 30px;
+    
+    
+
+}
+header>div{
+    position: absolute;
+    top: 200px;
+    left: 350px;
+}
+header>div>h1{
+    font-size: 50px;
+    font-weight: bolder;
+}
+/* --------------HEADER IMG---------------- */
+/* header>img {
+    
+
+} */
+/* --------------HEADER P---------------- */
+header>div>h5{
+    font-size: 25px;
+    
+
+}
+/* --------------NAV---------------- */
+/* header>nav{
+
+} */
+/* --------------UL---------------- */
+header>nav>ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+/* --------------LI---------------- */
+header>nav>ul>li {
+    margin-right: 25px;
+    font-weight: 600;
+
+}
+
+/* --------------A---------------- */
+/* header>nav>ul>li>a {
+
+} */
+.button1{
+    background-color: #370511;
+    padding: 7px 35px;
+    border-radius: 50px;
+    color: white;
+
+}
+.button2{
+    display: inline-block;
+    background-color: #370511;
+    padding: 7px 35px;
+    margin-top: 20px;
+    border-radius: 50px;
+    color: white;
+}
+/* --------------HEADER---------------- */
+
+
+
+
+/* --------------MAIN---------------- */
+main {
+    display: flex;
+    flex-direction: column;
+
+}
+main>h1 {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 50px;
+    
+
+}
+main>p {
+    text-align: center;
+    margin-bottom: 50px;
+    color: gray;
+    font-size: 30px;
+    
+
+}
+main>ul>li>img {
+    height: 300px;
+    width: 350px;
+    border-radius: 5px;
+}
+main>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+main>ul>li{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    align-items: center;
+}
+main>ul>li>p{
+    font-size: 10px;
+    margin: 10px 20px;
+}
+main>ul>li>h3{
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 10px;
+   
+}
+main>ul>li>button{
+    margin-top: 10px;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    border: 2px solid #CEC3C6;
+    background-color: white;
+   
+}
+/* --------------SECTION-.first---------------- */
+/* .first {
+
+} */
+/* --------------SECTION-.first---------------- */
+/* --------------SECTION-.second---------------- */
+/* .second {
+
+} */
+/* --------------SECTION-.second---------------- */
+/* --------------MAIN---------------- */
+
+
+
+
+/* --------------FOOTER-------------- */
+/* --------------P-------------- */
+/* footer>p {
+
+} */
+/* --------------P-------------- */
+/* --------------FOOTER-------------- */
+
+
