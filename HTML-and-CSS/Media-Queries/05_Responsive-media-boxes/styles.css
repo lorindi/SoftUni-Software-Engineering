@@ -1,0 +1,50 @@
+html {
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    width: 400px;
+    height: 420px;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+}
+
+a {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 2px;
+    padding: 6px 16px;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(0, 153, 0);
+}
+
+h3 {
+    font-family: Georgia, serif;
+    display: inline-block;
+    position: absolute;
+    bottom: 95px;
+    left: 20px;
+}
+
+p {
+    display: inline-block;
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+}

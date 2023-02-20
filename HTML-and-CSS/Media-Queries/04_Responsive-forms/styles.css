@@ -1,0 +1,79 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css);
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    position: relative;
+    background-color: #f0f1f2;
+    width: 400px;
+    height: 140px;
+    border-radius: 5px;
+    margin-top: 50px;
+    padding: 48px 20px 20px 20px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+fieldset {
+    background-color: transparent;
+    border: none;
+}
+
+p,
+.input-icon {
+    display: inline-block;
+}
+
+p {
+    font-weight: bold;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -20px;
+    left: -1px;
+    width: 170px;
+    height: 40px;
+    background-color: #f0f1f2;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 12px;
+}
+
+form,
+.login {
+    box-shadow: 1px 1px 3px 3px rgba(0,0,0,0.2);
+}
+
+button {
+    background-color: #2b2a2a;
+    color: white;
+    align-self: flex-start;
+    padding: 6px 18px;
+    border: none;
+    text-align: center;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+input {
+  padding:10px;
+	font-family: "FontAwesome", "Open Sans", Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+
+@media (max-width:499px){
+    form {
+        width: 80%;
+    }
+}
