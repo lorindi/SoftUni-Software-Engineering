@@ -1,0 +1,18 @@
+Task Details
+
+Home
+Task Board
+Create
+Search
+
+View Task Details
+
+ID		4
+Title		Create tasks
+Description	Implement [Create Task] page for adding new tasks
+Board		Open
+Date Created	2021-04-08 22:18:00
+Date Modified	2021-04-08 22:18:00
+Actions		Edit Task
+
+© 2021 - Task Board

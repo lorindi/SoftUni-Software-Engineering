@@ -1,0 +1,38 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat';
+
+div {
+    display: inline-block;
+    padding: 32px;
+    background-color: #aaaaaa;
+    border: 1px solid black;
+}
+
+table {
+    table-layout: fixed;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: #aaaaaa;
+    margin: auto;
+}
+
+thead th {
+    background-color: #4e4e4e;
+    color: #ffffff;
+}
+
+td {
+    color: #4e4e4e;
+}
+th, tr, td {
+    border: 1px solid #aaaaaa;
+    padding: 8px;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(221,221,221);
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}

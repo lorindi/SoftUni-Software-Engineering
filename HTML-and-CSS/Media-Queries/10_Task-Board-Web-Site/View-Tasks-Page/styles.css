@@ -1,0 +1,115 @@
+
+
+
+/* TODO	create a valid CSS Grid  */
+/* TODO make the layout responsive by using media queries */
+
+
+
+
+
+  /* -------- Stiles -------- */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body header {
+    background: rgb(181, 216, 255);
+    padding: 0px 3px 4px 3px;
+    border-radius: 3px;
+  }
+  
+  body header a {
+    align-self: center;
+    text-align: center;
+    font-size: 3.2em;
+    filter: drop-shadow(0px 0px 3px #777);
+    text-decoration: none;
+  }
+
+  body header h1 {
+    margin: 0px;
+    align-self: center;
+    font-size: 1.5em;
+    padding-top: 8px;
+  }
+
+  aside {
+    background: rgb(181, 216, 255);
+    border-radius: 3px;
+  }
+
+  aside ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+  }
+  
+  aside ul a {
+    display: block;
+    padding: 5px;
+    color: rgb(86, 40, 129);
+    text-decoration: none;
+  }
+  
+  button {
+    padding: 5px 17px;
+    margin: 0px 5px;
+    background: rgb(205, 208, 211);
+    color: rgb(86, 40, 129);
+    border: 3px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  main h1 {
+    font-size: 1.5em;
+  }
+  
+  footer {
+    grid-area: footer;
+    background: rgb(181, 216, 255);
+    padding: 8px;
+    border-radius: 3px; 
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(84, 144, 212);
+    color: white;
+  }
+  
+  section.tasks-grid div.task h1 {
+    background: #eee;
+    padding: 8px 10px;
+    border-radius: 2px;
+  }
+  
+  table {
+    margin: 10px 0px;
+  }
+  
+  table th {
+    width: 120px;
+  }
+  
+  table td {
+    width: 100%;
+  }
+
+  
+  
+
+  

@@ -1,0 +1,110 @@
+
+
+
+/* TODO	create a valid CSS Grid  */
+/* TODO make the layout responsive by using media queries */
+
+
+
+
+
+  /* ----------- Styles ----------- */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  body header {
+    background: rgb(181, 216, 255);
+    padding: 0px 3px 4px 3px;
+    border-radius: 3px;
+  }
+  
+  body header a {
+    align-self: center;
+    text-align: center;
+    font-size: 3.2em;
+    text-decoration: none;
+  }
+  
+  body header h1 {
+    margin: 0px;
+    align-self: center;
+    font-size: 1.5em;
+    padding-top: 8px;
+  }
+  
+  aside {
+    background: rgb(181, 216, 255);
+    border-radius: 3px;
+  }
+  
+  aside ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+  }
+  
+  aside ul a {
+    display: block;
+    padding: 5px;
+    color: rgb(86, 40, 129);
+    text-decoration: none;
+  }
+  
+  main h1 {
+    font-size: 1.5em;
+  }
+  
+  footer {
+    background: rgb(181, 216, 255);
+    padding: 8px;
+    border-radius: 3px; 
+  }
+  
+  main section {
+    background: rgb(171, 208, 243);
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  main div a {
+    color: rgb(86, 40, 129);
+    background: rgb(171, 208, 243);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(125, 170, 238);
+    margin: 10px 10px 0px 0px; 
+    text-align: center;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    vertical-align:middle;
+  }
+  
+  main div a span {
+    display: block;
+    font-size: 3em;
+
+  }
+
+  @media (max-width: 500px) {
+    body {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "aside aside"
+        "main main"
+        "footer footer";
+    }
+  }
+  
+
+
+  
+
+  
+ 
+  
+
+  

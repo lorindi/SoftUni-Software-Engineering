@@ -1,0 +1,38 @@
+Task Board
+
+Home
+Task Board
+Create
+Search
+
+Open
+
+Title		Create tasks
+Description	Implement [Create Task] page for adding new tasks
+Actions		View Edit
+
+Title		Edit tasks
+Description	Implement [Edit Tasks] page for editing existing tasks
+Actions		View Edit
+
+Title		Improve CSS styles
+Description	Implement better styling for all public pages
+Actions		View Edit
+
+In Progress
+
+Title		View task board
+Description	Create the [Task Board] page and list all tasks by board
+Actions		View Edit
+
+Done
+
+Title		Project skeleton
+Description	Create project folders, services, controllers and views
+Actions		View Edit
+
+Title		Home page
+Description	Create the [Home] page and list tasks count by board
+Actions		View Edit
+
+© 2021 - Task Board

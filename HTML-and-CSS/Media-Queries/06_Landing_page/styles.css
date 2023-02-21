@@ -1,0 +1,226 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css);
+
+body {
+    background: repeating-linear-gradient(
+  -45deg,
+  #FFFFFF,
+  #FFFFFF 10px,
+  #fdfdfd 10px,
+  #fdfdfd 20px
+);
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+/* ----------------------
+   Header
+   ---------------------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 8%;
+}
+
+header div h1 {
+    color: blueviolet;
+}
+
+header div p {
+    font-family: cursive;
+    font-size: 8px;
+    text-transform: uppercase;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li:not(:last-child) {
+    margin-right: 18px;
+}
+
+header nav {
+    margin-left: auto;
+}
+
+
+/* ----------------------
+   Need a website
+   ---------------------- */
+
+.need-a-website {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6%;
+}
+
+.need-a-website h2 {
+    text-decoration: none;
+}
+
+.need-a-website div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    padding-left: 35px;
+}
+
+.need-a-website div h2 {
+    margin-bottom: 12px;
+}
+
+.need-a-website p {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.need-a-website button {
+    font-size: 14px;
+    background-color:#fff;
+    display: inline-block;
+    height: 30px;
+    text-align: center;
+}
+
+.need-a-website .fa-earth-americas {
+    margin-left: auto;
+    margin-right: 8%;
+}
+
+/* ----------------------
+   Our team
+   ---------------------- */
+
+h2 {
+    text-align: center;
+    text-transform: capitalize;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration-line: underline;
+    text-underline-offset: 16px;
+    margin-bottom: 48px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 15px 8%;
+}
+
+.card__our-team {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    width: 30%;
+}
+
+.card__our-team img {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.card__our-team div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+}
+
+.card__our-team div h3,
+.card__our-team div p {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+/* ----------------------
+   Sigh up
+   ---------------------- */
+
+.sign-up {
+    background-color: #4d0d78;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.sign-up h2 {
+    color: #FFFEEF;
+}
+
+/* ----------------------
+   Testimonials
+   ---------------------- */
+
+.testimonials {
+    margin-bottom: 48px;
+}
+
+.testimonials .card__our-team p {
+    margin-bottom: 16px;
+}
+
+hr {
+    border: none;
+    box-shadow: 1px 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ----------------------
+   Need a website
+   ---------------------- */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 14px;
+    padding-bottom: 12px;
+}
+
+footer div {
+    margin-right: 20px;
+}
+
+footer .spider {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 35%;
+}
+
+footer .spider p {
+    font-size: 16px;
+}
+
+footer .sitemap ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+footer .sitemap li {
+    font-size: 14px;
+}
+
+footer .contacts li {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+footer .contacts li i {
+    margin-right: 4px;
+    font-size: 10px;
+}

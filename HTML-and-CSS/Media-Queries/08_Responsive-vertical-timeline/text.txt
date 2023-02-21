@@ -1,0 +1,19 @@
+Responsive Vertical Timeline
+A Little History of the World Wide Web
+March 1989
+Tim laid out his vision for what would become the web in a document called “Information Management: A Proposal”. Believe it or not, Tim’s initial proposal was not immediately accepted. In fact, his boss at the time, Mike Sendall, noted the words “Vague but exciting” on the cover.
+October of 1990
+Tim had written the three fundamental technologies that remain the foundation of today’s web (and which you may have seen appear on parts of your web browser):
+HTML: HyperText Markup Language. The markup (formatting) language for the web.
+URI: Uniform Resource Identifier. A kind of “address” that is unique and used to identify to each resource on the web. It is also commonly called a URL.
+HTTP: Hypertext Transfer Protocol. Allows for the retrieval of linked resources from across the web.
+March 1989
+Tim laid out his vision for what would become the web in a document called “Information Management: A Proposal”. Believe it or not, Tim’s initial proposal was not immediately accepted. In fact, his boss at the time, Mike Sendall, noted the words “Vague but exciting” on the cover.
+End of 1990
+The first web page was served on the open internet
+1991
+People outside of CERN were invited to join this new web community
+1994
+Tim moved from CERN to the Massachusetts Institute of Technology to found the World Wide Web Consortium (W3C), an international community devoted to developing open web standards. He remains the Director of W3C to this day.
+1991
+People outside of CERN were invited to join this new web community

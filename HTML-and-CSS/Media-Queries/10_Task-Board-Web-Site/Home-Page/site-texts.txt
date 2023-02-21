@@ -1,0 +1,28 @@
+Welcome
+
+Home
+Task Board
+Create
+Search
+
+Tasks: 6
+Open: 3
+In Progress: 1
+
+Done: 2
+🖹
+Task Board
+
+ 
+✚
+New Task
+
+ 
+⌕
+Search Tasks
+
+ 
+⚒
+RESTful API
+
+© 2021 - Task Board

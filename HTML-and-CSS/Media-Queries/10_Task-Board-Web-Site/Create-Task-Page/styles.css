@@ -1,0 +1,113 @@
+
+
+
+/* TODO	create a valid CSS Grid  */
+/* TODO make the layout responsive by using media queries */
+
+
+
+
+    /* ----------- Styles ----------- */
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body header {
+    background: rgb(181, 216, 255);
+    padding: 0px 3px 4px 3px;
+    border-radius: 3px;
+  }
+  
+  body header a {
+    align-self: center;
+    text-align: center;
+    font-size: 3.2em;
+    filter: drop-shadow(0px 0px 3px #777);
+    text-decoration: none;
+  }
+  
+  body header h1 {
+    margin: 0px;
+    align-self: center;
+    font-size: 1.5em;
+    padding-top: 8px;
+  }
+  
+  aside {
+    background: rgb(181, 216, 255);
+    border-radius: 3px;
+  }
+  
+  aside ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+  }
+  
+  aside ul a {
+    display: block;
+    padding: 5px;
+    color: rgb(86, 40, 129);
+    text-decoration: none;
+  }
+  
+  main h1 {
+    font-size: 1.5em;
+  }
+  
+  footer {
+    background: rgb(181, 216, 255);
+    padding: 8px;
+    border-radius: 3px; 
+  }
+  
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(84, 144, 212);
+    color: white;
+  }
+  
+  td {
+    white-space: pre-wrap;
+  }
+  
+  form table {
+    max-width: 800px;
+    margin: 0px auto 10px auto;
+  }
+  
+  form table input, form table textarea, form table select {
+    width: 100%;
+  }
+  
+  form table th {
+    width: 110px;
+  }
+  
+  form button {
+    padding: 15px 30px;
+    border-radius: 10px;
+    outline: none;
+    background: #9bcef0;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    max-width: 800px;
+    font-size: 1.2em;
+  }
+  
+  
