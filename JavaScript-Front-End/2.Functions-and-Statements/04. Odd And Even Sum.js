@@ -1,14 +1,9 @@
-function oddAndEvenSum(number){
-    number = number.toString()
-    let list = []
-    let odd = 0
-    let even = 0
-    for (let i = 0; i < number.length; i++){
-        list.push(number[i])
-
-    }
-    list.forEach(el => even.push(el % 2 == 0) )
-    return list
-
+function oddAndEvenSum(number) {
+    const digits = number.toString().split("").map(Number);
+    
+    const sumEven = digits.filter(digit => digit % 2 === 0).reduce((acc, curr) => acc + curr, 0);
+    
+    const sumOdd = digits.filter(digit => digit % 2 !== 0).reduce((acc, curr) => acc + curr, 0);
+    return `Odd sum = ${sumOdd}, Even sum = ${sumEven}`;
 }
-console.log(oddAndEvenSum(1000435));
+console.log(oddAndEvenSum(3495892137259234))
