@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&family=Caveat:wght@500&family=Courgette&display=swap');
+
+body {
+    margin: 20% auto;
+    padding: 0;
+    background-color: rgb(4, 3, 23);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 150px;
+}
+
+#submit {
+    height: 70px;
+    width: 150px;
+    border: none;
+    outline: none;
+    background: rgb(25, 25, 41);
+    color: #6b7275;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: 'Barlow', sans-serif;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 8px;
+    z-index: 0;
+}
+
+#submit:hover {
+    transition: 0.5s;
+    color: #818181;
+}
+#submit:hover:active {
+    transition: 0.5s;
+    color: #9c9c9c;
+}
+.base-for-buttons {
+    position: relative;
+}
+.base-for-buttons:before {
+    position: absolute;
+    content: '';
+    top: -7px;
+    left: -7px;
+    height: calc(100% + 15px);
+    width: calc(100% + 15px);
+    border-radius: 10px;
+    background: linear-gradient(100deg, 
+    #099fff,
+    #32A6D9,
+    #00ff66, 
+    #a6ff5d, 
+    #00ff66, 
+    #32A6D9,
+    #6E0DD0, 
+    #099fff);
+    background-size: 400%;
+    opacity: 0.4;
+    filter: blur(5px);
+    transition: opacity .3s ease-in-out;
+    animation: animate 20s linear infinite;
+    z-index: -1;
+}
+
+.base-for-buttons:hover:before {
+    opacity: 1;
+    filter: blur(10px);
+}
+
+.base-for-buttons:hover:active:before {
+    filter: blur(20px);
+    opacity: 1;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}

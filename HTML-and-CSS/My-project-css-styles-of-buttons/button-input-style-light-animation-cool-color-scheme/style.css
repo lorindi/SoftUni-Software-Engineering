@@ -1,0 +1,71 @@
+body {
+    margin: 20% auto;
+    padding: 0;
+    background-color: #22384f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 150px;
+}
+#submit {
+    height: 70px;
+    width: 150px;
+    border: none;
+    outline: none;
+    background: #2e4d6e;
+    color: #7f878a;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: 'Barlow', sans-serif;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50px;
+    z-index: 0;
+}
+#submit:hover {
+    transition: 0.5s;
+    color: #96a6aa; 
+}
+#submit:hover:active {
+    transition: 0.5s;
+    color: #b2c1c6; 
+}
+.base-for-buttons {
+    position: relative;
+}
+.base-for-buttons:before {
+    position: absolute;
+    content: '';
+    top: -3px;
+    left: -3px;
+    height: calc(100% + 6px);
+    width: calc(100% + 6px);
+    border-radius: 50px;
+    background: linear-gradient(15deg,
+            #22384f, #22384f, 
+            #4cb8c4, #22384f, #22384f,
+            #00dfc4, #22384f,#22384f,
+            #4cd1b8, #22384f, #22384f,
+            #72d572, #22384f, #22384f,
+            #4cd1b8, #22384f, #22384f);
+    background-size: 400%;
+    opacity: 0.5;
+    transition: opacity .3s ease-in-out;
+    animation: animate 20s linear infinite;
+    z-index: -1;
+}
+.base-for-buttons:hover:before {
+    opacity: 1;
+    color: #3390b3;
+    filter: blur(2px);
+}
+.base-for-buttons:hover:active:before {
+    filter: blur(5px);
+    opacity: 1;
+}
+@keyframes animate {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
