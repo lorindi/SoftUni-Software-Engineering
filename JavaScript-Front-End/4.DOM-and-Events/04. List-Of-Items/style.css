@@ -1,0 +1,77 @@
+body {
+  background: #eeeeee;
+  font-family: "Source Code Pro", monospace;
+}
+
+body > h1 {
+  text-align: left;
+  background: #50b9b9;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px 10px 0 0;
+  width: 250px;
+  margin: 0 auto;
+  font-size: 24px;
+}
+
+ul {
+  margin-top: 5px;
+}
+
+li {
+  background-color: white;
+  padding: 7px;
+  border-radius: 13px;
+  margin-bottom: 5px;
+  list-style-type: none;
+  margin-left: -37px;
+}
+
+#items li a {
+  color: red;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+main {
+  background: #91a29f;
+  width: 259px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 0 0 10px 10px;
+}
+
+main input[type="text"] {
+  border: 1px solid black;
+  border-radius: 14px;
+  padding: 5px;
+  font-size: 19px;
+  outline: none;
+  cursor: pointer;
+  width: 140px;
+}
+
+main input[type="button"] {
+  border: 1px solid;
+  background: #eeeeee;
+
+  font-size: 14px;
+  border-radius: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0px;
+  outline: none;
+  display: inline-block;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), inset 0 2px 1px rgba(0, 0, 0, 0.2);
+  width: 50px;
+}
+
+main input[type="button"]:hover {
+  border-color: white;
+  background-color: #91a29f;
+  color: white;
+}
