@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Delete from Table</title>
+</head>
+
+<body>
+    <table border="1" id="customers">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Eve</td>
+                <td>eve@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Nick</td>
+                <td>nick@yahooo.com</td>
+            </tr>
+            <tr>
+                <td>Didi</td>
+                <td>didi@didi.net</td>
+            </tr>
+            <tr>
+                <td>Tedy</td>
+                <td>tedy@tedy.com</td>
+            </tr>
+        </tbody>
+    </table>
+    <label>
+        Email: <input type="text" name="email" />
+        <button onclick="deleteByEmail()">Delete</button>
+    </label>
+    <div id="result"></div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
+
+<!-- const evenTds = Array.from(document.querySelectorAll('td:nth-child(even)'))
+    const input = document.querySelector('input[name = "email"]')
+    const result = document.getElementById('result')
+    let emailValue = input.value
+    let foundElement = evenTds.find((td) => td.textContent === emailValue);
+    if (foundElement){
+        foundElement.parentElement.remove();
+        result.textContent = 'Deleted.'
+
+    }else {
+        result.textContent = 'Not found.'
+    } -->
