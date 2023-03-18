@@ -1,0 +1,67 @@
+body{
+  background:#eaeaea;
+  text-align: center;
+}
+
+#exercise {
+display: inline-block;
+padding: 1rem 0 1rem 1rem;
+
+
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper{
+  width:100%;
+  max-width: 800px;
+  margin: 48px auto;
+}
+
+.card-wrapper{
+  border-radius:2px;
+  padding:24px;
+  background:white;
+  box-shadow: rgba(0,0,0,0.2) 0px 10px 20px;
+  margin-bottom:48px;
+}
+
+.wrapper table{
+  margin-top:24px;
+  vertical-align: center;
+}
+
+.wrapper table img{
+  max-width:80px;
+  max-height:80px;
+}
+
+.wrapper table td{
+  vertical-align:middle;
+}
+
+h1 {
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+#exercise input {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 24px;
+}
+
+#exercise button {
+  width: 50%;
+  background: #234465;
+  color: white;
+  border: none;
+  height: 5vh;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+}

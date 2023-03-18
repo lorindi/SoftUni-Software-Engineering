@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="template.css">
+    <title>FURNITURE</title>
+</head>
+
+<body onload="solve()">
+    <div id="container">
+        <div id="exercise">
+            <h1>Furniture List</h1>
+            <textarea rows="5" cols="50"></textarea>
+            <button>Generate</button>
+
+            <div class="wrapper">
+                <div class="card-wrapper">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Decoration factor</th>
+                                        <th scope="col">Mark</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img
+                                                src="https://www.lidl-shop.nl/media/fcf868f9526b38d0b0a43cc2ace72b80.jpeg">
+                                        </td>
+                                        <td>
+                                            <p>Office chair</p>
+                                        </td>
+                                        <td>
+                                            <p>160</p>
+                                        </td>
+                                        <td>
+                                            <p>0.5</p>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" disabled />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <textarea rows="4" cols="50" disabled></textarea>
+            <button>Buy</button>
+        </div>
+    </div>
+    <script src="solution.js"></script>
+</body>
+
+</html>

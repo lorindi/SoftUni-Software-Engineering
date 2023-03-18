@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="template.css">
+	<title>Encode and Decode Messages</title>
+</head>
+
+<body>
+	<div id="container">
+		<main id="main">
+			<div>
+				<p>Message</p>
+				<textarea placeholder="Write your message here..."></textarea>
+				<button>Encode and send it</button>
+			</div>
+			<div>
+				<p>Last received message</p>
+				<textarea disabled placeholder="No messages..."></textarea>
+				<button>Decode and read it</button>
+			</div>
+		</main>
+	</div>
+	<script src="./app.js"></script>
+	<script>
+		window.onload = encodeAndDecodeMessages();
+	</script>
+</body>
+
+</html>

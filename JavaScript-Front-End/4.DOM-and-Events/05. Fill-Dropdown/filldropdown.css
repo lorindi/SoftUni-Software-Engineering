@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body {
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    background-color: cadetblue;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+article {
+    background-color: #DDDDDD;
+    padding: 10px 20px;
+}
+
+#menu {
+    padding: 3px 7px;
+    border-radius: 15px;
+}
+
+input, select {
+    outline: none;
+    padding: 5px;
+}
+select {
+    margin-bottom: 12px;
+}
+
+input[type="text"] {
+    border: 1px solid darkgray;
+    border-radius: 15px;
+}
+
+input[type="button"] {
+    background: white;
+    margin-left: 20px;
+    padding: 5px 15px;
+    border: 1px solid darkgray;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #8198A2;
+    text-transform: uppercase;
+}

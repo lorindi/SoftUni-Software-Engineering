@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    width: 44%;
+    margin: 2rem auto;
+    text-align: center;
+    background: #f6f6f6;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+main label, main input {
+    display: block;
+}
+
+main input {
+    text-align: center;
+    width: 50%;
+    margin: 1rem auto;
+}
+
+#daysBtn, #hoursBtn, #minutesBtn, #secondsBtn {
+    background: gray;
+    width: 18%;
+    border: 2px solid gray;
+    border-radius: 4px;
+    padding: 4px 9px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+}

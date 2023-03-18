@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai');
+
+body {
+    font-family: 'Baloo Bhai', cursive;
+}
+
+div {
+    width: 50%;
+    margin: 0 auto;
+}
+
+div div {
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 15px;
+    border: 1px solid #999;
+}
+
+.focused {
+    background: #999999;
+}
