@@ -1,0 +1,245 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image:url(./background.jpg) ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 4px 6px black;
+}
+
+h2 {
+    font-size: 20px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 10px black;
+}
+
+.add {
+    font-size: 24px;
+}
+
+.message{
+    margin-left: 60px;
+    position: absolute;
+    width: 420px;
+    display: flex;
+}
+
+.addMails {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin: auto;
+    background-color:white 100%;
+    width: 400px;
+    border-radius: 20px;
+    padding: 10px 50px 50px 50px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+form {
+    font-size: 24px;
+    position: relative;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+textarea {
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: 10px;
+    border-radius: 10px;
+    width: 300px;
+    height: 150px; 
+    resize: none;
+    align-items: center;
+}
+
+textarea::placeholder {
+    font-family: 'Gill Sans',  sans-serif;
+}
+
+.list, .sent, .delete {
+    display: inline;
+    margin: -100px;
+}
+
+label {
+    display: block;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+button {
+    border: 5em;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+    padding: 0.7em 2em;
+    border-radius: 65px;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+    -webkit-transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    color: white;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+  
+button.text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+}
+  
+button:after {
+    content: "";
+    border-radius: 18px;
+    position: absolute;
+    margin: 4px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: #0e0e10;
+}
+  
+button:hover {
+    background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+    box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+}
+  
+button:hover .text {
+    background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+}
+
+.list-mails {
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color:white 100%;
+    min-width: 300px;
+    max-width: auto;
+    height: auto;
+    border-radius: 20px;
+    margin: 50px;
+    padding: 10px 100px 100px 100px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.list-mails::-webkit-scrollbar {
+    width: 10px;
+}
+
+.sent-mails, .trash {
+    display: table;
+    text-align: center;
+    color: white;
+    background-color:white 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 350px;
+    height: 250px;
+    border-radius: 20px;
+    margin: 20px;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#list {
+    padding-left: 0px;
+    display: block;
+}
+
+#list > li {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: rgba(245, 245, 245, 0.575);
+    list-style-type: none;
+    display: block;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    padding: 5px;
+    margin: 20px 0px 0px;
+    border-radius: 20px;
+}
+
+.sent-list {
+    padding-left: 0px;
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+.sent-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.sent-list > li{ 
+    display: block;
+    width: 300px;
+    padding: 5px;
+    margin: 10px;
+    color: black;
+    font-size: 16px;
+    list-style-type: none;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: rgba(245, 245, 245, 0.575);
+}
+
+.delete-list {
+    padding-left: 0px;
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+.delete-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.delete-list > li {
+    display: inline-block;
+    width: 300px;
+    padding: 5px;
+    margin: 5px;
+    color: black;
+    font-size: 16px;
+    list-style-type: none;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: rgba(245, 245, 245, 0.575);
+}
+
+.sent {
+    padding-top: 10px;
+}
+
+.btn {
+    margin: 15px;
+}

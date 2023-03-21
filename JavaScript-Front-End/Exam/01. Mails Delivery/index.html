@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mails Delivery</title>
+</head>
+
+<body>
+    <h1>Mails Delivery</h1>
+    <section class="message">
+        <div class="addMails">
+            <h2 class="add">Add Mails</h2>
+            <form>
+                <label>Recipient</label>
+                <input id="recipientName" type="text" placeholder="Recipient Name" />
+                <label>Title</label>
+                <input id="title" type="text" placeholder="Title" />
+                <label>Message</label>
+                <textarea id="message" placeholder="Message..."></textarea>
+                <div class="action">
+                    <button type="submit" id="add">Add to the List</button>
+                    <button type="submit" id="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="list-mails">
+            <h2 class="list">List of Mails</h2>
+            <ul id="list">
+                <!-- <li>
+                    <h4>Title: For Work</h4>
+                    <h4>Recipient Name: John@abv.bg</h4>
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ut recusandae deserunt, debitis perspiciatis praesentium facilis, suscipit adipisci provident, tempora repellat ratione voluptate sit vel animi totam. Quia, qui enim.</span>
+                    <div id="list-action">
+                        <button type="submit" id="send">Send</button>
+                        <button type="submit" id="delete">Delete</button>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+        <article>
+            <div class="sent-mails">
+                <h2 class="sent">Sent Mails</h2>
+                <ul class="sent-list">
+                    <!-- <li>
+                        <span>To: John@abv.bg</span>
+                        <span>Title: For Work</span>
+                        <div class="btn">
+                            <button type="submit" class="delete">Delete</button>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+
+            <div class="trash">
+                <h2 class="delete">Deleted Mails</h2>
+                <ul class="delete-list">
+                    <!-- <li>
+                        <span>To: John@abv.bg</span>
+                        <span>Title: For Work</span>
+                    </li> -->
+                </ul>
+            </div>
+        </article>
+    </section>
+    <script src="./app.js"></script>
+</body>
+
+</html>
