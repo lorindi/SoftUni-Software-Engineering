@@ -1,0 +1,97 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+table{
+    border:1px solid #234465;
+    padding: 1%;
+    margin: 0 auto;
+    width: 70%;
+    border-radius: 4px;
+}
+button {
+    cursor: pointer;
+}
+table th{
+    text-decoration: underline;
+    text-align: center;
+}
+table tbody td{
+    text-align: center;
+    border-bottom:1px solid black;
+    padding: 0.5%;
+}
+
+table tbody tr:nth-child(even){
+    background-color: #234465;
+    color: white
+}
+
+table tbody tr:nth-child(odd){
+    color: #234465;
+    border-bottom: 1px solid black;
+}
+
+table tbody tr:nth-child(odd) button{
+    background: #234465;
+    color:white;
+}
+
+table tbody tr:nth-child(even) button{
+    background: white;
+    color:#234465;
+}
+
+table tr td:not(:last-child):hover{
+    text-decoration: underline;
+}
+
+table button{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 8%;
+}
+
+table button:hover{
+    text-decoration: underline;
+}
+
+button#loadBooks{
+    margin: 0 auto;
+    display:block;
+    padding:1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 4px;
+}
+
+
+label, input{
+    display:block;
+    margin: 0 auto;
+}
+
+#form input{
+    margin-bottom: 1%;
+    width: 25%;
+}
+
+#form{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#form button{
+    margin: 0 auto;
+    display:block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 4px;
+    background-color: #234465;
+    color:white;
+    border: none;
+    padding: 0.5%;
+}

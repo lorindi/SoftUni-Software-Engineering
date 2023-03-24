@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=button] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=button]:hover {
+    background-color: #45a049;
+}
+body {
+    margin: auto;
+    width: 25%;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Open Sans', serif;
+}
+#stopName {
+    font-size: 1.5em;
+    margin: 8px 0;
+    font-weight: 400;
+    padding: 0.25em;
+    border-radius: 4px;
+    background-color: aquamarine;
+}

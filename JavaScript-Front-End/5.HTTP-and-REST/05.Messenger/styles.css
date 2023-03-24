@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=button] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+input[type=button]:hover {
+    background-color: #45a049;
+}
+body {
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Open Sans', serif;
+}
+label {
+    display: inline-block;
+    width: 5em;
+}
+#author,
+#content {
+    width: 30em;
+}
+#controls {
+    width: 38em;
+}
+#submit, #refresh {
+    display: inline-block;
+}
+#submit { 
+    margin: 32px;
+}
+
+#main{
+	width: 50%;
+	margin: 0 auto;
+}
