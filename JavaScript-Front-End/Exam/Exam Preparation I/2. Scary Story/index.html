@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+  <title>Scary Stories</title>
+</head>
+
+<body class="body">
+  <div id="main">
+    <div class="form-wrapper">
+      <h1>
+        Write your scary story
+        <span>Fill the author information, genre and the story text!</span>
+      </h1>
+      <form>
+        <div class="section"><span>&#9753;</span>Author Information</div>
+        <div class="inner-wrap">
+          <label>First Name: <input type="text" id="first-name" name="field1" /></label>
+          <label>Last Name: <input type="text" id="last-name" name="field2" /></label>
+          <label>Age: <input type="number" id="age" name="field3" /></label>
+          </label>
+          <label>Story Title:
+            <input type="text" id="story-title" name="field5" />
+          </label>
+          <label>Genre:
+            <select name="field4" id="genre">
+              <option value="Disturbing">Disturbing</option>
+              <option value="Psychological">Psychological</option>
+              <option value="Killer">Killer</option>
+              <option value="Monsters">Monsters</option>
+              <option value="Paranormal">Paranormal</option>
+            </select>
+        </div>
+
+        <div class="section"><span>&#9753;</span>Story</div>
+        <div class="inner-wrap">
+          <label for="story">Your Story:</label>
+          <textarea id="story" name="story" rows="6" cols="50"></textarea>
+        </div>
+        <div class="button-section">
+          <input type="button" id="form-btn" value="Publish" />
+        </div>
+      </form>
+    </div>
+    <div id="side-wrapper">
+      <ul id="preview-list">
+        <h3>Preview</h3>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
