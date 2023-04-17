@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint Planning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/form.css">
+    <link rel="stylesheet" href="./styles/tasks.css">
+</head>
+<body>
+    <main>
+        <section id="form-section">
+            <h1>Sprint Planning</h1>
+            <form id="create-task-form">
+                <input id="task-id" type="hidden" />
+                <div class="form-control">
+                    <label for="title">Title:</label>
+                    <input id="title" type="text" placeholder="Task title..." />
+                </div>
+                <div class="form-control">
+                    <label for="description">Description:</label>
+                    <textarea id="description" placeholder="Task description..."></textarea>
+                </div>
+                <div class="form-control">
+                    <label for="label">Label:</label>
+                    <select id="label">
+                        <option value="Feature">
+                            Feature
+                        </option>
+                        <option value="Low Priority Bug">Low Priority Bug</option>
+                        <option value="High Priority Bug">High Priority Bug</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="points">Estimation Points:</label>
+                    <input id="points" type="number" placeholder="Task estimation points..." />
+                </div>
+                <div class="form-control">
+                    <label for="assignee">Assignee:</label>
+                    <input id="assignee" type="text" placeholder="Task assignee..." />
+                </div>
+                <div class="form-control">
+                    <input type="button" id="create-task-btn" value="Create Task" />
+                </div>
+                <div class="form-control">
+                    <input type="button" id="delete-task-btn" disabled value="Delete Task" />
+                </div>
+            </form>
+        </section>
+        <section id="tasks-section">
+            <h1>New Sprint Tasks</h1>
+            <p id="total-sprint-points">
+                Total Points 0pts
+            </p>
+        </section>
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>

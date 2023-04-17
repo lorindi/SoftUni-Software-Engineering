@@ -1,0 +1,79 @@
+main,
+#create-task-form,
+.form-control {
+    display: flex;
+}
+
+#form-section {
+    width: 25%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    border: 2px solid rgb(95, 95, 212);
+    max-height: 650px;
+}
+
+#form-section > h1 {
+    background: rgb(95, 95, 212);
+    padding: 20px 30px 15px 30px;
+    margin: -20px -20px 20px -20px;
+    border-radius: 10px 10px 0 0;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+
+#create-task-form {
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-control {
+    flex-direction: column;
+}
+
+.form-control label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(95, 95, 212);
+    margin-bottom: 15px;
+}
+
+.form-control input,
+.form-control textarea,
+.form-control select {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+
+  border: 2px solid rgb(142, 139, 139);
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.form-control input::placeholder,
+.form-control textarea::placeholder,
+.form-control input[type="button"] {
+    font-family: 'Abel', sans-serif;
+}
+
+.form-control textarea {
+    resize: none;
+}
+
+.form-control input[type="button"] {
+    font-weight: 600;
+    color: rgb(95, 95, 212);
+    cursor: pointer;
+}
+
+.form-control input[type="button"]:disabled {
+    background-color: gray;
+    color: white;
+    cursor:default;
+}

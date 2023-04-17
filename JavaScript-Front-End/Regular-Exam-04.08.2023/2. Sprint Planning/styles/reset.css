@@ -1,0 +1,15 @@
+body,
+html {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+main {
+    margin: 15px 0 0 15px;
+}

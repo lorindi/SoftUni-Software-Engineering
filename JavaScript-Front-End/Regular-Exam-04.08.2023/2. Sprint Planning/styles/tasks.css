@@ -1,0 +1,104 @@
+#tasks-section {
+    display: flex;
+    position: relative;
+}
+
+#tasks-section > h1 {
+    align-self: center;
+    background: rgb(95, 95, 212);
+    width: 33%;
+    text-align: center;
+    padding: 20px 30px 15px 30px;
+    margin: -20px -20px 20px -20px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+
+#tasks-section {
+    width: 66%;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+}
+
+.task-card {
+    position: relative;
+    padding: 16px;
+    background: rgb(232, 227, 227);
+    border: 5px solid rgb(95, 95, 212);
+}
+
+.task-card-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid rgb(95, 95, 212);
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.task-card > .feature {
+    background: greenyellow;
+}
+
+.task-card > .low-priority {
+    background: rgba(255, 247, 0, 0.597);
+}
+
+.task-card > .high-priority {
+    background: rgb(255, 0, 0);
+}
+
+.task-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin: 0;
+}
+
+.task-card-description,
+.task-card-points,
+.task-card-assignee {
+    font-family: 'Abel', sans-serif;
+    font-size: 20   px;
+}
+
+.task-card-assignee {
+    font-style: italic;
+}
+
+.task-card-actions {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.task-card-actions > button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 16px;
+    color: aliceblue;
+    background-color: rgb(95, 95, 212);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.task-card-actions > button:hover {
+    background-color: aliceblue;
+    color: rgb(95, 95, 212);
+}
+
+#total-sprint-points {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    font-family: 'Abel', sans-serif;
+    font-size: 32px;
+    padding-right: 16px;
+}
