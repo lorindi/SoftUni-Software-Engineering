@@ -1,0 +1,42 @@
+{% load static %}
+{% load tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block page_title %}My site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'site.css' %}">
+    <style>
+        h1 {
+            color: blueviolet;
+        }
+    </style>
+
+    {% block styles %} {% endblock %}
+    {% block head_scripts %}{% endblock %}
+</head>
+<body>
+{% block body_start_scripts %}
+{% endblock %}
+
+HTML Nav:
+<nav>
+    <a href="{% url 'index' %}">Go to home</a>
+
+    <a href="{% url 'redirect to home' %}">Redirect to home</a>
+</nav>
+
+Tag Nav:
+{% app_nav 'index' 'redirect to home' 'about' %}
+{% app_nav 'index' 'redirect to home' 'redirect to home' 'redirect to home' 'redirect to home' %}
+
+{% block page_content %}
+{% endblock %}
+
+{% block body_end_scripts %}
+{% endblock %}
+{##}
+{% include 'partials/footer.html'%}
+</body>
+</html>
