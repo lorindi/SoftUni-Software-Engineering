@@ -1,0 +1,32 @@
+.not-found-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.not-found {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    color: rgb(162, 158, 158);
+    z-index: 2;
+}
+
+.not-found h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.not-found button {
+    color: white;
+    background-color: rgb(0, 132, 255);
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    margin-top: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}

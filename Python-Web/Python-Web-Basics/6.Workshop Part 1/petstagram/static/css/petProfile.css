@@ -1,0 +1,60 @@
+.pet-profile {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.pet-profile .profile-data {
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.pet-profile .footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.pet-posts {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    flex-wrap: wrap;
+}
+
+.pet-posts .card {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    border: 1px solid rgba(7, 7, 7, 0.24);
+    flex-basis: 100%;
+}
+
+.pet-posts .card .top {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pet-posts .card .bottom {
+    padding: 10px 20px;
+}
+
+.pet-posts .card .top .userDetails {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.pet-posts h3 {
+    font-size: 16px !important;
+    color: #4d4d4f !important;
+    font-weight: 500 !important;
+    line-height: 1em !important;
+    white-space: nowrap !important; 
+}

@@ -1,0 +1,41 @@
+{% load static %}
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">
+            <!-- Link to Home Page -->
+            <a href="{% url 'index' %}">
+                <img width="50px" src="{% static 'images/free-30-instagram-stories-icons23_122570.png'%}" alt="img1">
+            </a>
+
+            <!-- Link to Home Page -->
+            <a class="home" href="{% url 'index' %}">
+                <i>Petstagram</i>
+            </a>
+        </div>
+
+        <div class="nav-links">
+            <ul class="nav-group">
+                <li class="nav-item">
+                    <!-- Link to Add Pet Page -->
+                    <a href="{% url 'add pet' %}">
+                        <i>Add Pet</i>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <!-- Link to Add Photo Page -->
+                    <a href="{% url 'add photo' %}">
+                        <i>Add Photo</i>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <!-- Link to Profile Page -->
+                    <a href="{% url 'deletes user' pk=1 %}">
+                        <i>Profile</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

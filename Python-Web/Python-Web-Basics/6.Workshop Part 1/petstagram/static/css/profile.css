@@ -1,0 +1,181 @@
+.profile {
+    margin: 140px 35% 0 38%;
+}
+
+.profile-data {
+    display: flex;
+    gap: 130px;
+    justify-content: center;
+}
+
+.profile_img img {
+    width: 175px;
+    height: 175px;
+    margin-top: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile a {
+    color: black;
+}
+
+.profile .footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.delete {
+    display: block;
+}
+
+.no-posts-holder {
+    display: flex;
+    justify-content: center;
+}
+
+.no-posts {
+    width: 70% !important;
+    height: auto !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.personal .edit {
+    display: flex;
+    gap: 20px;
+    font-weight: lighter;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.personal .edit p {
+    white-space: nowrap;
+}
+
+.personal .edit-img {
+    width: 25px;
+    margin-top: 8px;
+}
+
+.personal .bin-img {
+    width: 25px;
+    margin-left: -10px;
+    margin-top: 8px;
+}
+
+.personal .data {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.personal .data span {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.personal .data p {
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.names {
+    margin-bottom: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.email {
+    margin-bottom: 5px;
+}
+
+.statuses {
+    margin-bottom: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 20px 0;
+    overflow: auto;
+    max-width: 850px;
+    justify-content: center;
+}
+
+.statuses .status {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: auto;
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    min-height: 70px;
+    background: linear-gradient(to right, red, orange);
+    padding: 2px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.statuses .status .image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+}
+
+.statuses .status img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.head-pet {
+    display: block;
+    text-align: center;
+}
+
+.head-pet p {
+    margin-left: 13px;
+}
+
+.pet-photos {
+    border-top: 1px solid #ddd;
+    width: 850px;
+}
+
+.pet-photos img {
+    margin: 10px;
+    width: 400px;
+    height: 400px;
+    border-radius: 2px;
+    box-shadow: 4px 4px 4px 4px #888888;
+    object-fit: cover;
+}
+
+.pet-photos img:hover {
+    box-shadow: none;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.step-links {
+    text-shadow: 1px 1px #4b4848;
+}
+
+.step-links a:hover {
+    text-shadow: none;
+}

@@ -1,0 +1,222 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_content %}
+
+    <div class="container">
+        <div class="col-9">
+
+            <!-- Start Pet Photo Post Section -->
+            <div class="card">
+                <div class="top">
+
+                    <!-- Start User Details and Image Location Section -->
+                    <div class="userDetails">
+
+                        <!-- Link to User Profile Details Page-->
+                        <a href="#">
+                            <div class="profilepic">
+                                <div class="profile_img">
+                                    <div class="image">
+                                        <img src="{% static 'images/person.png'%}" alt="img8">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <h3>
+
+                            <!-- Link to User Profile Details Page -->
+                            <a href="#">
+                                <!-- IF user has first name and last name -->
+                                Diyan Kalaydzhiev
+                                <!-- else -->
+                                <!-- show user username -->
+                            </a>
+                            <br>
+
+                            <!-- IF the photo has location -->
+                            <span>Bansko, Bulgaria</span>
+
+                            <!-- IF the viewer is the creator of the photo -->
+                            <div class="edit-delete-btns">
+
+                                <!-- Link to Edit Pet Photo Page -->
+                                <a href="#">
+                                    <img class="edit-img" src="{% static 'images/edit-pen-icon-6.jpg' %}"
+                                         alt="edit button">
+                                </a>
+
+                                <!-- Link to Delete Pet Photo Page -->
+                                <a href="#">
+                                    <img class="bin-img" src="{% static 'images/icon-remove-22.jpg' %}" alt="bin button">
+                                </a>
+                            </div>
+                            <!-- End IF the viewer is the creator of the photo -->
+
+                        </h3>
+                    </div>
+                    <!-- End User Details and Image Location Section -->
+
+                </div>
+
+                <!-- Start Pet Photo -->
+                <div class="imgBx" id="place the id of the photo here">
+                    <!-- Pet Photo -->
+                    <img src="{% static 'images/axolotl.jpeg' %}" alt="post" class="cover">
+                </div>
+                <!-- End Pet Photo -->
+
+                <div class="bottom">
+
+                    <!-- Start Like and Share Buttons Section -->
+                    <div class="actionBtns">
+                        <div class="left">
+
+                            <!-- Start Like Button -->
+                            <span class="heart">
+
+                                    <!-- Link to Like Path -->
+									<a href="#">
+
+										<!-- IF user has liked the photo -->
+                                        <svg style="color: red"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             width="24"
+                                             height="24"
+                                             fill="currentColor"
+                                             class="bi bi-heart-fill"
+                                             viewBox="0 0 16 16">
+                                            <!-- Coordinate path -->
+                                            <path fill-rule="evenodd"
+                                                  d="M8 1.314C12.438-3.248 23.534 4.735
+                                                  8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                                                  fill="red">
+                                            </path>
+                                        </svg>
+
+                                        <!-- IF NOT user has liked the photo -->
+                                        <svg aria-label="Like"
+                                             color="#262626"
+                                             fill="#262626"
+                                             height="24"
+                                             role="img"
+                                             viewBox="0 0 48 48"
+                                             width="24">
+                                        <!-- Coordinate path -->
+                                        <path d="M34.6 6.1c5.7 0 10.4 5.2 10.4
+                                                    11.5 0 6.8-5.9 11-11.5 16S25 41.3 24
+                                                    41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3
+                                                    11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3
+                                                    1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9
+                                                    1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9
+                                                    1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1
+                                                    0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3
+                                                    1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3
+                                                    1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2
+                                                    7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6
+                                                    48 25 48 17.6c0-8-6-14.5-13.4-14.5z">
+                                        </path>
+                                        </svg>
+								    </a>
+                            </span>
+                            <!-- End Like Button -->
+
+                            <!-- Start Share  Button -->
+
+                            <!-- Link to Share Path -->
+                            <a href="#">
+                                <svg aria-label="Share Post" class="_8-yf5 " color="#262626" fill="#262626"
+                                     height="24" role="img" viewBox="0 0 48 48" width="24">
+                                    <path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3
+										3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6
+										1 1.2 1.1h.2c.5 0 1-.3
+										1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2
+										6.1h35.5L18 18.7 5.2 6.1zm18.7
+										33.6l-4.4-18.4L42.4 8.6 23.9 39.7z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Like and Share Buttons Section -->
+
+                    <!-- Number of Likes for the Photo -->
+                    <p class="likes">203 likes</p>
+
+                    <!-- Start Tagged Pets Section-->
+                    <!-- Link to First Tagged Pet Details Page -->
+                    <a href="#">
+                        <p class="message">
+                            <b>Sasho</b>
+                        </p>
+                    </a>
+                    <!-- Link to Second Tagged Pet Details Page -->
+                    <a href="#">
+                        <p class="message">
+                            <b>Some other fish</b>
+                        </p>
+                    </a>
+                    <!-- End Tagged Pets Section-->
+
+                    <!-- Photo description -->
+                    <p class="pet-details">This is my pet</p>
+
+                    <!-- Date of Publication or edit of the Photo -->
+                    <h5 class="postTime">19/09/2022</h5>
+
+                    <!-- Start Comments Section -->
+                    <div class="comments">
+                        <div class="top">
+                            <div class="userDetails">
+                                <div class="comment-data">
+                                    <div class="profilepic">
+                                        <div class="profile_img">
+                                            <div class="image">
+                                                <!-- User Profile Image -->
+                                                <img src="{% static 'images/person.png'%}" alt="img8">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <!-- Link to User Profile Details Page-->
+                                        <!-- User First and/or Last Name or username-->
+                                        <a href="">Steven Ivanov</a>
+                                        <!-- User Comment -->
+                                        - OMG where can i get one
+                                    </p>
+                                </div>
+                                <span>Sept. 20, 2022, 5:02 p.m.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Comments Section -->
+                </div>
+
+                <!-- Start Add Comments Section -->
+                <div class="addComments">
+                    <div class="reaction">
+                        <h3>
+                            <i class="far fa-smile"></i>
+                        </h3>
+                    </div>
+
+                    <!-- Start Add Comments Form -->
+                    <form method="post" action="#">
+                        <label for="id_body">Body:</label>
+                        <textarea name="body" cols="40" rows="10" placeholder="Add comment..." maxlength="300"
+                                  required="" id="id_body"></textarea>
+                        <!-- Post Comments Button -->
+                        <button type="submit">Post</button>
+                    </form>
+                    <!-- End Add Comments Form -->
+
+                </div>
+                <!-- End Add Comments Section -->
+
+            </div>
+            <!-- End Pet Photo Post Section -->
+
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,165 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+.delete-profile {
+    margin-top: 25vh;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
+        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.delete-profile h1 {
+    z-index: 3;
+}
+
+.sure-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    z-index: 2;
+}
+
+.sure-buttons button, .sure-buttons a {
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 2px 3px #888888;
+    z-index: 2;
+}
+
+.sure-buttons button {
+    background-color: red;
+}
+
+.sure-buttons button:hover, .sure-buttons a:hover {
+    box-shadow: none;
+}
+
+.sure-buttons a {
+    background-color: green;
+}
+
+.delete-profile img {
+    margin-top: -140px;
+    margin-left: -60px;
+    position: absolute;
+    z-index: -1;
+}
+
+.list-choice {
+    font-family: 'Raleway', sans-serif;
+    width: 300px;
+    margin: 7px auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.list-choice input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.list-choice-title {
+    width: 100%;
+    display: block;
+    background: rgb(148, 163, 185);
+    text-align: center;
+    padding: 0.55em 1em;
+    box-sizing: border-box;
+    color: #FFF;
+    text-shadow: 0 1px 0 #CACACA;
+    border-radius: 0.2em;
+}
+
+.list-choice:hover .list-choice-title {
+    border-radius: 0.2em 0.2em 0 0;
+}
+
+.list-choice-objects label:nth-last-of-type(1) span {
+    border-radius: 0 0 0.2em 0.2em;
+}
+
+.list-choice input[type="radio"]+span {
+    color: #FFF;
+    background: rgb(124, 122, 122);
+    padding: 0.55em 1em;
+    display: block;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+}
+
+.list-choice-objects {
+    position: absolute;
+    top: 0;
+    padding-top: 2.1em;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 250ms ease;
+}
+
+.list-choice:hover .list-choice-objects input[type="radio"]+span {
+    position: relative;
+    top: 0;
+    transition: all 250ms ease-in-out;
+}
+
+.list-choice:hover input[type="radio"]+span:hover {
+    background: rgb(148, 163, 185);
+}
+
+.list-choice:hover input[type="radio"]:checked+span:hover {
+    background: rgb(52, 115, 209);
+}
+
+.list-choice input[type="radio"]:checked+span {
+    background: rgb(148, 163, 185)5;
+    position: absolute;
+    top: 0em;
+    border-radius: 0.2em;
+}
+
+.list-choice:hover input[type="radio"]:checked+span {
+    border-radius: 0;
+}
+
+.list-choice:hover .list-choice-objects label:nth-last-of-type(1) input[type="radio"]:checked+span {
+    border-radius: 0 0 0.2em 0.2em;
+}
+
+.list-choice:hover .list-choice-objects {
+    max-height: 540px;
+}
+
+label {
+    width: 100px;
+}
+
+.edit-photo input, select, .edit-photo textarea, .label-input input {
+    width: 300px !important;
+}
+.label-input {
+    display: flex;
+    margin-top: -10px;
+}
+
+.label-input:first-of-type {
+    margin-top: 10px;
+}
+
+.label-input label {
+    display: initial !important;
+    width: 40%;
+    margin-top: 12px;
+    text-align: left;
+}
+
+#id_tagged_pets {
+    height: 82px;
+}

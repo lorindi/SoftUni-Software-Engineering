@@ -1,0 +1,36 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- Starts Head Section -->
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/free-30-instagram-stories-icons23_122570.png' %}">
+
+    <title>Petstagram</title>
+</head>
+<!-- End Head Section -->
+
+<!-- Starts Body Section -->
+<body>
+
+
+<!-- Starts Header Section with Navigation Bar -->
+<header>
+    {% include 'base/partials/nav.html' %}
+</header>
+<main>
+{#This is diferent for each child template#}
+    {% block page_content %}
+    {% endblock %}
+</main>
+<div class="footer">
+		<span class="footer-section">
+			© 2022 SOFTUNI WORKSHOP FOR PYTHON WEB MODULE
+		</span>
+</div>
+<!-- End Footer Section -->
+
+</body>
+</html>

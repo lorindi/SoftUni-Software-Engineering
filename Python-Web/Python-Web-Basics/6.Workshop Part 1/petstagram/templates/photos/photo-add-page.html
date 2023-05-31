@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+
+    <!-- Start Add Photo Section -->
+    <div class="edit-delete edit-photo">
+        <h2>Add photo</h2>
+        <!-- Start Add Photo Form -->
+        <form action="" enctype="multipart/form-data">
+            <p>
+                <label for="id_photo_file">Photo file:</label>
+                <input type="file">
+            </p>
+
+            <p>
+                <label for="id_description">Description:</label>
+                <input type="text">
+            </p>
+
+            <p>
+                <label for="id_description">Location:</label>
+                <input type="text" name="photo_shooting_location" maxlength="50" id="id_photo_shooting_location">
+            </p>
+
+            <p>
+                <label for="pets">Tag Pets:</label>
+
+                <select name="pets" id="id_tagged_pets" multiple>
+                    <option>Sasho</option>
+                    <option>Perry</option>
+                    <option>Bucky</option>
+                    <option>Steve</option>
+                </select>
+            </p>
+            <!-- Add Photo Button -->
+            <button class="add-btn" type="submit">Add Photo</button>
+        </form>
+        <!-- End Add Photo Form -->
+    </div>
+    <!-- End Add Photo Section -->
+{% endblock %}

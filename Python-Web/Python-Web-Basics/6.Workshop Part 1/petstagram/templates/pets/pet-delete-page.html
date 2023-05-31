@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+
+    <!-- Starts Delete Pet Section -->
+    <div class="edit-delete edit-photo">
+        <h2>Delete pet</h2>
+        <!-- Starts Delete Pet Form -->
+        <form action="#">
+            <p>
+                <label for="pet-name">Pet name: </label>
+                <input type="text" placeholder="Name" value="Sasho" disabled>
+            </p>
+            <p>
+                <label for="pet-date">Date of birth: </label>
+                <input type="date" disabled>
+            </p>
+            <p>
+                <label for="pet-image">Link to image: </label>
+                <input type="text" placeholder="Link to image"
+                       value="https://i.natgeofe.com/n/de94c416-6d23-45f5-9708-e8d56289268e/naturepl_01132178.jpg?w=636&h=631"
+                       alt="pet image" disabled>
+            </p>
+            <!-- Delete Pet Button -->
+            <button class="delete-btn" type="submit">Delete</button>
+            <!-- Go Back Button -->
+            <a class="btn btn-primary" href="javascript:history.back()">
+                <button class="edit-btn" type="button">Go back</button>
+            </a>
+        </form>
+        <!-- End Delete Pet Form -->
+    </div>
+    <!-- End Delete Pet Section -->
+{% endblock %}
