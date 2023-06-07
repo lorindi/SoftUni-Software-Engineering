@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/style.css">
+    <title>MyPlantApp</title>
+</head>
+
+<body>
+<div id="box">
+
+    <header>
+        <!-- Navigation Bar -->
+        <h1><a class="index-navigation" href="#">MyPlants</a></h1>
+        <nav>
+            <a href="#">Catalogue</a>
+            <a href="#">Create Plant</a>
+            <a href="#">Profile</a>
+        </nav>
+    </header>
+
+    <!-- create plant form -->
+    <section id="create-page" class="auth">
+        <form id="create">
+            <div class="container">
+                <h1 class="form-create-headline">Create Plant</h1>
+
+                <label for="type">Type:</label>
+                <select name="type" required="" id="type">
+                    <option value="" selected="">---------</option>
+                    <option value="Outdoor Plants">Outdoor Plants</option>
+                    <option value="Indoor Plants">Indoor Plants</option>
+                </select>
+
+                <label for="name">Name:</label>
+                <input type="text" name="name" maxlength="20" required="" id="name">
+
+                <label for="image_url">Image URL:</label>
+                <input type="url" name="image_url" maxlength="200" required="" id="image_url">
+
+                <label for="id_description">Description:</label>
+                <textarea name="description" cols="40" rows="10" required="" id="id_description"></textarea>
+
+                <label for="price">Price:</label>
+                <input type="number" name="price" required="" id="price">
+
+                <input class="btn" type="submit" value="Create Plant">
+
+            </div>
+        </form>
+    </section>
+</div>
+<!-- Footer -->
+<footer>
+    &copy;SoftUni Team 2022. All rights reserved.
+</footer>
+<!-- End Footer -->
+
+</body>
+</html>

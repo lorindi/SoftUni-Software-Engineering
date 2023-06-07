@@ -1,0 +1,165 @@
+#register-page,
+#create-page,
+#edit-page,
+#delete-page {
+    position: relative;
+    width: 550px;
+    height: auto;
+    background: rgba(0, 0, 0, 0.27);
+    text-align: center:
+    padding: 10px;
+    border-radius: 30px;
+    border: 3px solid #6e8e4626;
+}
+
+.container {
+    padding: 40px;
+}
+
+.container > h1 {
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: #7d442d;
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 14px;
+}
+
+label,
+input,
+select,
+textarea{
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    color: white;
+}
+
+label {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+label:nth-of-type(2) {
+    margin-top: 10px;
+}
+
+label[for="female"] {
+    margin-top: 10px;
+}
+
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="url"]{
+    background: #6d8d46b5;
+    padding: 20px 20px 20px 20px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 17px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+}
+
+
+select {
+    background: #6d8d46b5;
+    padding: 10px 20px 10px 20px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 17px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+}
+
+#id_description {
+    background: #6d8d46b5;
+    padding: 20px 20px 20px 20px;
+}
+
+label[for="terms"] > input,
+label[for="terms"] > select{
+    display: inline;
+}
+
+#delete-page>select>type{
+    color: white;
+}
+
+.btn{
+    color: #fff;
+    border: none;
+    margin-top: 30px;
+    font-weight: 600;
+    height: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    cursive: pointer;
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-property: box-shadow;
+}
+
+.btn{
+    background: #88472ed6;;
+    box-shadow: 0 0 25px white;
+    width: 50%;
+}
+
+.btn:hover{
+    box-shadow: 0 0 100px white;
+                0 0 50px white;
+                0 0 25px white;
+                0 0 5px white;
+}
+
+.container {
+    text-align: left;
+    margin-top: 0;
+}
+
+.field > span {
+    position: absolute;
+    font-size: 18px;
+    bottom: 17px;
+    right: 8px;
+    text-decoration: none;
+    color: black;
+    background: rgb(235, 157, 142);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+textarea {
+    width: 100%;
+    min-width: 20vw;
+    min-height: 7em;
+    border: 2px solid #86a480;
+    border-radius: 0.7em;
+    font-size: 17px;
+    border-bottom-color: #ecf0f3;
+    background-color: #ecf0f3;
+    border-right-color: #ecf0f3;
+    margin-top: 7px;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+}
+
+textarea>description{
+    padding: 20px 20px 20px 20px;
+}
+
+.errorlist{
+    color: red
+}
+

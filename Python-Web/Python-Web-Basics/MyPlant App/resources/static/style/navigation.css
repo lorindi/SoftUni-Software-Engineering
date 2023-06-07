@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Croissant+One&family=Great+Vibes&family=Lato&family=Montserrat:wght@300;400&family=PT+Serif:ital@1&family=Tangerine:wght@700&display=swap');
+
+body{
+    background: linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.5)), url('../images/display.jpg');
+    background-attachment: fixed;
+       background-size: cover;
+}
+
+.auth {
+    width: 100px;
+    margin: 3em auto;
+}
+
+header,
+footer {
+    background-color: #02E34F;
+    background-image: linear-gradient(160deg, #9FE050 0%, #3C3C3C 100%);
+    width: 100%;
+    overflow: hidden;
+    color: white;
+
+}
+
+.index-navigation {
+    font-size: xx-large;
+    font-family: 'Cinzel', serif;
+
+
+}
+
+header {
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+header h1 {
+    display: inline-block;
+    color: #E2E8EA;
+    margin-bottom: auto;
+}
+
+
+h1 span{
+    color: #3387C7;
+}
+
+header nav {
+    font-size: x-large;
+    font-family: 'Cinzel', serif;
+    position: absolute;
+    right: 0;
+    bottom: 21px;
+}
+
+header nav>* {
+    float: left;
+}
+
+footer {
+    padding: 0.5em;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+
+}
+
+nav a {
+    margin: 0 0.5em;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-top: 1px solid #79A148;
+    padding: 5px 10px 5px 10px;
+
+}
+
+
+nav a:hover{
+    color:#79A148;
+
+}
+
+
+
+#user,
+#guest {
+    margin: 0;
+    padding: 0;
+}

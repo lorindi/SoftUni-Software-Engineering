@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Great+Vibes&family=Lato&family=Montserrat:wght@300;400&family=PT+Serif:ital@1&display=swap');
+
+
+html {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: inherit;
+    line-height: 1.3;
+}
+
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+    padding: 0.2em 1rem;
+}
+
+p,
+div {
+    margin: 0 1em 0.5em 1em;
+}
+
+ol,
+ul {
+    margin: 0 1rem;
+}
+
+li {
+    list-style-position: inside;
+}
+
+button {
+    font-weight: bold;
+    padding: 0.2em;
+    margin: 0.2em;
+    border: 1px solid white;
+    border-radius: 0.3em;
+    background-color: transparent;
+}
+
+a {
+    margin: 0.2em;
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+}
+
+#index-headline {
+    width: auto;
+    justify-content: right;
+    padding: 25px 15px 20px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#index-headline .index-message {
+    display: inline-block;
+    z-index: 999;
+    margin: 150px auto;
+    left: 0;
+    top: 40%;
+    text-align: center;
+    width: 30%
+}
+
+
+.index-message h2 {
+    color: #ffffff;
+    font-size: 220%;
+
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 8px;
+    word-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: 'Abril Fatface', cursive;
+}
+
+.index-message h3 {
+    color: #88472e;
+    font-size: 350%;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    word-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: 'Abril Fatface', cursive;
+}
+
+.index-message h4 {
+    color: #547f4b;
+    font-size: 69%;
+
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 8px;
+    word-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: 'Abril Fatface', cursive;
+}
+
+#catalogue>h1{
+    text-align: center;
+    color: #134062;
+    text-transform: uppercase;
+    padding: 20px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 15px;
+}
+
+.plant-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    margin-top: 20px;
+    padding: 50px;
+    margin-left: 50px;
+    background-position: right 35% bottom 45%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    float: left;
+    height: auto;
+}
+
+.image-wrap {
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.image-wrap>img {
+    max-width: 100%;
+    height: 100%;
+}
+
+.details-buttons{
+    text-align: center;
+    margin-top: 50px;
+}
+.details-btn{
+    color: #fff;
+    border: none;
+    margin: 20px;
+    padding: 20px 30px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    cursive: pointer;
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-property: box-shadow;
+}
+
+.details-btn{
+    background: #79A148;
+    box-shadow: 0 0 25px white;
+}
+
+.details-btn:hover{
+    box-shadow: 0 0 100px white;
+                0 0 50px white;
+                0 0 25px white;
+                0 0 5px white;
+}
+.plant-card>h3 {
+    font-family: "Agency FB", serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.5s ease-out;
+    text-align: center;
+    text-transform: uppercase;
+}
+.plant-card>h3,
+.plant-card>h1{
+    color: #E2E8EA;
+    text-align: center;
+}
+
+.plant-card>h1{
+    font-size: 15px;
+}
+
+
+
+#home-page>h1 {
+    color: rgb(252, 168, 151);
+    text-align: center;
+    font-weight: 700;
+    font-size: 84px;
+    font-family: "Agency FB", serif;
+}
+
+.no-articles {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+    font-family: "Agency FB", serif;
+    color: #88472e;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}

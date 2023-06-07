@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Croissant+One&family=Great+Vibes&family=Lato&family=Montserrat:wght@300;400&family=PT+Serif:ital@1&family=Tangerine:wght@700&display=swap');
+#plant-details {
+    position: relative;
+    display: block;
+    width: 980px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.4s;
+
+}
+
+#plant-details>h1 {
+    letter-spacing: 10px;
+    font-family: 'Croissant One', cursive;
+    color: #E2E8EA;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #79A1489C;
+}
+
+.info-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-blend-mode: multiply;
+    z-index: 2;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+.plant-header {
+    position: relative;
+    padding: 25px;
+    height: 40%;
+}
+
+.plant-header>h1 {
+    color: #7A5820;
+    margin-top: 5px;
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.plant-header>h4 {
+    color: #E2E8EA;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.levels {
+    display: inline-block;
+    margin-top: 15px;
+    color: #555;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #b4b6ee;
+    border: 1px solid rgba(218, 181, 181, 0.829);
+}
+.info-section>.description {
+    margin-top: 30px;
+    padding: 60px;
+    height: 50%;
+}
+
+.description {
+    font-size: 25px;
+    color: #E2E8EA;
+}
+.description-plant{
+    font-size: 20px;
+    color: #E2E8EA;
+}
+
+.plant-img {
+    width: 25%;
+    position: relative;
+    float: left;
+    margin-left: 15px;
+    margin-right: 55px;
+    height: 220px;
+    border-radius: 50%;
+    box-shadow: 0 0 25px white;
+}
+
+
+.buttons {
+    height: 10%;
+    text-align: right;
+    padding-right: 15px;
+    padding-bottom: 40px;
+    transition: 0.5s;
+    transition-property: box-shadow;
+
+}
+
+.edit-button, .delete-button {
+    height: 15%;
+    padding: 14px;
+    margin-top: auto;
+    font-size: 21px;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 25px white;
+    border-radius: 20px;
+}
+.edit-button{
+    background: #79A148;
+}
+
+.delete-button{
+    background: red;
+}
+
+.edit-button:hover, .delete-button:hover{
+    box-shadow: 0 0 100px white;
+                0 0 50px white;
+                0 0 25px white;
+                0 0 5px white;
+}
+
+.star-img{
+    width: 10%
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/style.css">
+    <title>MyPlantApp</title>
+</head>
+
+<body>
+<div id="box">
+    <header>
+        <!-- Navigation Bar -->
+        <h1><a class="index-navigation" href="{% url 'home page' %}">MyPlants</a></h1>
+        <nav>
+            <a href="{% url 'catalogue' %}">Catalogue</a>
+            <a href="{% url 'plant create' %}">Create Plant</a>
+            <a href="{% url 'details profile' %}">Profile</a>
+        </nav>
+    </header>
+
+    <!-- details section -->
+    <section id="plant-details">
+        <h1>Plant Details</h1>
+        <div class="info-section">
+            <div class="plant-header">
+                <!-- plant image -->
+                <img class="plant-img"
+                     src="{{ plant.image_url }}"
+                     alt='plant image'/>
+                <!-- plant type -->
+                <h1>Indoor Plants</h1>
+                <!-- plant name -->
+                <p><span class="description-plant">Name: {{ plant.name }}</span></p>
+                <!-- plant price -->
+                <p><span class="description-plant">Price: {{ plant.price|floatformat:2 }}</span></p>
+                <!-- plant description -->
+                <p><span class="description-plant">Description: {{ plant.description }}</span></p>
+            </div>
+
+            <!-- Edit/Delete buttons -->
+            <div class="buttons">
+                <a href="{% url 'plant edit' pk=plant.pk %}" class="edit-button">Edit</a>
+                <a href="{% url 'plant delete' pk=plant.pk %}" class="delete-button">Delete</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        &copy;SoftUni Team 2022. All rights reserved.
+    </footer>
+</div>
+</body>
+</html>

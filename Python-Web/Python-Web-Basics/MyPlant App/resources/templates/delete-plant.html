@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/style.css">
+    <title>MyPlantApp</title>
+</head>
+
+<body>
+<div id="box">
+
+    <header>
+        <!-- Navigation Bar -->
+        <h1><a class="index-navigation" href="#">MyPlants</a></h1>
+        <nav>
+            <a href="#">Catalogue</a>
+            <a href="#">Create Plant</a>
+            <a href="#">Profile</a>
+        </nav>
+    </header>
+
+    <!-- delete plant form -->
+    <section id="delete-page" class="auth">
+        <form id="delete">
+            <div class="container">
+                <h1>Delete Plant</h1>
+
+                <label for="type">Type:</label>
+                <select name="type" disabled="disabled" readonly="readonly" required="" id="type">
+                    <option value="">---------</option>
+                    <option value="Outdoor Plants">Outdoor Plants</option>
+                    <option value="Indoor Plants" selected="">Indoor Plants</option>
+                </select>
+
+                <label for="name">Name:</label>
+                <input type="text" name="name" value="Orchid" maxlength="20" disabled="disabled" readonly="readonly" required="" id="name">
+
+                <label for="image_url">Image URL:</label>
+                <input type="url" name="image_url" value="https://www.ikea.com/om/en/images/products/fejka-artificial-potted-plant-orchid-white__0748880_pe745269_s5.jpg?f=s" maxlength="200" disabled="disabled" readonly="readonly" required="" id="image_url">
+
+                <label for="id_description">Description:</label>
+                <textarea name="description" cols="40" rows="10" disabled="disabled" readonly="readonly" required="" id="id_description">Orchids are plants that belong to the family Orchidaceae, a diverse and widespread group of flowering plants with blooms that are often colourful and fragrant.</textarea>
+
+                <label for="price">Price:</label>
+                <input type="number" name="price" value="10.0" disabled="disabled" readonly="readonly" required="" id="price">
+
+                <input class="btn submit" type="submit" value="Delete Plant">
+
+            </div>
+        </form>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        &copy;SoftUni Team 2022. All rights reserved.
+    </footer>
+
+</div>
+</body>
+</html>
