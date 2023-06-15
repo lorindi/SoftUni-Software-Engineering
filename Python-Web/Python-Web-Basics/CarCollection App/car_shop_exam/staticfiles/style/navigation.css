@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Monoton&display=swap');
+body{
+    background: #060c21;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.auth {
+    width: 100px;
+    margin: 3em auto;
+}
+
+header,
+footer {
+    background-color: #0D223A;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+
+}
+
+.index-navigation {
+    font-size: xx-large;
+    font-family: 'Cinzel', serif;
+    text-shadow: 2px 2px 4px black;
+
+}
+
+header {
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+header h1 {
+    display: inline-block;
+    color: #E2E8EA;
+    margin-bottom: auto;
+    border-right: 1px solid #3387C7;
+
+}
+
+
+h1 span{
+    color: #3387C7;
+}
+
+header nav {
+    font-size: x-large;
+    font-family: 'Cinzel', serif;
+    position: absolute;
+    right: 0;
+    bottom: 21px;
+}
+
+header nav>* {
+    float: left;
+}
+
+footer {
+    padding: 0.5em;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+
+}
+
+nav a {
+    margin: 0 0.5em;
+    color: #E2E8EA;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px black;
+
+}
+
+nav a:hover{
+    border-bottom: 1px solid #3387C7;
+    border-top: 1px solid #3387C7;
+}
+
+
+#user,
+#guest {
+    margin: 0;
+    padding: 0;
+}

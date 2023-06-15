@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+{% load static %}
+    <!-- edit profile form -->
+    <section id="register-page" class="content auth">
+        <form id="register" method="post" action="{% url 'profile edit' %}">
+            <div class="container">
+                <h1>Edit Profile</h1>
+                {{ form }}
+                {% csrf_token %}
+
+{#                <label for="username">Username:</label>#}
+{#                <input type="text" name="username" value="svetoslava" maxlength="10" required="" id="username">#}
+{##}
+{#                <label for="email">Email:</label>#}
+{#                <input type="email" name="email" value="svetoslava@gmail.com" maxlength="254" required="" id="email">#}
+{##}
+{#                <label for="age">Age:</label>#}
+{#                <input type="number" name="age" value="30" required="" id="age">#}
+{##}
+{#                <label for="password">Password:</label>#}
+{#                <input type="text" name="password" value="123456" maxlength="30" required="" id="password">#}
+{##}
+{#                <label for="first_name">First Name:</label>#}
+{#                <input type="text" name="first_name" maxlength="30" id="first_name">#}
+{##}
+{#                <label for="last_name">Last Name:</label>#}
+{#                <input type="text" name="last_name" maxlength="30" id="last_name">#}
+{##}
+{#                <label for="profile_picture">Profile Picture:</label>#}
+{#                <input type="url" name="profile_picture" maxlength="200" id="profile_picture">#}
+
+
+                <input class="btn" type="submit" value="Edit Profile">
+            </div>
+        </form>
+    </section>
+
+{% endblock %}

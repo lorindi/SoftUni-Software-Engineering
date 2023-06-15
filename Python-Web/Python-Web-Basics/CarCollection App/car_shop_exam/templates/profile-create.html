@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <title>CarCollection</title>
+</head>
+
+<body>
+<div id="box">
+    <header>
+
+        <!-- navigation bar -->
+        <h1><a class="index-navigation" href="{% url 'home page' %}"><span>C</span>ARS <span>C</span>OLLECTION</a></h1>
+        <nav>
+            <a href="{% url 'profile create' %}">Create Profile</a>
+        </nav>
+    </header>
+
+    <!-- create profile form -->
+    <section id="register-page" class="content auth">
+        <form id="register" method="post" action="{% url 'profile create' %}">
+            <div class="container">
+                <div class="brand-logo"></div>
+                <h1>Create Profile</h1>
+                {{ form }}
+                {% csrf_token %}
+{##}
+{#                <label for="username">Username:</label>#}
+{#                <input type="text" name="username" maxlength="10" required="" id="username">#}
+{##}
+{#                <label for="email">Email:</label>#}
+{#                <input type="email" name="email" maxlength="254" required="" id="email">#}
+{##}
+{#                <label for="age">Age:</label>#}
+{#                <input type="number" name="age" required="" id="age">#}
+{##}
+{#                <label for="password">Password:</label>#}
+{#                <input type="password" name="password" required="" id="password">#}
+
+                <input class="btn submit" type="submit" value="Create Profile">
+            </div>
+        </form>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        &copy;SoftUni Team 2022. All rights reserved.
+    </footer>
+
+</div>
+</body>
+</html>

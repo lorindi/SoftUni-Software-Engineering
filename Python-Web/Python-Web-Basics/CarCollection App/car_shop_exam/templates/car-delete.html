@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+
+    <!-- edit game form -->
+    <section id="delete-page" class="auth">
+        <form id="delete" method="post" action="{% url 'car delete' pk=car.pk %}">
+            <div class="container">
+
+                <h1>Delete Car</h1>
+                {{ form }}
+                {% csrf_token %}
+{#                <label for="type">Type:</label>#}
+{#                <select name="type" disabled required="" id="type">#}
+{#                    <option value="">---------</option>#}
+{#                    <option value="Sport Car" selected="">Sport Car</option>#}
+{#                    <option value="Pickup">Pickup</option>#}
+{#                    <option value="Crossover">Crossover</option>#}
+{#                    <option value="Minibus">Minibus</option>#}
+{#                    <option value="Other">Other</option>#}
+{#                </select>#}
+{#                <label for="model">Model:</label>#}
+{#                <input type="text" name="model" value="Ferrari 488 GTB" maxlength="20" disabled="disabled" readonly="readonly" required="" id="model">#}
+{##}
+{#                <label for="year">Year:</label>#}
+{#                <input type="number" name="year" value="2019" disabled="disabled" readonly="readonly" required="" id="year">#}
+{##}
+{#                <label for="image_url">Image URL:</label>#}
+{#                <input type="url" name="image_url" value="https://i0.wp.com/ccclaguna.com/wp-content/uploads/2019/12/DSC_0373-scaled.jpg?fit=2560%2C1707&amp;ssl=1" maxlength="200" disabled="disabled" readonly="readonly" required="" id="image_url">#}
+{##}
+{#                <label for="price">Price:</label>#}
+{#                <input type="number" name="price" value="285.0" step="any" disabled="disabled" readonly="readonly" required="" id="price">#}
+
+                <input class="btn submit" type="submit" value="Delete Car">
+
+            </div>
+        </form>
+    </section>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+{% load static %}
+
+    <!-- profile details section -->
+    <section id="car-details">
+        <h1>Profile Details</h1>
+        <div class="info-section">
+            <div class="car-header">
+                {% if not user.profile_picture %}
+                <!-- default profile image (if the user does NOT have any)-->
+                    <img class="car-img" src="{% static 'images/default-profile.png'%}" alt='profile-image'/>
+                {% else %}
+                <!-- if the user has a profile image -->
+                    <img class="car-img" src="{{ user.profile_picture }}" alt='profile-image'/>
+                <!-- user full name (if any) -->
+                {% endif %}
+                <h1>{{ user.get_full_name }}</h1>
+                <!-- user username -->
+                <p class="description">Username: {{ user.username }}</p>
+                <!-- user email -->
+                <p class="description">Email: {{ user.email }}</p>
+                <!-- user age -->
+                <p class="description">Age: {{ user.age }}</p>
+                <!-- total price of all cars -->
+                <p class="description">Total price: {{ car_price.price|floatformat:3 }}</p>
+                <!-- Edit/Delete buttons -->
+                <div class="buttons">
+                    <a href="{% url 'profile edit' %}" class="edit-button">Edit</a>
+                    <a href="{% url 'profile delete' %}" class="delete-button">Delete</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

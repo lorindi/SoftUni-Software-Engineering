@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <section id="create-page" class="auth">
+        <!-- create car form -->
+        <form id="create" method="post" action="{% url 'car create' %}">
+            <div class="container">
+                <h1 class="form-create-headline">Create Car</h1>
+                {{ form }}
+                {% csrf_token %}
+{#                <label for="type">Type:</label>#}
+{#                <select name="type" required="" id="type">#}
+{#                    <option value="" selected="">---------</option>#}
+{#                    <option value="Sport Car">Sport Car</option>#}
+{#                    <option value="Pickup">Pickup</option>#}
+{#                    <option value="Crossover">Crossover</option>#}
+{#                    <option value="Minibus">Minibus</option>#}
+{#                    <option value="Other">Other</option>#}
+{#                </select>#}
+{#                <label for="model">Model:</label>#}
+{#                <input type="text" name="model" maxlength="20" required="" id="model">#}
+{##}
+{#                <label for="year">Year:</label>#}
+{#                <input type="number" name="year" required="" id="year">#}
+{##}
+{#                <label for="image_url">Image URL:</label>#}
+{#                <input type="url" name="image_url" maxlength="200" required="" id="image_url">#}
+{##}
+{#                <label for="price">Price:</label>#}
+{#                <input type="number" name="price" step="any" required="" id="price">#}
+
+
+                <input class="btn" type="submit" value="Create Car">
+            </div>
+        </form>
+    </section>
+{% endblock %}
+

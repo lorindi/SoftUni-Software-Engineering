@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+html {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: inherit;
+    line-height: 1.3;
+}
+
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+    padding: 0.2em 1rem;
+}
+
+p,
+div {
+    margin: 0 1em 0.5em 1em;
+}
+
+ol,
+ul {
+    margin: 0 1rem;
+}
+
+li {
+    list-style-position: inside;
+}
+
+button {
+    font-weight: bold;
+    padding: 0.2em;
+    margin: 0.2em;
+    border: 1px solid white;
+    border-radius: 0.3em;
+    background-color: transparent;
+}
+
+a {
+    margin: 0.2em;
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+}
+
+#index-headline {
+    width: auto;
+    justify-content: right;
+    padding: 25px 15px 20px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#index-headline .index-message {
+    display: inline-block;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    top: 40%;
+    text-align: center;
+    width: 30%
+}
+
+.index-message>h2{
+    position: relative;
+    font-size: 50px;
+    left: 180px;
+    top: 20px;
+}
+
+#index-headline>img {
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 60%;
+    margin-left: auto;
+}
+
+.index-message h2 {
+    color: #ffffff;
+    font-size: 300%;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: 'Monoton', cursive;
+}
+
+.index-message h2>span {
+    color: #3387C7;
+}
+
+#catalogue>h1{
+    text-align: center;
+    color: #134062;
+    text-transform: uppercase;
+    padding: 20px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 15px;
+}
+
+.car-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    margin-top: 20px;
+    padding: 50px;
+    margin-left: 50px;
+    background-position: right 35% bottom 45%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    float: left;
+    height: auto;
+}
+
+.image-wrap {
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.image-wrap>img {
+    max-width: 100%;
+    height: 100%;
+}
+
+.details-buttons{
+    text-align: center;
+    margin-top: 50px;
+}
+.details-btn{
+    color: #fff;
+    border: none;
+    margin: 20px;
+    padding: 20px 30px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    cursive: pointer;
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-property: box-shadow;
+}
+
+.details-btn{
+    background: #3387C7;
+    box-shadow: 0 0 25px white;
+}
+
+.details-btn:hover{
+    box-shadow: 0 0 100px white;
+}
+.car-card>h3 {
+    font-family: "Agency FB", serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.5s ease-out;
+    text-align: center;
+    text-transform: uppercase;
+}
+.car-card>h3,
+.car-card>h1{
+    color: #E2E8EA;
+    text-align: center;
+}
+
+.car-card>h1{
+    font-size: 15px;
+}
+
+
+
+#home-page>h1 {
+    color: rgb(252, 168, 151);
+    text-align: center;
+    font-weight: 700;
+    font-size: 84px;
+    font-family: "Agency FB", serif;
+}
+
+.no-articles {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+    font-family: "Agency FB", serif;
+}
