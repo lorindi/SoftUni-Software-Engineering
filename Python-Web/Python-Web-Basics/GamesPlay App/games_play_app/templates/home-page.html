@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <title>GamesPlay</title>
+</head>
+
+<body>
+<div id="box">
+    <header>
+
+        <h1><a class="home" href="{% url 'home page' %}">GamesPlay</a></h1>
+        <nav>
+            {% if not profile %}
+            <a href="{% url 'create profile' %}">Create Profile</a>
+
+            {% else %}
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'create game' %}">Create Game</a>
+            <a href="{% url 'details profile' %}">Profile</a>
+            {% endif %}
+        </nav>
+    </header>
+
+
+    <section id="welcome-world">
+        <div class="welcome-message">
+            <h2>ALL new games are</h2>
+            <h3>Only in GamesPlay</h3>
+        </div>
+        <img src="{% static 'images/four_slider_img01.png' %}" alt="hero">
+    </section>
+
+    <footer>
+        &copy;SoftUni Team 2022. All rights reserved.
+    </footer>
+
+</div>
+</body>
+</html>

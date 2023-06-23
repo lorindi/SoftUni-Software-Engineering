@@ -1,0 +1,145 @@
+#register-page,
+#create-page,
+#edit-page,
+#delete-page {
+    position: relative;
+    width: 550px;
+    height: auto;
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    background: #3e4443;
+    box-shadow: 0 0 32px 0 #49535e, -14px -14px 20px #191c21;
+}
+
+.container {
+    padding: 40px;
+}
+
+.brand-logo {
+    height: 80px;
+    width: 80px;
+    background: url("../images/icon-gamepad-2.png");
+    margin: auto;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+}
+
+.container > h1 {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 14px;
+}
+
+label,
+input,
+select,
+textarea{
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+label {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+label:nth-of-type(2) {
+    margin-top: 10px;
+}
+
+label[for="female"] {
+    margin-top: 10px;
+}
+
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="url"]{
+    background: #ecf0f3;
+    padding: 20px 20px 20px 20px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 17px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+}
+
+select {
+    background: #ecf0f3;
+    padding: 10px 20px 10px 20px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 17px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+}
+
+label[for="terms"] > input,
+label[for="terms"] > select{
+    display: inline;
+}
+
+.btn.submit {
+    margin-top: 30px;
+    background: #778e9c;
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+.btn.submit:hover {
+    color: white;
+    background-color: #8fa9b9;
+}
+
+.container {
+    text-align: left;
+    margin-top: 0;
+}
+
+.field > span {
+    position: absolute;
+    font-size: 18px;
+    bottom: 17px;
+    right: 8px;
+    text-decoration: none;
+    color: black;
+    background: rgb(235, 157, 142);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+textarea {
+    width: 100%;
+    min-width: 20vw;
+    min-height: 7em;
+    border: 2px solid #86a480;
+    border-radius: 0.7em;
+    font-size: 17px;
+    border-bottom-color: #ecf0f3;
+    background-color: #ecf0f3;
+    border-right-color: #ecf0f3;
+    margin-top: 7px;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+}

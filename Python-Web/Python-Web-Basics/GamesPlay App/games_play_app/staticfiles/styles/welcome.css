@@ -1,0 +1,169 @@
+#welcome-world {
+    width: auto;
+    justify-content: right;
+    padding: 25px 15px 20px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#welcome-world .welcome-message {
+    display: inline-block;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    top: 40%;
+    text-align: center;
+    width: 30%
+}
+
+#welcome-world>img {
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 60%;
+    margin-left: auto;
+
+}
+
+.welcome-message h2 {
+    color: #ffffff;
+    font-size: 300%;
+
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: "Agency FB", serif;
+}
+
+.welcome-message h3 {
+    color: #ffffff;
+    font-size: 600%;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: "Agency FB", serif;
+}
+
+#welcome-world>#home-page {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+#home-page {
+    background-color: transparent;
+    box-shadow: 0 0 40px 0;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 55px;
+    height: auto;
+    width: auto;
+}
+
+.game {
+    box-shadow: 0 0 30px 0;
+    margin-top: 20px;
+    padding: 50px;
+    margin-left: 50px;
+    background-position: right 35% bottom 45%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    float: left;
+    height: auto;
+    color: rgb(204, 144, 131);
+}
+
+.image-wrap {
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.image-wrap>img {
+    max-width: 100%;
+}
+
+.game>h3 {
+    font-family: "Agency FB", serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.5s ease-out;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.game-content>h4 {
+    color: #c2d4f8;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    text-align: center;
+    direction: rtl;
+}
+
+.rating span {
+    font-size: 40px;
+    padding: 4px;
+}
+
+.rating span:before {
+    content: "\2605";
+    position: absolute;
+    color: gold;
+}
+
+.details-btn {
+    background-color: #fd5454;
+    font-size: 1.4rem;
+    margin-top: 10px;
+    color: white;
+    padding: 0.9em 1.4em;
+}
+
+.data-buttons {
+    font-size: 1.4rem;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.btn.details-btn:hover {
+    background-color: rgb(192, 129, 117);
+    color: white;
+}
+
+#home-page>h1 {
+    color: rgb(252, 168, 151);
+    text-align: center;
+    font-weight: 700;
+    font-size: 84px;
+    font-family: "Agency FB", serif;
+}
+
+.no-articles {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+    font-family: "Agency FB", serif;
+}

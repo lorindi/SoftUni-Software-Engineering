@@ -1,0 +1,64 @@
+html {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: inherit;
+    line-height: 1.3;
+}
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+    padding: 0.2em 1rem;
+}
+
+p,
+div {
+    margin: 0 1em 0.5em 1em;
+}
+
+ol,
+ul {
+    margin: 0 1rem;
+}
+
+li {
+    list-style-position: inside;
+}
+
+button {
+    font-weight: bold;
+    padding: 0.2em;
+    margin: 0.2em;
+    border: 1px solid white;
+    border-radius: 0.3em;
+    background-color: transparent;
+}
+
+a {
+    margin: 0.2em;
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 0.5em;
+}
+
+blockquote>cite {
+    display: block;
+    text-align: right;
+    margin: 0.5em 2em;
+    font-weight: bold;
+}

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <title>GamesPlay</title>
+</head>
+
+<body>
+<div id="box">
+    <header>
+
+        <h1><a class="home" href="{% url 'home page' %}">GamesPlay</a></h1>
+        <nav>
+
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'create game' %}">Create Game</a>
+            <a href="{% url 'details profile' %}">Profile</a>
+
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        &copy;SoftUni Team 2022. All rights reserved.
+    </footer>
+
+</div>
+</body>
+</html>
