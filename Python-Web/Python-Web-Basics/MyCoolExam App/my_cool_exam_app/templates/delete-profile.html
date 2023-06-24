@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+{% block content %}
+{% load static %}
+    <main>
+
+        <section id="edit">
+
+            <div class="form">
+                <h1>Are you sure you want to delete your profile?</h1>
+                
+                <!-- Delete Profile Form -->
+                <form id='delete' class="register-form" method="post" action="{% url 'delete profile' %}">
+                    <!-- Confirm Button -->
+
+                    {% csrf_token %}
+                    <button type="submit">Yes</button>
+
+                </form>
+                <!-- End Delete Profile Form -->
+            </div>
+            
+        </section>
+    </main>
+{% endblock %}

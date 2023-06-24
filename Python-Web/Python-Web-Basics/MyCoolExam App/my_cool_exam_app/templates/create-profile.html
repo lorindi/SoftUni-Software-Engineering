@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=\, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
+    <title>Fruitipedia</title>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <!-- Navigation -->
+        <a id="logo" href="#">
+            <img id="logo-img" src="{% static 'images/logo.png' %}" alt="logo"/>
+        </a>
+
+        <nav>
+            {% if profile %}
+            <!-- If there is a user profile -->
+            <div class="user">
+                <a href="{% url 'dashboard' %}">Dashboard</a>
+                <a href="{% url 'create fruit' %}">Add Fruit</a>
+                <a href="{% url 'details profile' %}">Profile</a>
+            </div>
+            {% else %}
+            <!-- If user profile has NOT been created -->
+            <div class="guest">
+
+                <a href="{% url 'create profile' %}">Create Profile</a>
+
+            </div>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Create Profile Form -->
+        <section id="register">
+            <div class="form">
+                <h2>Create Profile</h2>
+                <form class="register-form" method="post" action="{% url 'create profile' %}">
+                    {{ form }}
+                    {% csrf_token %}
+
+
+                    <button type="submit">Create</button>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+</div>
+<!-- footer -->
+<footer>
+    <p>@Fruitipedia - SoftUni Team 2023. All rights reserved.</p>
+</footer>
+</body>
+</html>
