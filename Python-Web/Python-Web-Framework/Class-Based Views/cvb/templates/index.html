@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{ title }}</h1>
+From CBV
+<form method="get" action="{% url 'index' %}" >
+
+    <label>
+        <input name="pattern" placeholder="Enter text:" value="{{ pattern }}"/>
+    </label>
+    <button>
+        Search
+    </button>
+    {% csrf_token %}
+</form>
+<a href="{% url 'employee create' %}">Create new employee</a>
+<ul>
+    {% for employee in employees %}
+    <li>
+        <a href="{% url 'employee details' pk=employee.pk %}">{{ employee.full_name }}</a>
+
+    </li>
+    {% endfor %}
+</ul>
+
+{#<ul>#}
+{#    {% for employee in employees %}#}
+{#    {% for employee in object_list %}#}
+{#        <li>{{ employee.full_name }}</li>#}
+{#    {% endfor %}#}
+{#</ul>#}
+</body>
+</html>

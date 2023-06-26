@@ -1,0 +1,7 @@
+<h1>Create an employee</h1>
+
+<form method="post" action="{% url 'employee create' %}">
+    {{ form }}
+    <button>Create</button>
+    {% csrf_token %}
+</form>
