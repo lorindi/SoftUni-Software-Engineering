@@ -16,7 +16,11 @@
                 <!-- fruit name -->
                 <h3 class="title">{{ fruit.name }}</h3>
                 <!-- fruit description -->
-                <p class="description">{{ fruit.description }}</p>
+                {% if fruit.description|length <= 50 %}
+                    <p>{{ fruit.description }}</p>
+                {% else %}
+                    <p>{{ fruit.description|slice:":50" }}</p>
+                {% endif %}
                 <!-- fruit details button -->
                 <a class="details-btn" href="{% url 'details fruit' pk=fruit.pk %}">More Info</a>
             </div>

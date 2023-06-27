@@ -26,7 +26,9 @@ class CreateProfileForm(forms.ModelForm):
                 attrs={
                     'placeholder': 'Password'
                 }
-            )
+            ),
+
+
         }
         labels = {
             'first_name': '',
@@ -58,6 +60,16 @@ class EditFruitForm(forms.ModelForm):
     class Meta:
         model = Fruit
         fields = '__all__'
+        labels = {
+
+            'image_url': 'Image URL:',
+
+        }
+        widgets = {
+            'nutrition': forms.Textarea(
+                attrs={'placeholder': 'Nutrition info'}
+            ),
+        }
 
 
 class DeleteFruitForm(forms.ModelForm):

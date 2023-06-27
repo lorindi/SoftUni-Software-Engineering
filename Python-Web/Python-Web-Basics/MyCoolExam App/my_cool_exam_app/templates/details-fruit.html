@@ -14,11 +14,20 @@
                 <div id="info-wrapper">
                     <div id="details-description">
                         <!-- fruit description -->
-                        <p>{{ fruit.description }}</p>
+                        {% if fruit.description|length <= 50 %}
+                            <p>{{ fruit.description }}</p>
+                        {% else %}
+                            <p>{{ fruit.description|slice:":50" }}</p>
+                        {% endif %}
                         <!-- fruit nutrition -->
                         <p id="nutrition">Nutrition</p>
                         <!-- fruit nutrition details -->
-                        <p id="details-nutrition">{{ fruit.nutrition }}</p>
+                        {% if fruit.description|length <= 50 %}
+                            <p id="details-nutrition">{{ fruit.nutrition }}</p>
+                        {% else %}
+                            <p id="details-nutrition">{{ fruit.nutrition|slice:":50" }}</p>
+                        {% endif %}
+
                     </div>
 
                     <!--Edit and Delete buttons -->

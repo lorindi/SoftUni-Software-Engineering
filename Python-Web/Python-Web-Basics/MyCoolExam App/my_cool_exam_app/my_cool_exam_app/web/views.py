@@ -66,7 +66,9 @@ def details_fruit(request, pk):
 
 
 def edit_fruit(request, pk):
+    profile = get_profile()
     fruit = get_fruit_pk(pk)
+
     if request.method == 'POST':
         form = EditFruitForm(request.POST, instance=fruit)
         if form.is_valid:
@@ -74,8 +76,10 @@ def edit_fruit(request, pk):
             return redirect('dashboard')
     else:
         form = EditFruitForm(instance=fruit)
+
     context = {
         'form': form,
+        'profile': profile,
         'fruit': fruit,
 
     }
