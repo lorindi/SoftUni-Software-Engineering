@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+
+    <!-- profile details section -->
+    <section id="game-details">
+        <h1>Profile Details</h1>
+        <div class="info-section">
+            <div class="game-header">
+                {% if not profile.profile_picture %}
+                    <!-- default profile image (if the user does NOT have any)-->
+                    <img class="game-img" src="{% static 'images/default-user.jpg' %}" alt='profile-image'/>
+                    <!-- if the user has a profile image -->
+                {% else %}
+                    <img class="game-img" src="{{ profile.profile_picture }}" alt='profile-image'/>
+                {% endif %}
+                {% if name %}
+                    <!-- user full name (if any) -->
+                    <h1>{{ name }}</h1>
+                {% endif %}
+                <!-- user email -->
+                <p class="text">Email: {{ profile.email }}</p>
+                <!-- user age -->
+                <p class="text">Age: {{ profile.age }}</p>
+                <!-- total number of games -->
+                <p class="text">Total games: {{ total_games }}</p>
+                <!-- average rating for all games -->
+                <p class="text">Average rating: {{ average_rating }}</p>
+                <!-- Edit/Delete buttons -->
+                <div class="buttons">
+                    <a href="{% url 'profile_edit' %}" class="button">Edit</a>
+                    <a href="{% url 'profile_delete' %}" class="button">Delete</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

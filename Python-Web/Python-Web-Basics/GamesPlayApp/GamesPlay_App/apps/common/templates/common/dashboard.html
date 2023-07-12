@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- Display paragraph: If there are no games-->
+    {% if not games %}
+        <p class="no-articles">No games yet</p>
+    {% else %}
+        <!-- Display div "game" with information about every game (if any)-->
+        <section id="welcome-world">
+            {% for game in games %}
+                <div class="game">
+                    <div class="image-wrap">
+                        <!-- game image -->
+                        <img src="{{ game.image_url }}"
+                             alt="game picture">
+                    </div>
+                    <!-- game title -->
+                    <h3>{{ game.title }}</h3>
+                    <!-- game category-->
+                    <h1>{{ game.category }}</h1>
+                    <div class="data-buttons">
+                        <!-- game details button -->
+                        <a href="{% url 'game_details' pk=game.pk %}" class="btn details-btn">Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </section>
+    {% endif %}
+{% endblock %}

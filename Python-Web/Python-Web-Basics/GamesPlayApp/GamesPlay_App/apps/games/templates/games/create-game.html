@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- create game section -->
+    <section id="create-page" class="auth">
+        <!-- create game form -->
+        <form method="post" action="{% url 'game_create' %}" id="create">
+            <div class="container">
+                <!-- create game paragraph -->
+                <h1>Create Game</h1>
+                {{ form }}
+
+                <!-- create game button -->
+                <input class="btn submit" type="submit" value="Create Game">
+                {% csrf_token %}
+            </div>
+        </form>
+    </section>
+
+{% endblock %}
