@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|PT+Serif:400,400i,700,700i");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: PT Sans, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1.5;
+  box-sizing: inherit;
+  max-width: 100vw;
+  color: #67686b;
+}
+
+li{
+  list-style: none;  
+}
+
+header {
+  background: linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)),
+    url(https://wallpaperaccess.com/full/329583.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 2rem 0;
+  text-shadow: 1px 1px 1px rgb(80, 79, 79);
+}
+
+nav img {
+  width: 50px;
+  height: 50px;
+}
+
+header nav {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav ul li {
+  padding-right: 1em;
+}
+
+.header-title {
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  padding: 6em 0;
+}
+
+.header-title h1 {
+  font-size: 50px;
+  padding-bottom: 0.5em;
+}
+
+.header-title p {
+  font-size: 20px;
+}
+
+.header-title button {
+  padding: 0.7em 0.9em;
+  color: rgb(104, 102, 102);
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 0.3rem;
+  background: rgb(231, 238, 240);
+  margin-top: 2em;
+  /* border: 2px solid rgb(104, 102, 102); */
+}
+
+h3 {
+  font-size: 24px;
+}
+
+.team-description-wrapper,
+.about-us {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+
+.blog-section p:nth-child(2),
+.team-description p:nth-child(2),
+.about-us p:nth-child(2) {
+  font-style: italic;
+  padding-bottom: 2.5rem;
+}
+
+.about-us p:nth-child(3){
+  width: 70%;
+  margin: 0 auto;
+}
+
+.choose-us {
+  padding: 2.5rem 0;
+  /* background: rgb(231, 242, 245);     */
+}
+
+.choose-us ul{
+  display: flex;
+  justify-content: space-around;
+}
+
+.choose-us li {
+  flex: 0 0 25%;
+  text-align: center;
+}
+
+.choose-us li h4 {
+  padding-bottom: 0.8rem;
+  font-size: 20px;
+}
+
+.choose-us li img {
+  width: 8rem;
+  height: 8rem;
+}
+
+.team-description{
+  background: rgb(231, 242, 245);
+}
+
+.team-description ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-description ul li img {
+  width: 250px;
+  height: 250px;
+  padding-bottom: 0.3rem;
+}
+
+.team-description ul li > p:nth-child(2) {
+  padding: 0;
+}
+
+.blog-news {  
+  background: rgb(231, 242, 245);  
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.blog-news ul {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2rem;
+}
+
+.blog-news ul .item {
+  list-style: none outside;
+  display: flex;
+  text-align: center;
+  flex: 0 0 35%;
+  box-shadow: 0 0.3rem 1rem 0.3rem rgba(0,0,0,0.3); 
+}
+
+.blog-news .content{
+  width: 15rem;
+  padding: 0 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+}
+
+.blog-news .content h4{
+  padding-bottom: 1rem;
+}
+
+.blog-news ul .item .avatar {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  position: relative; 
+  margin: 0 auto;  
+  margin: 0;
+}
+
+.blog-news ul .item .avatar:before {
+  display: block;
+  content: '';
+  padding-top: 100%;
+}
+
+.blog-news ul .item .avatar img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+footer {
+  background: #2d333c;
+  text-align: center;
+  color: white;
+  padding: 1em 0;
+}

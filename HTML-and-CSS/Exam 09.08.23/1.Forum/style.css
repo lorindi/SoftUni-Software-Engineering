@@ -1,0 +1,147 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+
+.body:before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 112%;
+    background-image: url("./images/background.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+body {
+    font-family: 'Inter';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+p{
+    color: #595959;
+}
+.section-flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.person1 {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    background-position: center;
+    object-fit: cover;
+    background-size: contain;
+}
+
+.person2{
+    width: 250px;
+    height: 250px;
+    height: auto;
+    border-radius: 100%;
+    background-size: contain;
+  
+
+}
+.person3{
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    background-position: center;
+    object-fit: cover;
+    background-size: contain;
+    filter: grayscale(100%);
+  
+
+}
+.div-flex-row-card{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 1055px;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 405px;
+    
+}
+.div-flex-row-card:nth-child(1){
+    margin-bottom: 35px;
+    
+}
+.div-flex-col-text {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: space-evenly;
+    
+}
+.div-flex-col-text>i{
+    font-size: 65px;
+    margin-top: 30px;
+
+}
+.div-flex-col-text>p{
+    margin-top: 30px;
+    width: 600px;
+    font-size: 21px;
+   
+    /* letter-spacing: 1.5px; */
+
+}
+.div-flex-col-text>h4{
+    margin-top: 30px;
+    font-size: 27px;
+    
+
+}
+
+/* -------------------------------------------------------- */
+.container-flex-col-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 500px;
+    height: 850px;
+    justify-content: space-between;
+    margin-left: 35px;
+    padding: 35px;
+    
+   
+}
+
+.container-flex-col-card>i {
+    margin-top: 30px;
+    font-size: 100px;
+
+}
+.container-flex-col-card>p {
+    font-size: 20px;
+    width: 410px;
+    margin-bottom: 70px;
+    letter-spacing: 0.5px;
+
+}
+
+.container-flex-col-card>div {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    border-top: 1px solid #D9D9D9;
+    align-items: center;
+    
+
+}
+.container-flex-col-card>div>div {
+    margin-left: 15px;
+}
+.container-flex-col-card>div>div>h4 {
+    font-size: 25px;
+}
+.container-flex-col-card>div>div>p {
+    font-size: 14px;
+}
