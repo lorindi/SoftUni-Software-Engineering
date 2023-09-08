@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sum Numbers</title>
+</head>
+<body>
+<input type="text" id="num1"/> +
+<input type="text" id="num2"/> =
+<input type="text" id="sum" readonly="readonly"/>
+<input type="button" value="Calc" onclick="calc()"/>
+<script src="SumNumbers.js"></script>
+</body>
+</html>
