@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- За компоненти, чист реакт -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Компоненти комуникиращи с дом, връзката с дом дървото, цвързваща библиотека -->
+    <title>My First React Page</title>
+</head> 
+
+<body>
+    <h1>Hello from server</h1>
+    <div id="root">
+
+    </div>
+    <script>
+        const rootElement = document.getElementById('root');
+        const root = ReactDOM.createRoot(rootElement);
+        const headingElement = React.createElement('h1', {}, 'Hello from React!')
+        const secondHeadingElement = React.createElement('h2', {}, 'Some slogan here!')
+        const headerElement = React.createElement('header', {}, headingElement, secondHeadingElement)
+        root.render(headerElement)
+    </script>
+</body>
+
+</html>
+
+
+
+
+npm init --yes
+npm install babel-cli@6 babel-preset-react-app@3
+правим src папка, а в нея app.js и слагаме:
+        const rootElement = document.getElementById('root');
+        const root = ReactDOM.createRoot(rootElement);
+        const headingElement = React.createElement('h1', {}, 'Hello from React!')
+        const secondHeadingElement = React.createElement('h2', {}, 'Some slogan here!')
+        const headerElement = React.createElement('header', {}, headingElement, secondHeadingElement)
+        root.render(headerElement)
+
+
+
+
+след това:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- За компоненти, чист реакт -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Компоненти комуникиращи с дом, връзката с дом дървото, цвързваща библиотека -->
+    <title>My First React Page</title>
+</head> 
+
+<body>
+    <h1>Hello from server</h1>
+    <div id="root">
+
+    </div>
+    <script src="./src/app.js"></script>
+</body>
+
+</html>
+
+
+
+
+npx babel --watch ./src --out-dir ./build --presets react-app/prod - тази команда ни създава папка build в която също има app.js 
+и там подробно се описва с код на js това което пишем на jsx
+
+
+
+
+в src/app.js премахваме текущото писание и пишем :
+const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement);
+// const headingElement = React.createElement("h1", {}, "Hello from React!");
+// const secondHeadingElement = React.createElement("h2", {}, "Some slogan here!");
+// const headerElement = React.createElement(
+//   "header",
+//   {},
+//   headingElement,
+//   secondHeadingElement
+// );
+const headerElement = (
+    <header>
+        <h1>Hello from React!</h1>
+        <h2>Slogan here</h2>
+    </header>
+)
+root.render(headerElement);
+
+
+добавяме в package.json
+  "scripts": {
+    "start": "npx babel --watch ./src --out-dir ./build --presets react-app/prod"
+  },
+
+
+
+Понеже браузърът не разбира от JSX както в случаят съм подала пътят <script src="./src/app.js"></script>, той няма как да го визуализира, 
+трябва да подадем <script src="./build/app.js"></script> защото там вече jsx ще се трансвормира в нормален js и вече браузърът ще го разбере.
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- За компоненти, чист реакт -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Компоненти комуникиращи с дом, връзката с дом дървото, цвързваща библиотека -->
+    <title>My First React Page</title>
+</head> 
+
+<body>
+    <h1>Hello from server</h1>
+    <div id="root">
+
+    </div>
+    <!-- <script src="./src/app.js"></script> -->
+    <script src="./build/app.js"></script>
+</body>
+
+</html>
+
+
+
+
+JSX в
+const headerElement = (
+    <header>
+        <h1 className="title">Hello from React!</h1>
+        <h2>Slogan here</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore magni incidunt excepturi harum maxime nemo, quia qui blanditiis cum in, iste vitae quam aut unde corrupti alias similique asperiores? Iusto.</p>
+    </header>
+)
+const headerElement = (
+  <div>
+    <header>
+      <h1 className="title">Hello from React!</h1>
+      <h2>Slogan here</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore magni
+        incidunt excepturi harum maxime nemo, quia qui blanditiis cum in, iste
+        vitae quam aut unde corrupti alias similique asperiores? Iusto.
+      </p>
+    </header>
+    <button>Click</button>
+  </div>
+);
+винаги трябва да има в него един главен елемент родител и в родителят може да има много деца, но не може да има няколко като в този пример:
+
+const headerElement = (
+    <header>
+        <h1 className="title">Hello from React!</h1>
+        <h2>Slogan here</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore magni incidunt excepturi harum maxime nemo, quia qui blanditiis cum in, iste vitae quam aut unde corrupti alias similique asperiores? Iusto.</p>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+        
+    </footer>
+)
+
+
+
+npm install
+npm start
+
+
+

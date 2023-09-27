@@ -1,0 +1,6 @@
+npx create-react-app .
+npm start
+npm run build
+npm start
+В src папката създаваме папка с найменожание components, а в нея Logo.js, 
+компонентите винаги се пишат в Pascal Case
