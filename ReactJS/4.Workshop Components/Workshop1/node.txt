@@ -1,0 +1,44 @@
+#server
+cd server
+npm i
+npm start
+npm run dev
+
+
+
+#client
+cd .\client\
+npx create-react-app .
+npm run build
+npm start
+
+open .env and correct from DB_CONNECTION=mongodb://localhost:27017 to DB_CONNECTION=mongodb://127.0.0.1:27017
+open postman and paste link from readme.md server - http://localhost:3005/api
+create new request in postman request - post to http://localhost:3005/api/users => body => raw => JSON and paste:
+{
+  "firstName": "Lora",
+  "lastName": "Mitova",
+  "email": "loramitova9@gmail.com",
+  "imageUrl": "https://scontent.fsof5-1.fna.fbcdn.net/v/t39.30808-6/321752624_5804138396312713_2421254393695585197_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=1b51e3&_nc_ohc=3lfYk1_QElwAX-UCZT_&_nc_ht=scontent.fsof5-1.fna&oh=00_AfBEyqCFu58JhtIjVvxYRV6ogETpY-F621caSS6mlckarA&oe=652A4ECE",
+  "phoneNumber": "0898277556",
+  "address": {
+    "country": "Bulgaria",
+    "city": "Elin Pelin",
+    "street": "ul. San Stefano",
+    "streetNumber": 8
+  }
+}
+{
+    "firstName": "Ivan",
+    "lastName": "Dimitrov",
+    "email": "gmivanko@gmail.com",
+    "imageUrl": "https://scontent.fsof5-1.fna.fbcdn.net/v/t39.30808-6/247012660_10224514061897647_2862835228684542200_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=1b51e3&_nc_ohc=cCEtmJxWoz4AX8vKS7c&_nc_ht=scontent.fsof5-1.fna&oh=00_AfDqx6kEEZ4lEOMe-lR77YZcehOb3DmKo6XmpYkoipATQQ&oe=65299F12",
+    "phoneNumber": "0812345678",
+    "address": {
+        "country": "Bulgaria",
+        "city": "Elin Pelin",
+        "street": "ul. Lesnovska",
+        "streetNumber": 21
+    }
+}
+https://magic.reactjs.net/htmltojsx.htm
