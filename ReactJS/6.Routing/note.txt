@@ -1,0 +1,15 @@
+npx create-react-app .
+npm run build
+npm start
+
+npm i react-router-dom
+In index.js add:
+import { BrowserRouter } from "react-router-dom";
+ <BrowserRouter>
+    <App />
+  </BrowserRouter> 
+
+in App.js import:
+import { Routes } from 'react-router-dom'
+
+

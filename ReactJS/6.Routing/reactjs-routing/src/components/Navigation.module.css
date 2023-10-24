@@ -1,0 +1,19 @@
+.navigation>ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+}
+.navigation>ul>li:hover{
+    text-decoration: underline;
+
+}
+.navigation>ul>li>a {
+    color: white;
+    text-decoration: none;
+
+}
+.nav-active {
+    color: lightcoral !important;
+}
