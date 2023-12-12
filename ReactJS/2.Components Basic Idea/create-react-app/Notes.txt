@@ -1,0 +1,4 @@
+npm create vite components-basic -- --template react
+npm i
+code .
+npm run dev
