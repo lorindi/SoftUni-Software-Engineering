@@ -1,0 +1,313 @@
+Equal to =
+Different from !=, <>
+Greater than >
+Greater than or equal to >=
+Less than <
+Less than or equal to <=
+
+CRUD 
+C - CREATE
+R - READ
+U - UPDATE
+D - DELETE
+
+
+Стринговете винаги в единични ''
+Когато искаме дадена колона да бъде с главни букви, например "Full Name", тя трябва да бъде в двойни кавички.
+Коментарите в PostgresSQL са с две линии --, това е за коментар на ред.
+Ако искаме да закоментираме повече от един ред, го правим с /*
+ */
+
+
+По този начин взимаме данните на една колона.
+SELECT
+    first_name
+FROM
+    person
+
+
+По този начин взимаме данните на две колони.
+SELECT
+    first_name,
+    last_name
+FROM
+    person
+
+
+Дай ми всичко от таблицата person,тоест цялата таблица.
+SELECT
+    *
+FROM
+    person
+
+
+Прейменуване на колоната first_name на alabala
+SELECT
+    first_name AS alabala,
+    last_name
+FROM
+    person
+
+
+
+Прейменуване на колоната first_name на First Name с главни букви, щом е с главни букви трябва да бъде с двойни кавички.
+SELECT
+    first_name AS "First Name",
+    last_name AS "Last Name"
+FROM
+    person
+
+
+
+Конкатенация:
+Знак за конкатенация: ||
+SELECT 'Karlson' || ' ' || 'Pokriva'
+
+Функцията, която ще използваме:
+SELECT concat('Karlson', ' ', 'Pokriva')
+'Pokriva' - това е стринг и затова е в единични кавички.
+
+
+
+
+Конкатенация с null:
+
+SELECT 'Karlson' || ' ' || 'Pokriva' || NULL
+Ще се получи в таблизата null, което е грешно поведение.
+
+Затова използваме за конкатенация:
+SELECT concat('Karlson', ' ', NULL)
+Резултатът ще бъде само Karlson
+
+
+Упражнение:
+Създаваме  си база данни с командата:
+CREATE DATABASE hotel;
+След това влизаме в текущата база данни и пействаме готовият ресурс, който ни прави таблици.
+
+
+Проверяваме да видим какво има в таблицата clients.
+SELECT - означава покажи ми.
+SELECT 
+	*
+FROM 
+	clients
+
+
+
+
+Покажи първите 3 реда на таблицата.
+SELECT
+	*
+FROM
+	employees
+LIMIT 3
+
+
+
+Показва цялата таблиза сортирана по азбучен ред на колоната first_name.
+SELECT
+	*
+FROM
+	employees
+ORDER BY
+	first_name
+
+
+
+Показва цялата таблиза сортирана по азбучен ред на колоната first_name.
+ASC -означа по азбучен ред.
+DESC - означава по низходящ ред
+SELECT
+	*
+FROM
+	employees
+ORDER BY
+	first_name ASC
+
+
+
+
+Показва цялата таблиза сортирана по азбучен ред първо на колоната first_name 
+и след това сортира по азбучен ред и на колоната last_name.
+SELECT
+	*
+FROM
+	employees
+ORDER BY
+	first_name,
+    last_name
+
+
+Показва цялата таблица employees, като сортира колоната salary по десендинг ред, 
+тоест от най високата, до най - ниската заплата.
+SELECT
+    first_name,
+    last_name, 
+    job_title,
+    salary
+FROM
+    employees
+ORDER BY salary DESC
+
+
+
+
+Показва уникалните имена в колоната first_name на таблицата employees, ако има еднакви ги премахва:
+SELECT
+    DISTINCT first_name
+FROM 
+    employees
+
+
+
+Показва редовете с id  === 3
+SELECT
+    *
+FROM
+    employees
+WHERE departmen_id = 3
+
+
+
+Показва 2те колони first_name и last_name на който редовете им са с id  === 3
+SELECT
+    first_name,
+    last_name,
+FROM
+    employees
+WHERE departmen_id = 3
+
+
+
+SELECT
+	id,
+	concat(first_name, ' ', last_name) AS fill_name,
+	job_title,
+	salary
+FROM
+	employees
+WHERE
+	salary > 1000
+    AND id <> 3
+ORDER BY id
+<> - различно
+
+
+Показва от таблицата clients, колоната last_name, и връща false:
+SELECT
+    *
+FROM
+    clients
+WHERE
+    last_name = null
+
+
+
+Показва от таблицата clients, колоната last_name, всички редове на които last_name е null:
+SELECT
+    *
+FROM
+    clients
+WHERE
+    last_name IS null
+
+
+
+Показва от таблицата clients, колоната last_name, всички редове на които last_name IS NOT null:
+SELECT
+    *
+FROM
+    clients
+WHERE
+    last_name IS NOT null
+
+
+
+Покажи таблицата employees, тези редове в които salary >= 1000 AND salary <= 1550
+SELECT
+    *
+FROM  
+    employees
+WHERE
+    salary >= 1000
+    AND salary <= 1550
+Съкратен варянт:
+SELECT
+    *
+FROM  
+    employees
+WHERE
+    salary BETWEEN 1000 and 1550
+
+
+
+Покажи от таблицата employees, редовете с id 1, 2, 4
+SELECT
+    *
+FROM
+    employees
+WHERE
+    department_id IN (1, 2, 4)
+
+
+
+Покажи от таблицата employees, редовете, които не съдържат с id 3, 4, 5
+SELECT
+    *
+FROM
+    employees
+WHERE
+    department_id NOT IN (3, 4, 5)
+
+
+
+Създаване или добавяне на редове в таблицата или допълване на данни.
+Добавяне към таблицата градове, поле само с id
+Когато експлицитно вкараме id стойност, ако id e праймъри key, в случая то не знае че сме я вкарали, 
+а си помни неговата стойност и затова ще гръмне с грешка, за доблиране на id
+INSERT INFO towns (id)
+VALUES
+    (2)
+SELECT * FROM towns
+
+
+
+Добавяне към таблицата градове, поле  с id, name
+INSERT INFO towns (id, name)
+VALUES
+    (3, 'Plovdiv')
+SELECT * FROM towns
+
+
+
+
+
+
+Създаване на нова таблица:
+CREATE TABLE test_persons(
+    id serial PRIMARY KEY,
+    first_name VARCHAR(30),
+    last_name VARCHAR(30)
+);
+Запиши в таблицата test_persons, first_name и last_name от таблицата employees в таблицата test_persons.
+INSERT INTO test_persons (first_name, last_name)
+SELECT
+    first_name,
+    last_name
+FROM
+    employees;
+Готово данните от employees за колоните first_name и last_name се наляга в таблицата test_persons.
+След това я изтриваме с:
+DROP TABLE test_persons
+
+Отново създаваме таблица test_persons и копираме цялата таблица employees с колоните id, first_name,
+    last_name:
+CREATE TABLE test_persons
+AS
+SELECT
+    id,
+    first_name,
+    last_name
+FROM  
+    employees
