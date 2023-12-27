@@ -1,3 +1,7 @@
+https://mockaroo.com/
+
+
+
 Equal to =
 Different from !=, <>
 Greater than >
@@ -5,11 +9,14 @@ Greater than or equal to >=
 Less than <
 Less than or equal to <=
 
+
+
 CRUD 
 C - CREATE
 R - READ
 U - UPDATE
 D - DELETE
+
 
 
 Стринговете винаги в единични ''
@@ -19,11 +26,13 @@ D - DELETE
  */
 
 
+
 По този начин взимаме данните на една колона.
 SELECT
     first_name
 FROM
     person
+
 
 
 По този начин взимаме данните на две колони.
@@ -34,11 +43,13 @@ FROM
     person
 
 
+
 Дай ми всичко от таблицата person,тоест цялата таблица.
 SELECT
     *
 FROM
     person
+
 
 
 Прейменуване на колоната first_name на alabala
@@ -69,7 +80,6 @@ SELECT concat('Karlson', ' ', 'Pokriva')
 
 
 
-
 Конкатенация с null:
 
 SELECT 'Karlson' || ' ' || 'Pokriva' || NULL
@@ -78,6 +88,7 @@ SELECT 'Karlson' || ' ' || 'Pokriva' || NULL
 Затова използваме за конкатенация:
 SELECT concat('Karlson', ' ', NULL)
 Резултатът ще бъде само Karlson
+
 
 
 Упражнение:
@@ -92,7 +103,6 @@ SELECT
 	*
 FROM 
 	clients
-
 
 
 
@@ -127,7 +137,6 @@ ORDER BY
 
 
 
-
 Показва цялата таблиза сортирана по азбучен ред първо на колоната first_name 
 и след това сортира по азбучен ред и на колоната last_name.
 SELECT
@@ -137,6 +146,7 @@ FROM
 ORDER BY
 	first_name,
     last_name
+
 
 
 Показва цялата таблица employees, като сортира колоната salary по десендинг ред, 
@@ -149,7 +159,6 @@ SELECT
 FROM
     employees
 ORDER BY salary DESC
-
 
 
 
@@ -192,6 +201,7 @@ WHERE
     AND id <> 3
 ORDER BY id
 <> - различно
+
 
 
 Показва от таблицата clients, колоната last_name, и връща false:
@@ -281,9 +291,6 @@ SELECT * FROM towns
 
 
 
-
-
-
 Създаване на нова таблица:
 CREATE TABLE test_persons(
     id serial PRIMARY KEY,
@@ -311,3 +318,30 @@ SELECT
     last_name
 FROM  
     employees
+
+
+
+Където в колоната last_name има стойности - null, промени null на Unknown
+UPDATE clients
+SET last_name = 'Unknown'
+WHERE
+    last_name IS null
+RETURNING *;
+
+
+Изтрива всички данни в таблицата, но без да изтрива таблицата.
+DELETE FROM clients
+
+
+Създаване на VIEW:
+CREATE VIEW name_department_view AS
+SELECT
+	concat(first_name, ' ', last_name) AS "Full Name",
+	department_id
+FROM
+	employees
+След това проверяваме, че ни е направило view 
+SELECT 
+	*
+FROM
+	name_department_view
