@@ -1,0 +1,210 @@
+Взимаме данните от таблицата person като p.
+SELECT
+    CONCAT(p.first_name, ' ', p.last_name) AS "Full Name"
+FROM person AS p
+
+
+SELECT      
+    SUBSTRING('Mili Vanili', 1, 4)
+#Mili
+
+
+Показва първите 2 букви от име и фамилия в трета колона initials
+SELECT
+    first_name,
+    last_name,
+    CONCAT(
+        SUBSTRING(first_name, 1, 1),
+        '.',
+        SUBSTRING(last_name, 1, 1)
+    ) AS initials
+FROM person
+
+
+Можем да проверим дали в стринг има определена дума,
+ако няма подобна ще върне като резултат null
+SELECT SUBSTRING('Mili Vanili', Mili)
+Вторият паръметър е подадената дума, която търси в стрингът.
+
+
+
+Вторият паръметър може да бъде и регекс, например:
+SELECT SUBSTRING('456Lora123', '[A-Za-z]+')
+
+
+
+Регулярните изрази, наричани още регекс или RegExp, са мощен инструмент за търсене и обработка на текст, 
+базиран на шаблони. Те се използват за търсене на определени шаблони в низове от символи и за извършване на 
+различни манипулации с текст, като например замяна на текст, извличане на информация или проверка за наличие 
+на определени структури.
+Регулярните изрази се използват в много програмни езици и приложения, като например Python, JavaScript, Java, 
+Perl, и други. Те предоставят мощни възможности за обработка на текст, като дефинирате правила и шаблони 
+за търсене и манипулиране на текстова информация.
+
+Пример за регулярен израз в Python:
+
+python
+Copy code
+import re
+
+pattern = r'\b\d{3}-\d{2}-\d{4}\b'
+text = "Социален номер: 123-45-6789"
+
+match = re.search(pattern, text)
+
+if match:
+    print("Намерен социален номер:", match.group())
+else:
+    print("Социален номер не е намерен.")
+Този пример демонстрира използването на регулярен израз, който търси социални номера във формат "XXX-XX-XXXX", 
+където X представлява цифра.
+
+
+
+Показва първите 4 знака.
+SELECT left('Zaio Baio', 4)
+#Zaio
+Показва всичко без последните 2 знака.
+SELECT left('Zaio Baio', -2)
+#Zaio Ba
+
+
+Ако в този стринг 'Zaio Baio' намериш тази дума 'Zaio', думата я замени с 'Vaio' друга:
+SELECT replace('Zaio Baio', 'Zaio', 'Vaio')
+#Vaio Baio
+
+
+Връща стрингът с главни букви:
+SELECT UPPER('lora')
+#LORA
+
+Връща стрингът с малки букви:
+SELECT UPPER('LORA')
+#lora
+
+
+sofia => S + ofia = Sofia
+UPDATE cities
+SET name = CONCAT(
+    UPPER(LEFT(name, 1)),
+    RIGHT(name, -1)
+)
+RETURNING name;
+
+
+Замени част от имейлът със звездички
+SELECT
+    first_name,
+    last_name,
+    replace(email, substring(email, '@[a-z]+.[a-z]'), '****')
+FROM friends;
+
+
+
+TRIM - Премахв всички разстояния, като има ltrim  и rtrim, които премахват разтоянието от ляво и от дясно.
+SELECT TRIM('  LORA')
+
+
+TRIM - също така премхва:
+SELECT LTRIM('+359898277556', '+359')
+#898277556
+Единственият минус е, ча ако му се подадат разбъркани, отново ще ги премахне, ако не ги е намерило.
+
+
+Връща обърнат стринг.
+SELECT reverse('lale');
+#elal
+
+
+Потори:
+SELECT REPEAT('*', 8);
+#********
+
+
+SELECT length('Kuma Lisa')
+#9
+
+
+SELECT bit_length('Kuma')
+#32
+Буквите на кирилица връща двойно повече.
+#64
+
+
+SELECT translate('1213121', '123', 'alb')
+#alabala
+
+
+Вземи колкото символи са до разстоянието.
+SELECT 
+    full_name,
+    left(full_name, position(' ', in full_name )) AS first_name
+FROM
+    new_friends;
+
+
+
+SELECT 5::float / 2
+#2.5
+
+SELECT cast(5 as float) / 2
+#2.5
+
+
+SELECT MOD(7, 4)
+#3
+
+
+SELECT 5 ^ 3
+#125
+SELECT POW(5, 3)
+#125
+
+
+SELECT |/9
+#3
+SELECT SQRT(9)
+#3
+
+
+SELECT abs(-9)
+#9
+
+
+SELECT PI()
+#3.141592653589793
+
+SELECT floor(2.22)
+#2
+
+SELECT ceil(2.22)
+#3
+
+SELECT round(2.223, 2)
+#2.23
+
+SELECT trunc(2.99)
+#2
+
+SELECT trunc(2.2499, 2)
+#2.24
+
+
+SELECT now() - връща времето сега.
+
+
+SELECT 
+    extract('Year' from now()) AS year
+
+SELECT date_part('year', now())
+
+
+SELECT age('2011-02-03', now())
+
+SELECT now() + interval '3 hours 22 minutes 11 seconds'
+
+SELECT to_char(now(), 'YYYY') AS year;
+
+SELECT CURRENT_DATE
+
+SELECT CURRENT_TIME
