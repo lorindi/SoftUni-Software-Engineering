@@ -1,0 +1,90 @@
+Material negotiation
+
+Concatenating words:
+SELECT CONCAT('Lora', ' ', 'Mitova');
+#Lora Mitova
+
+Concatenation with space:
+SELECT CONCAT_WS(' ', 'Lora', 'Mitova');
+#Lora Mitova
+
+SELECT SUBSTRING('string', 1, 3);
+#str
+
+SELECT LEFT('moon', 2);
+#mo
+
+SELECT LEFT('moon', -3);
+#m
+
+SELECT RIGHT('moon', 2);
+#on
+
+SELECT RIGHT('moon', -3);
+#n
+
+Uppercase
+SELECT UPPER('sun');
+#SUN
+
+Lowercase
+SELECT LOWER('SUN');
+#sun
+
+SELECT REPLACE('Lara Mitova', 'Lara', 'Lora');
+#Lora Mitova
+
+SELECT LENGTH('flower');
+#6
+
+SELECT BIT_LENGTH('flower');
+#48
+
+SELECT 5 / 2
+#2
+SELECT 5.00 / 2
+#2.5
+SELECT 5::float / 2
+#2.5
+
+SELECT extract('year' from now());
+#2024
+
+
+
+Examples from the new lessons.
+
+SELECT
+    COUNT(*)
+FROM 
+    students;
+
+Групира всички optional и в таблицата count показва колко души са избрали съответният optional.
+SELECT
+    gender,
+    count(*)
+FROM students
+GROUP BY gender
+ORDER BY gender
+
+Групирането става по колоните "country" и "gender". 
+Така, ако има няколко реда с една и съща комбинация на стойности в тези две колони, 
+те се считат за една група.
+Функцията COUNT(*) след GROUP BY изчислява броя на редовете във всяка група. 
+В този конкретен случай, броят показва колко пъти се среща всяка комбинация от "country" и "gender".
+SELECT
+    country,
+    gender,
+    count(*)
+FROM students
+GROUP BY country, gender
+ORDER BY country
+
+Групира ги по country и показва колко на брой студенти има от всяка страна.
+SELECT 
+    country,
+    count(*)
+FROM    
+    students
+GROUP BY country
+ORDER BY count(*);
