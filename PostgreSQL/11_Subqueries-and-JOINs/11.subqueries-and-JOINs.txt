@@ -1,0 +1,46 @@
+PK връзваме към много FK - one to many
+PK + FK + PK + FK -  many to many - 2таблици с коли и служители. 
+PK => PK || PK + Unique - one to one
+
+По дефолт JOIN  === INNER JOIN
+
+
+
+SELECT
+    *
+FROM
+    cities CROSS JOIN persons;
+Като секс в тъмна стая.
+
+
+
+
+Subquery:
+
+По този начин добавяме и колона city_id с SELECT id FROM cities WHERE name = 'Varna'
+INSERT INTO persons(firs_name, last_name,city_id)
+VALUES
+    ('Kiro',
+    'Kostov',
+    (SELECT id FROM cities
+    WHERE name = 'Varna')
+    );
+SELECT * from persons;
+
+
+SELECT
+    MAX(average_salary)
+FROM (
+    SELECT AVG(salary) AS average_salary
+    FROM employees
+    GROUP BY country
+) AS a
+
+
+SELECT
+    firs_name,
+    last_name,
+    salary
+FROM
+    employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
