@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  redis:
+    image: "redis"
+    ports:
+      - "6379:6379"
+    container_name: redis_instance
+    command: redis-server --bind '0.0.0.0'
+  redisinsight:
+    image: redislabs/redisinsight:latest
+    ports:
+      - '8001:8001'
+    links:
+      - redis
+    depends_on:
+      - redis

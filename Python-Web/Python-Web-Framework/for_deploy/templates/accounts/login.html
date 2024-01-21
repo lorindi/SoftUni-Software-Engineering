@@ -1,0 +1,9 @@
+<form action="{% url 'login_user' %}" method="post">
+    {{ form }}
+    {% csrf_token %}
+
+    <input type="hidden" name="next" value="{{ next }}">
+
+    <button>Login</button>
+    or <a href="{% url 'register_user' %}?next={{ next }}">Register</a>
+</form>

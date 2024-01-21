@@ -1,0 +1,38 @@
+<style>
+    ul {
+        display: flex;
+        gap: 5px;
+        list-style-type: none;
+    }
+
+</style>
+<h1>It works!</h1>
+<h2>Count: {{ count }}</h2>
+
+<a href="{% url 'create_task' %}">Create task</a>
+
+<ul>
+    {% for user in users %}
+        <li>
+            {{ user.username }}
+        </li>
+    {% empty %}
+        <li>No users</li>
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for task in tasks %}
+        <li>
+            <a href="{% url 'details_task' task.pk %}">{{ task.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for task in prev_tasks %}
+        <li>
+            <a href="{% url 'details_task' task.pk %}">{{ task.title }}</a>
+        </li>
+    {% endfor %}
+</ul>

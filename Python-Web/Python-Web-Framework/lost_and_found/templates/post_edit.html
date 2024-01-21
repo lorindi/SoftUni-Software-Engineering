@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Edit Post</h1>
+    <div class="container">
+      <form method="post">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-25">
+            <label for="title">Title</label>
+          </div>
+          <div class="col-75">
+            {{ post_form.title }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="description">Description</label>
+          </div>
+          <div class="col-75">
+            {{ post_form.description }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="author-name">Author Name</label>
+          </div>
+          <div class="col-75">
+            {{ post_form.author_name }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="author-phone">Author Phone</label>
+          </div>
+          <div class="col-75">
+            {{ post_form.author_phone }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="found">Found</label>
+          </div>
+          <div class="col-75">
+              {{ post_form.found }}
+          </div>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+{% endblock %}

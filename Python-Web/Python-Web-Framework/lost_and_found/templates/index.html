@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Lost and Found Posts</h1>
+    <div class="button-wrapper">
+        <button><a href="create/">Create</a></button>
+    </div>
+    <div class="posts">
+        {% for post in posts %}
+            <div class="post">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.description }}</p>
+                <img src="{{ post.object.image }}" alt="{{ post.object.name }}"/>
+                <div class="object-info">
+                    <p>Width: {{ post.object.width }}</p>
+                    <p>Height: {{ post.object.height }}</p>
+                    <p>Weight: {{ post.object.weight }}</p>
+                </div>
+                <div class="contacts">
+                    <p>Author Name: {{ post.author_name }}</p>
+                    <p>Author Contact: {{ post.author_phone }}</p>
+                </div>
+                {% if post.found %}
+                    <p class="found">Found</p>
+                {% else %}
+                    <p class="not-found">Not Found</p>
+                {% endif %}
+                    <button class="edit"><a href="edit/{{ post.id }}">Edit</a></button>
+                    <button class="delete"><a href="delete/{{ post.id }}">Delete</a></button>
+                    {% if not post.found %}
+                        <button><a href="found/{{ post.id }}">Found it!</a></button>
+                    {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

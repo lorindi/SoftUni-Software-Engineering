@@ -1,0 +1,10 @@
+from django.apps import AppConfig
+
+
+class WebConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'signals_middlewares_cache_session_demos.web'
+
+    def ready(self):
+        import signals_middlewares_cache_session_demos.web.signals
+

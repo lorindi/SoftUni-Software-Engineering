@@ -1,0 +1,51 @@
+<style>
+    .lists {
+        display: flex;
+    }
+</style>
+
+<a href="{% url 'create_article' %}">Create</a>
+
+<form action="{% url 'list_articles_cbv' %}?page={{ page_obj.number }}">
+    <input name="search" value="{{ search }}">
+    <button>Search by title</button>
+</form>
+
+<div class="lists">
+    <div>
+        <h2>object_list</h2>
+        <ul>
+            {% for article in object_list %}
+                <li>
+                    <a href="{% url 'details_article' article.pk %}">{{ article.pk }} - {{ article.title }}</a>
+                    <a href="{% url 'delete_article' article.pk %}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h2>articles</h2>
+        <ul>
+            {% for article in articles %} {# pet_photo_list #}
+                <li>
+                    <a href="{% url 'details_article' article.pk %}">{{ article.pk }} - {{ article.title }}</a>
+                    <a href="{% url 'delete_article' article.pk %}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}&search={{ search }}">&lt;</a>
+{% else %}
+    <a>&lt;</a>
+{% endif %}
+
+{{ page_obj.number }} / {{ paginator.num_pages }}
+
+{% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}&search={{ search }}">&gt;</a>
+{% else %}
+    <a>&gt;</a>
+{% endif %}

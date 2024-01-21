@@ -1,0 +1,25 @@
+<a href="{% url 'login' %}">Login</a>
+<a href="{% url 'logout' %}">Logout</a>
+
+<h1>It works</h1>
+{{ csrf_token }}
+{#{% csrf_token %}#}
+
+<input type="text">
+<div>
+    {{ xss }}
+</div>
+<div>
+    <div>
+        {{ user }}
+    </div>
+    <div>
+        {{ user.is_authenticated }}
+    </div>
+    <div>
+        Permission: {{ permission }}
+    </div>
+    <div>
+        doncho_1000: {{ doncho_1000 }}
+    </div>
+</div>

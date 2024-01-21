@@ -1,0 +1,10 @@
+Collecting djangorestframework
+  Using cached djangorestframework-3.14.0-py3-none-any.whl (1.1 MB)
+Requirement already satisfied: django>=3.0 in ./venv/lib/python3.9/site-packages (from djangorestframework) (4.2.3)
+Collecting pytz
+  Using cached pytz-2023.3-py2.py3-none-any.whl (502 kB)
+Requirement already satisfied: asgiref<4,>=3.6.0 in ./venv/lib/python3.9/site-packages (from django>=3.0->djangorestframework) (3.7.2)
+Requirement already satisfied: sqlparse>=0.3.1 in ./venv/lib/python3.9/site-packages (from django>=3.0->djangorestframework) (0.4.4)
+Requirement already satisfied: typing-extensions>=4 in ./venv/lib/python3.9/site-packages (from asgiref<4,>=3.6.0->django>=3.0->djangorestframework) (4.7.1)
+Installing collected packages: pytz, djangorestframework
+Successfully installed djangorestframework-3.14.0 pytz-2023.3

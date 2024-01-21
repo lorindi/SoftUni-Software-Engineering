@@ -1,7 +1,0 @@
-<h1>Update an employee</h1>
-
-<form method="post" action="{% url 'employee update' pk=object.pk %}">
-    {{ form }}
-    <button>Update</button>
-    {% csrf_token %}
-</form>
