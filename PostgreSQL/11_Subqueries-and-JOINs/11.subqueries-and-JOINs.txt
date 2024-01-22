@@ -1,3 +1,9 @@
+SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity
+WHERE datname = 'sushi_db';
+
+DROP DATABASE sushi_db;
+
 PK връзваме към много FK - one to many
 PK + FK + PK + FK -  many to many - 2таблици с коли и служители. 
 PK => PK || PK + Unique - one to one
