@@ -1,0 +1,162 @@
+------------------------------ФУНКЦИЯ------------------------------------
+Този код е SQL код, който създава функция в езика за програмиране PL/pgSQL 
+(Procedural Language/PostgreSQL Structured Query Language) в PostgreSQL 
+база данни. Функцията се нарича fn_full_name и приема два параметъра от 
+тип VARCHAR (символен низ) и връща резултат от същия тип.
+
+Тя има следния вид:
+
+
+CREATE OR REPLACE FUNCTION fn_full_name(VARCHAR, VARCHAR)
+RETURNS VARCHAR AS
+$$
+    BEGIN
+        RETURN concat($1, ' ', $2);
+    END
+$$
+LANGUAGE plpgsql;
+SELECT fn_full_name('Lora', 'Mitova');
+
+Обяснения:
+
+CREATE OR REPLACE FUNCTION: Създава нова функция с указаното име или замества вече 
+съществуваща функция със същото име, ако такава съществува.
+
+fn_full_name(VARCHAR, VARCHAR): Дефинира функцията fn_full_name, която приема два 
+параметъра от тип VARCHAR.
+
+RETURNS VARCHAR AS: Указва, че функцията ще върне резултат от тип VARCHAR.
+
+$$ ... $$: Това е синтаксис за вмъкване на PL/pgSQL код. Всичко между двата символа 
+$$ представлява PL/pgSQL код.
+
+BEGIN ... END: Между ключовите думи BEGIN и END се поставя тялото на функцията.
+
+RETURN concat($1, ' ', $2);: Използва се за конкатенация на двата параметъра 
+(подадени чрез $1 и $2) с интервал между тях. Резултатът се връща от функцията.
+
+
+
+----------------------------------Деклариране-на-променливи-----------------------------------------
+
+CREATE OR REPLACE FUNCTION fn_full_name(VARCHAR, VARCHAR)
+RETURNS VARCHAR AS
+$$
+    DECLARE
+        first_name ALIAS FOR $1;
+        last_name ALIAS FOR $2;
+    BEGIN
+        RETURN concat(first_name, ' ', last_name);
+    END
+$$
+LANGUAGE plpgsql;
+SELECT fn_full_name('Lora', 'Mitova');
+
+----------------------------------Деклариране-на-променливи-----------------------------------------
+
+CREATE OR REPLACE FUNCTION fn_full_name(first_name VARCHAR, last_name VARCHAR)
+RETURNS VARCHAR AS
+$$
+    DECLARE
+        fn_full_name VARCHAR;
+    BEGIN
+        IF first_name IS NULL and last_name IS NULL THEN
+            full_name := NULL;
+        ELSIF
+            first_name IS NULL THEN
+            full_name := last_name
+        ELSIF last_name IS NULL THEN
+            full_name := first_name;
+        ELSE
+            full_name := CONCAT(first_name, ' ', last_name);
+        END IF;
+            RETURN full_name;
+    END
+$$
+LANGUAGE plpgsql;
+SELECT fn_full_name('Lora', 'Mitova');
+
+
+CREATE OR REPLACE FUNCTION: Създава нова функция или замества вече съществуваща със същото име.
+
+fn_full_name(first_name VARCHAR, last_name VARCHAR) RETURNS VARCHAR: Дефинира функцията fn_full_name, 
+която приема два параметъра от тип VARCHAR и връща резултат от същия тип.
+
+DECLARE full_name VARCHAR;: Декларира променлива full_name от тип VARCHAR, която ще се използва за 
+съхранение на резултата.
+
+IF first_name IS NULL AND last_name IS NULL THEN ...: Проверява дали и двете имена са NULL. Ако това е вярно, 
+променливата full_name също се прави NULL.
+
+ELSIF first_name IS NULL THEN ...: Ако first_name е NULL, присвоява стойността на last_name на full_name.
+
+ELSIF last_name IS NULL THEN ...: Ако last_name е NULL, присвоява стойността на first_name на full_name.
+
+ELSE ...: В противен случай (когато и двата параметъра са ненулеви), конкатенира first_name и last_name с 
+интервал между тях и присвоява резултата на full_name.
+
+RETURN full_name;: Връща стойността на full_name като резултат от функцията.
+
+
+----------------------------------Пример-за-функция-----------------------------------------
+CREATE OR REPLACE FUNCTION fn_get_city_id(city_name VARCHAR)
+RETURNS INT AS
+$$
+    DECLARE
+        city_id INT;
+    BEGIN
+        SELECT id INTO city_id FROM cities 
+        WHERE name = city_name;
+        RETURN city_id;
+    END;
+$$
+LANGUAGE plpgsql;
+
+SELECT id FROM cities WHERE name = 'Sofia'
+
+
+SELECT fn_get_city_id('Sofia);
+
+INSERT INTO persons(first_name, last_name, city_id)
+VALUES
+    ('Lili', 'Miteva', fn_get_city_id('Plovdiv'));
+
+SELECT * FROM persons
+
+
+---------------------------------------Входящи-и-изходящи-параметри------------------------------------------------
+DROP FUNCTION IF EXISTS fn_get_city_id;
+CREATE OR REPLACE FUNCTION fn_get_city_id(
+    IN city_name VARCHAR,
+    OUT city_id INT,
+    OUT status INT
+) AS
+$$
+    DECLARE
+        temp_id INT;
+        BEGIN
+            SELECT id FROM cities WHERE name = city_name
+            INTO temp_id;
+            IF temp_id IS NULL THEN
+                SELECT 100 INTO status;
+            ELSE
+                SELECT temp_id, 0 INTO city_id, status;
+            END IF;
+        END;
+$$
+LANGUAGE plpgsql;
+SELECT * FROM fn_get_city_id('Varna')
+
+---------------------------------------Процедура------------------------------------------------
+
+CREATE PROCEDURE sp_add_person(first_name VARCHAR, last_name VARCHAR, city_name VARCHAR)
+AS
+$$
+    BEGIN
+        INSERT INTO persons (first_name, last_name, city_id)
+        VALUES (first_name, last_name, fn_get_city_id(city_name));
+    END;
+$$
+LANGUAGE plpgsql;
+CALL sp_add_person('Lora', 'Mitova', 'Elin Pelin');
+SELECT * FROM persons
