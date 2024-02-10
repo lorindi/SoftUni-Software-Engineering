@@ -1,5 +1,13 @@
-npm install -g typescript
-tsc myfile.ts
+Install globally via npm
+npm install -g @angular/cli
+
+▪ Create new project
+ng new some-app
+cd some-app 
+
+▪ Start a dev server on port 4200
+ng serve
+
 
 https://jsonplaceholder.typicode.com/
 
