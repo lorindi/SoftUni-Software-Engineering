@@ -1,0 +1,15 @@
+Install globally via npm
+*npm install -g @angular/cli
+
+Create new project
+*ng new some-app
+*cd some-app 
+
+*npm i: Командата се използва за инсталиране на всички необходими зависимости за проекта, които са описани във файлът package.json.
+
+*ng build: Командата се използва за създаване на готова за публикуване версия на Angular приложението,
+ като се компилира TypeScript кодът в JavaScript и се създават минифицирани и оптимизирани версии на HTML, CSS и другите активи.
+
+Start a dev server on port 4200
+*ng serve
+
