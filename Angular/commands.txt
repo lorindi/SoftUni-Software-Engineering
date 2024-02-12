@@ -19,6 +19,7 @@ Create new project
 
 Start a dev server on port 4200
 *ng serve
+*ng s
 
 
 
