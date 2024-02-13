@@ -2,7 +2,35 @@
     <!-- <span *ngIf="toggle">HIDE</span>
     <span *ngIf="!toggle">SHOW</span> -->
 
-    <span>{{toggle ? "Show" : "Hide"}}</span>
+    <!-- <span>{{toggle ? "Show" : "Hide"}}</span> -->
 
-    <button (click)="handleClick()">Click me</button>
+    <span *ngIf="isActive">
+        <ul>
+            <!-- <li *ngFor="let user of activeUsers">{{user.name + ' : ' + user.age}}</li> -->
+
+            <li *ngFor="let user of activeUsers">
+            <!-- <p *ngIf="user.age % 2 === 0">{{user.age + ':' + user.name}}</p> -->
+            <!-- <span [class.green]="user.age % 2 === 0" [class.red]="user.age % 2 != 0">{{user.age + ':' + user.name}}</span> -->
+            <span [style.color]="user.age % 2 === 0 ? 'red' : 'green'">{{user.age + ':' + user.name}}</span>
+
+
+
+            </li>
+
+        </ul>
+
+    </span>
+
+    <span *ngIf="!isActive">
+        <p>Nothing is Active :(</p>
+
+    </span>
+
+    <input [value]="inputValue" type="text">
+    <!-- <input [attr.data-testche]="inputValue" type="text"> -->
+
+
+
+    <button (click)="handleClick($event, 100, 200, 300)">Make {{ isActive ? "Inactive" : "Active" }}</button>
+    <!-- event - always in front -->
 </div>

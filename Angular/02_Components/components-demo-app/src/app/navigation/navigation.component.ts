@@ -6,11 +6,25 @@ import { Component } from '@angular/core';
   styleUrl: './navigation.component.css',
 })
 export class NavigationComponent {
-  title = 'hide';
-  toggle = false;
-  handleClick() {
+  // title = 'hide';
+  // toggle = false;
+  isActive = false;
+
+  inputValue = 'Hello'
+
+  activeUsers = [
+    { name: 'Mitko', age: 22 },
+    { name: 'Mitko', age: 23 },
+    { name: 'Mitko', age: 24 },
+    { name: 'Mitko', age: 25 },
+    { name: 'Mitko', age: 26 },
+  ];
+
+  handleClick(event: Event, ...args: number[] ): void {
     console.log('clicked!');
-    this.toggle = !this.toggle;
-    console.log(this.toggle);
+    this.isActive = !this.isActive;
+
+    // this.toggle = !this.toggle;
+    // console.log(this.toggle);
   }
 }

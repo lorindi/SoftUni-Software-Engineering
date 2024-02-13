@@ -1,6 +1,15 @@
 #nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     width: 100%;
     background-color: blueviolet;
-    height: 80px;
+    min-height: 80px;
     font-size: 50px;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
 }
