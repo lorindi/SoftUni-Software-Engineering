@@ -9,6 +9,10 @@ cd some-app
 ng serve
 
 
+TypeScript
+npm install -g typescript
+tsc myfile.ts
+
 https://jsonplaceholder.typicode.com/
 
 HTTP (Hypertext Transfer Protocol) и HTTPS (Hypertext Transfer Protocol Secure) са протоколи за комуникация между уеб 
