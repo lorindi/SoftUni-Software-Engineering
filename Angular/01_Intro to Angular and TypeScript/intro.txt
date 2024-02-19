@@ -1,18 +1,20 @@
 Install globally via npm
-npm install -g @angular/cli
+*npm install -g @angular/cli
+*ng version
 
 ▪ Create new project
-ng new some-app
-cd some-app 
+*ng new some-app
+*cd some-app 
 
 ▪ Start a dev server on port 4200
-ng serve
+*ng serve
 
 
 TypeScript
-npm install -g typescript
-tsc myfile.ts
+*npm install -g typescript
+*tsc myfile.ts
 
+https://www.typescriptlang.org/
 https://jsonplaceholder.typicode.com/
 
 HTTP (Hypertext Transfer Protocol) и HTTPS (Hypertext Transfer Protocol Secure) са протоколи за комуникация между уеб 
