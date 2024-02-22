@@ -1,0 +1,16 @@
+#wrapper {
+    background-color: dodgerblue;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.btn {
+    color: white;
+    font-size: 30px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
