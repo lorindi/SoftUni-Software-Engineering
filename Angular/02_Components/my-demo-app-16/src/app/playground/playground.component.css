@@ -1,0 +1,22 @@
+.husky {
+    height: 500px;
+    border-radius: 10px;
+    margin: 20px;
+}
+.playground-btn {
+    padding: 20px 30px;
+    font-size: 35px;
+    border-radius: 50px;
+    border: 3px solid skyblue;
+}
+.bad-curly {
+    color: blueviolet;
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 20px;
+}
+.shiny {
+    color: rgb(135, 224, 0);
+    font-size: 40px;
+
+}

@@ -1,0 +1,27 @@
+<hr>
+<p>Playground works!</p>
+<div [class]="['first', 'second']">Not a ngClass</div>
+<div [ngClass]="['first', 'second']">Test ngClass</div>
+
+<div>
+    <p [style.color]="isShowed ? 'orange': 'blue'">This is dynamic color change!</p>
+    <p [style.background]="isShowed ? 'lightblue': 'lightgreen'">This is dynamic background color change!</p>
+</div>
+<p [class.shiny]="isShowed">This text will be shiny on click</p>
+<div *ngIf="isShowed">
+    <p [class]="badCurly">Toggle me!</p>
+    <img class="husky" [attr.src]="imgUrl" alt="">
+</div>
+<button class="playground-btn" (click)="handleClickShowed()">Click me!</button>
+<div>
+    <input type="text" placeholder="username" #username>
+    <button (click)="handleInput(username.value)">Handle Input</button>
+
+    <input type="text" placeholder="lastName" #lastName>
+    <button (click)="handleInputLastName(lastName)">Handle Input</button>
+
+</div>
+<div [attr.data-test123]="'test321'">
+    THis is testing custom data attribute
+</div>
+<p [style.background]="colorValue">test asd {{colorValue}}</p>
