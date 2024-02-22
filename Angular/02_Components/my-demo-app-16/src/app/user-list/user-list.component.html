@@ -1,0 +1,24 @@
+<hr>
+<ul>
+    <li *ngFor="let user of users; index as i">
+        <span *ngIf="i % 2 === 0" style="background-color: pink;">{{i}}.{{user.name}} - {{user.age}}years.</span>
+        <span *ngIf="i % 2 !== 0" style="background-color: lightskyblue;">{{i}}.{{user.name}} - {{user.age}}
+            years.</span>
+    </li>
+</ul>
+
+<button class="btn-handler" (click)="handleClick($event)">More Information</button>
+<ul *ngIf="isToggle" class="user-list">
+    <li *ngFor="let user of users; index as i">{{i}}. Person with the name of {{user.name}} and {{user.age}} y/o.</li>
+</ul>
+
+<ul>
+    <li *ngFor="let user of users; index as i">
+        <span [class]="user.status">{{i}}.Person {{user.name}}; Age - {{user.age}}years.</span>
+
+    </li>
+</ul>
+
+<p *ngFor="let user of usersInfo; index as i">
+    <span>Person {{user.name}}; Status - {{user.status}}.</span>
+</p>

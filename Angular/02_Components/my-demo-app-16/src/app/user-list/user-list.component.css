@@ -1,0 +1,32 @@
+.btn-handler {
+    padding: 10px 20px;
+    font-size: 35px;
+    border: 3px solid pink;
+    border-radius: 50px;
+    color: pink;
+    text-shadow: 0px 0px 2px red;
+    background-color: white;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.74);
+    
+}
+.btn-handler:active {
+
+    box-shadow: 0px 0px 10px 1px lightblue;
+}
+.user-list {
+    background-color: lightblue;
+    padding: 10px;
+    margin: 30px;
+    width: 600px;
+}
+
+
+.green {
+    background-color: lightgreen;
+}
+.yellow {
+    background-color: rgb(255, 255, 128);
+}
+.red {
+    background-color: rgba(255, 0, 0, 0.521);
+}
