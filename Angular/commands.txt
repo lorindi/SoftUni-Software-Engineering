@@ -11,10 +11,13 @@ Create new project
 
 *cd some-app 
 
+
+
 *npm i: Командата се използва за инсталиране на всички необходими зависимости за проекта, които са описани във файлът package.json.
 
 *ng build/ npm run build: Командата се използва за създаване на готова за публикуване версия на Angular приложението,
  като се компилира TypeScript кодът в JavaScript и се създават минифицирани и оптимизирани версии на HTML, CSS и другите активи.
+
 
 
 Start a dev server on port 4200
@@ -28,3 +31,8 @@ Creates a new Angular component.
 
 *ng generate component --skip-test=true navigation
 The command ng generate component --skip-test=true navigation creates a new Angular component named "navigation" without generating test files.
+
+
+
+*ng g s some-service
+При изпълнението на тази команда, Angular CLI автоматично създава нов файл за сервиз с базова конфигурация и го включва в модула на вашето приложение.
