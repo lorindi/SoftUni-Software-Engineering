@@ -25,14 +25,14 @@ export class AppComponent {
 }
 
 //async analogy
-const p = new Promise((resolve, reject) => {
-  console.log('From Promise Invoked');
+// const p = new Promise((resolve, reject) => {
+//   console.log('From Promise Invoked');
 
-  setTimeout(() => {
-    resolve(1200);
-  }, 4000);
-});
-p.then((data) => console.log('promise', data));
+//   setTimeout(() => {
+//     resolve(1200);
+//   }, 4000);
+// });
+// p.then((data) => console.log('promise', data));
 
 //async analogy Promise
 Promise.resolve(100)
@@ -47,6 +47,8 @@ Promise.resolve(100)
 
 //async analogy Observable
 function interval(intervalValue: number) {
+  console.log('from Observable Invoked');
+
   return new Observable<number>((observer) => {
     // observer.next(1000);
     // observer.next(2000);
@@ -66,16 +68,27 @@ function interval(intervalValue: number) {
   });
 }
 
-// const stream$ = interval(3000).subscribe((data) => {
-//   console.log('data from observer', data);
-// });
-
-const stream$ = interval(3000).pipe(map((x) => x + 1));
-
-setInterval(() => {
-  stream$.subscribe({
+const stream$ = interval(3000)
+  .pipe(map((x) => (x + 1) * 2)) //transform, filter,accumulate, result
+  .subscribe({
     next: (x) => console.log('data', x),
     error: (err) => console.error(`Error occured: ${err}`),
     complete: () => console.log('Stram has been completed!'),
   });
-}, 3000);
+
+
+// const stream$ = interval(3000).subscribe((data) => {
+//   console.log('data from observer', data);
+// });
+
+// const stream$ = interval(3000).pipe(map((x) => x + 1));
+
+// setInterval(() => {
+//   stream$.subscribe({
+//     next: (x) => console.log('data', x),
+//     error: (err) => console.error(`Error occured: ${err}`),
+//     complete: () => console.log('Stram has been completed!'),
+//   });
+// }, 3000);
+
+
