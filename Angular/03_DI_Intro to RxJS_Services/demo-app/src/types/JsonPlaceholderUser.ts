@@ -14,7 +14,7 @@ interface Address {
   zipcode: string;
   geo: Geo;
 }
-interface User {
+export interface User {
   id: number;
   name: string;
   username: string;

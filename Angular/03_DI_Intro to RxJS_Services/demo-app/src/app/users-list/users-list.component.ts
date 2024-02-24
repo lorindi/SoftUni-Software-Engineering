@@ -4,7 +4,7 @@ import {
   Component,
   Input,
 } from '@angular/core';
-import { User } from 'src/types/user';
+import { User } from 'src/types/JsonPlaceholderUser';
 
 @Component({
   selector: 'app-users-list',
