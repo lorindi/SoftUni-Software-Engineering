@@ -1,0 +1,8 @@
+*npx @angular/cli@16 new workshop-components
+ng s
+
+dbURL: 'mongodb://127.0.0.1:27017/forum',
+cd Rest-api => npm i
+
+Command prompt
+C:\Program Files\MongoDB\Tools\100\bin>mongorestore --uri "mongodb://localhost:27017/forum" -d forum "D:\Programming\Git Projects\SoftUni-Software-Engineering\Angular\04_Workshop Components\resources\forum"
