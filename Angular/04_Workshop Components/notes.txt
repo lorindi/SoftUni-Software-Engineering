@@ -1,8 +1,48 @@
 *npx @angular/cli@16 new workshop-components
-ng s
+*ng s
 
 dbURL: 'mongodb://127.0.0.1:27017/forum',
-cd Rest-api => npm i
+cd Rest-api => *npm i
 
 Command prompt
 C:\Program Files\MongoDB\Tools\100\bin>mongorestore --uri "mongodb://localhost:27017/forum" -d forum "D:\Programming\Git Projects\SoftUni-Software-Engineering\Angular\04_Workshop Components\resources\forum"
+
+
+*ng g m some-module - Команда за създаване на модули.
+*ng g c core/header --skip-tests. / ng g c core/header - Създаване на компонент в модула.
+
+
+Трябва да импортнем модулите: header, footer в app.module.ts:
+ imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CoreModule,
+    SharedModule,
+
+  ],
+
+
+В app => core => core.module.ts:
+@NgModule({
+  declarations: [
+    HeaderComponent,
+    FooterComponent
+  ],
+  imports: [
+    CommonModule
+  ],
+  exports: [HeaderComponent, FooterComponent]
+})
+export class CoreModule { }
+
+*ng g s api - Команда за генериране на сървис.
+
+
+*ng generate environments - Добавя environments папка:
+export const environment = {
+    apiUrl: 'http://localhost:3000/api',
+};
+export const environment = {
+  apiUrl: 'http://localhost:3000/api',
+};
+
