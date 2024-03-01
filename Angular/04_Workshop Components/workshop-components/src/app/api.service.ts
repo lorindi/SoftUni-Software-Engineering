@@ -9,7 +9,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
   getThemes() {
     const { apiUrl } = environment;
-    return this.http.get(`${apiUrl}/themes`)
+    return this.http.get<any>(`${apiUrl}/themes`)
   }
   getPosts(limit?: number) {}
 }
