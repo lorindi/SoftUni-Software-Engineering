@@ -15,7 +15,18 @@
   }
 </ul>
 <div>
-  
+  @for (task of tasks;track task.id){
+  @switch (task.status) {
+  @case ('todo') {
+  <p style="border: 3px solid green">{{task.name}} - {{task.status}}</p>
+  }
+  @case ('inProgress') {
+  <p style="border: 3px solid blueviolet">{{task.name}} - {{task.status}}</p>
+  }
+  @default {
+  <p style="border: 3px solid palevioletred">{{task.name}} - {{task.status}}</p>
+  }
+  }}
 </div>
 
 <router-outlet />
