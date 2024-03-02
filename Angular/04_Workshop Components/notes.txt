@@ -1,5 +1,8 @@
 https://chromewebstore.google.com/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh
 
+Ctrl + K + 0 - Colaps all
+When you press "Ctrl + K + 0," it typically collapses all currently expanded code blocks or regions, making your code more manageable and easier to navigate.
+
 *npx @angular/cli@16 new workshop-components
 *ng s
 
