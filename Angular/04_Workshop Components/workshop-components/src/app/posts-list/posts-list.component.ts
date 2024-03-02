@@ -12,12 +12,27 @@ export class PostsListComponent implements OnInit {
   isLoading: boolean = true;
   constructor(private api: ApiService) {}
   ngOnInit(): void {
-    this.api.getPosts(5).subscribe((posts) => {
-      console.log(posts);
-      this.posts = posts;
-      setTimeout(() => {
+    // this.api.getPosts(5).subscribe((posts) => {
+    //   console.log(posts);
+    //   this.posts = posts;
+    //   setTimeout(() => {
+    //     this.isLoading = false;
+    //   }, 3000);
+    // });
+
+    this.api.getPosts(5).subscribe({
+      next: (posts) => {
+        console.log(posts);
+        this.posts = posts;
+
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 3000);
+      },
+      error: (err) => {
         this.isLoading = false;
-      }, 3000);
+        console.log('Error: ', err);
+      },
     });
   }
 }
