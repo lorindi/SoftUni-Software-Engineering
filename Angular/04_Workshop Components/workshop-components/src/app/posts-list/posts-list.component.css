@@ -1,6 +1,10 @@
 /* aside  */
 
-
+aside {
+    /* width: 29%; */
+    margin-top: 1em;
+    font-size: 0.8em;
+}
 
 .aside * {
     margin: 0;
@@ -22,24 +26,7 @@
     margin: 1rem 0;
     padding: 0.5rem 0;
 }
-
-.aside h3 {
-    border-bottom: none;
-    border-radius: 0.3rem;
-    font-size: 1.2rem;
-    background-color: #4ebced;
-    padding-left: 0.5rem;
-}
-
 .aside-theme+.aside-theme {
     border-top: dashed 1px #999;
 }
 
-.aside-theme p {
-    text-align: right;
-}
-
-.aside-theme a {
-    text-decoration: none;
-    color: inherit;
-}
