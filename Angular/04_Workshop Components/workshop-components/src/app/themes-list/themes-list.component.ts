@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
 export class ThemesListComponent implements OnInit {
   constructor(private api: ApiService) {}
   ngOnInit(): void {
-    this.api.getThemes().subscribe(themes => {
+    this.api.getThemes().subscribe((themes) => {
       console.log(themes);
       
     })
