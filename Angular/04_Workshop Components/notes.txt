@@ -52,3 +52,5 @@ export const environment = {
   apiUrl: 'http://localhost:3000/api',
 };
 
+
+ng g c home-test --skip-tests
