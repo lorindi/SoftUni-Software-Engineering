@@ -3,6 +3,7 @@
 header {
     background: rgb(0, 128, 182);
     background: linear-gradient(0deg, rgba(0, 128, 182, 1) 0%, rgba(0, 128, 182, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    width: 100%;
 }
 
 header ul {

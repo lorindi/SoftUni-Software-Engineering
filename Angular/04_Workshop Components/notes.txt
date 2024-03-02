@@ -1,3 +1,5 @@
+https://chromewebstore.google.com/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh
+
 *npx @angular/cli@16 new workshop-components
 *ng s
 
