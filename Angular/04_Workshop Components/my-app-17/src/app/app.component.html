@@ -17,11 +17,16 @@
 
 <div>
   @for (task of tasks;track task.id){
-    <div>{{task.name}}</div>
+  <div>{{task.name}}</div>
   } @empty {
-    <div>Sorry, This collection is empty :(</div>
+  <div>Sorry, This collection is empty :(</div>
   }
 </div>
+
+<div *ngFor="let task of tasks">
+  <h2>{{task.name}}</h2>
+</div>
+
 
 <div>
   @for (task of tasks;track task.id){
