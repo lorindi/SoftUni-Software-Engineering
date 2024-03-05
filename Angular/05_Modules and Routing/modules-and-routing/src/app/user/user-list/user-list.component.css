@@ -12,3 +12,7 @@
     background-color: skyblue;
     cursor: pointer;
 }
+.disabled {
+    background-color: gray;
+    pointer-events: none;
+}
