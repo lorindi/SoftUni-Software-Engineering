@@ -1,6 +1,7 @@
 <p>user-list works!</p>
 
-<div class="btn">
-    <app-spinner />
+<div class="btn" (click)="fetchUsers()">
+    <span *ngIf="!isLoading">Reload users</span>
+    <app-spinner *ngIf="isLoading" />
 
 </div>
