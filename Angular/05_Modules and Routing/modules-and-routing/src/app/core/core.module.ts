@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GlobalLoaderComponent } from './global-loader/global-loader.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -9,7 +10,7 @@ import { GlobalLoaderComponent } from './global-loader/global-loader.component';
     GlobalLoaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, SharedModule
   ],
   exports: [GlobalLoaderComponent],
 })
