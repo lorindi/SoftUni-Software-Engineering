@@ -1,0 +1,13 @@
+.nav-btn {
+    margin: 20px;
+    padding: 20px;
+    background-color: palevioletred;
+    color: white;
+    width: fit-content;
+}
+
+.nav-btn:hover {
+   background-color: aquamarine;
+    color: palevioletred;
+
+}
