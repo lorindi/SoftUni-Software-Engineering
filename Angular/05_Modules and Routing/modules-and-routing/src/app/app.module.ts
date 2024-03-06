@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-// import { SharedModule } from './shared/shared.module';
+import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-// import { UserModule } from './user/user.module';
-// import { TodoModule } from './todo/todo.module';
+import { UserModule } from './user/user.module';
+import { TodoModule } from './todo/todo.module';
 
 
 @NgModule({
@@ -18,10 +18,10 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // SharedModule,
+    SharedModule,
     CoreModule,
-    // UserModule,
-    // TodoModule,
+    UserModule,
+    TodoModule,
     HttpClientModule,
   ],
   providers: [],
