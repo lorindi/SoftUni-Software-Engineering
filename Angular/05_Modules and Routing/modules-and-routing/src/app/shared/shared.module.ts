@@ -13,6 +13,6 @@ import { ErrorPageComponent } from './error-page/error-page.component';
   imports: [
     CommonModule
   ],
-  exports: [SpinnerComponent]
+  exports: [SpinnerComponent, ErrorPageComponent]
 })
 export class SharedModule { }
