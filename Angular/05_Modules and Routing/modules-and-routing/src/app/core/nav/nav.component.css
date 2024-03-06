@@ -9,5 +9,6 @@
 .nav-btn:hover {
    background-color: aquamarine;
     color: palevioletred;
+    cursor: pointer;
 
 }
