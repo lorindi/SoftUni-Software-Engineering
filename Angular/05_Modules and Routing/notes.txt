@@ -10,6 +10,7 @@
 *ng g c core/global-loader
 *ng g m todo
 *ng g c shared/error-page
+*ng g c core/nav
 
 https://loading.io/css/
 https://jsonplaceholder.typicode.com/users
