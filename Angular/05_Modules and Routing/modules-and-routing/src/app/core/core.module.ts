@@ -14,6 +14,6 @@ import { NavComponent } from './nav/nav.component';
   imports: [
     CommonModule, SharedModule
   ],
-  exports: [GlobalLoaderComponent],
+  exports: [GlobalLoaderComponent, NavComponent],
 })
 export class CoreModule { }
