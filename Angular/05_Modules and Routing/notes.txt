@@ -8,7 +8,7 @@
 *ng g s user/user
 *ng g s core/global-loader
 *ng g c core/global-loader
-
+*ng g m todo
 
 https://loading.io/css/
 https://jsonplaceholder.typicode.com/users
