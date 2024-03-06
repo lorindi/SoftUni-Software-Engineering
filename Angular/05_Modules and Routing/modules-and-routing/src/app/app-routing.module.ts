@@ -4,7 +4,7 @@ import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 
 const routes: Routes = [
-  {path: '', component: TodoListComponent},
+  {path: '', pathMatch: 'full', component: TodoListComponent},
   {path: 'user-list', component: UserListComponent},
   {path: 'todo-list', component: TodoListComponent},
 
