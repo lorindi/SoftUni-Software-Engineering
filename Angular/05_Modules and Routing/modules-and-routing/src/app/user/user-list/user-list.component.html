@@ -1,4 +1,3 @@
-
 <!-- <div class="btn" (click)="fetchUsers()" [class.disabled]="isLoading">
     <span *ngIf="!isLoading">Reload users</span>
     <app-spinner *ngIf="isLoading" />
@@ -7,6 +6,11 @@
 
 <div>
     <ul>
-        <li *ngFor="let user of users">id: {{user.id}} - name:{{user.name}};</li>
+        <li *ngFor="let user of users" 
+        class="item" 
+        [routerLink]="['/user', 'detail', user.id]"
+        >
+        id: {{user.id}} -
+            name:{{user.name}};</li>
     </ul>
 </div>
