@@ -14,11 +14,14 @@ export class UserDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(this.activatedRoute.snapshot.data['user']);
+
     this.activatedRoute.params.subscribe((v) => {
-      const id = v['id'];
-      this.userService.getSingUser(id).subscribe((user) => {
-        console.log(user);
-      });
+      // const id = v['id'];
+
+      // this.userService.getSingUser(id).subscribe((user) => {
+      //   console.log(user);
+      // });
     });
   }
 }
