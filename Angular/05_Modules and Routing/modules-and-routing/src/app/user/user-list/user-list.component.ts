@@ -29,6 +29,7 @@ export class UserListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    //to clear data!
     console.log('On Destroy invoked!');
     clearInterval(this.interval);
   }
