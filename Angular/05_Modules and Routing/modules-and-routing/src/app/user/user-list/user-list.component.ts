@@ -12,6 +12,7 @@ export class UserListComponent implements OnInit, OnDestroy {
   isLoading = false;
   users: User[] = [];
   counter = 0;
+  interval: any;
 
   constructor(
     private userService: UserService,
@@ -21,13 +22,15 @@ export class UserListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.fetchUsers();
 
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.counter += 1;
-    }, 3000);
+      console.log(this.counter);
+    }, 2000);
   }
 
   ngOnDestroy(): void {
     console.log('On Destroy invoked!');
+    clearInterval(this.interval);
   }
 
   fetchUsers() {
