@@ -16,3 +16,11 @@
     background-color: gray;
     pointer-events: none;
 }
+.item {
+    margin: 10px;
+}
+.item:hover {
+    background-color: gray;
+    color: aliceblue;
+    cursor: pointer;
+}
