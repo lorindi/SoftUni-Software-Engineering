@@ -6,6 +6,9 @@ import { User } from '../types/user';
   providedIn: 'root',
 })
 export class UserService {
+  getSingleUser(id: any): User | import("rxjs").Observable<User> | Promise<User> {
+      throw new Error('Method not implemented.');
+  }
   private API = 'https://jsonplaceholder.typicode.com/users';
   constructor(private http: HttpClient) {}
 
