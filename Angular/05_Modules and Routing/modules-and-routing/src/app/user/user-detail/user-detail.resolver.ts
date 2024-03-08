@@ -20,4 +20,3 @@ export class UserResolve implements Resolve<User> {
     return this.userService.getSingleUser(id);
   }
 }
-
