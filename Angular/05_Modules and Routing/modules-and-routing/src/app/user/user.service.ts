@@ -6,10 +6,13 @@ import { User } from '../types/user';
   providedIn: 'root',
 })
 export class UserService {
-  API = 'https://jsonplaceholder.typicode.com/users';
+  private API = 'https://jsonplaceholder.typicode.com/users';
   constructor(private http: HttpClient) {}
 
   getUsers() {
-    return this.http.get<User[]>(this.API)
+    return this.http.get<User[]>(this.API);
+  }
+  getSingUser(id: string) {
+    return this.http.get<User>(`${this.API}/${id}`);
   }
 }
