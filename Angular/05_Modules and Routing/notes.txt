@@ -11,6 +11,7 @@
 *ng g m todo
 *ng g c shared/error-page
 *ng g c core/nav
+*ng g c user/user-detail
 
 https://loading.io/css/
 https://jsonplaceholder.typicode.com/users
