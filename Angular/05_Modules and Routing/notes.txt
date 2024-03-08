@@ -191,3 +191,56 @@ Save to grepper
 
 
 
+Рутър гардовете (Router guards) в Angular са механизъм, който позволява на приложението да контролира достъпа до определени маршрути, преди те да бъдат активирани. 
+Те се използват за защита на определени части от приложението и осигуряват допълнителна сигурност и контрол върху навигацията.
+
+Angular предлага четири вида рутър гардове:
+
+CanActivate: Този гард се използва за определяне дали може да бъде активиран даден маршрут. Ако CanActivate връща true, маршрутът се активира. 
+В противен случай, маршрутът не се активира.
+
+CanActivateChild: Този гард е подобен на CanActivate, но се прилага за всички деца на даден родителски маршрут. 
+Той се използва за определяне дали може да бъдат активирани всички деца на даден родителски маршрут.
+
+CanDeactivate: Този гард се използва за определяне дали потребителят може да напусне даден маршрут. 
+Той се използва преди потребителят да напусне текущия маршрут.
+
+Resolve: Този гард се използва за зареждане на допълнителни данни, преди маршрута да бъде активиран. 
+Това може да бъде полезно, когато е необходимо да се заредят данни, преди компонентът да се рендира.
+
+За да използвате рутър гардове, трябва да ги дефинирате и конфигурирате във вашия модул за маршрутизация (AppRoutingModule или друг) 
+и да ги приложите към съответните маршрути.
+
+Ето примерен код за дефиниране на рутър гард CanActivate:
+
+typescript
+Copy code
+import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthGuard implements CanActivate {
+  constructor(private router: Router) {}
+
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    const isLoggedIn = /* Check if user is logged in */;
+    if (!isLoggedIn) {
+      // Redirect to login page if user is not logged in
+      this.router.navigate(['/login']);
+      return false;
+    }
+    return true;
+  }
+}
+Save to grepper
+В този пример AuthGuard проверява дали потребителят е влезнал в системата. Ако не е, гардът пренасочва потребителя към страницата за вход (/login).
+Този гард може да бъде приложен към маршрути в конфигурацията на маршрутите, за да се осигури достъпа до определени части на приложението само на логнати потребители.
+
+
+
+
