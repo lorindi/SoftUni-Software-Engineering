@@ -27,7 +27,7 @@ export class PostsListComponent implements OnInit {
 
         setTimeout(() => {
           this.isLoading = false;
-        }, 3000);
+        }, 1000);
       },
       error: (err) => {
         this.isLoading = false;
