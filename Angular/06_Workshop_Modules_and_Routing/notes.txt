@@ -1,0 +1,4 @@
+Rest-api> npm start
+workshop-modules> ng s
+
+C:\Program Files\MongoDB\Tools\100\bin>mongorestore --uri "mongodb://localhost:27017/forum" -d forum "D:\Programming\Git Projects\SoftUni-Software-Engineering\Angular\06_Workshop_Modules_and_Routing\resources\forum"
