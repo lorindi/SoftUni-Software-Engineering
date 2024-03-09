@@ -10,6 +10,8 @@ import { ThemesListComponent } from './themes-list/themes-list.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostItemComponent } from './posts-list/post-item/post-item.component';
+import { HomeComponent } from './home/home.component';
+import { UserModule } from './user/user.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +19,7 @@ import { PostItemComponent } from './posts-list/post-item/post-item.component';
     ThemesListComponent,
     PostsListComponent,
     PostItemComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ import { PostItemComponent } from './posts-list/post-item/post-item.component';
     CoreModule,
     SharedModule,
     HttpClientModule,
+    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
