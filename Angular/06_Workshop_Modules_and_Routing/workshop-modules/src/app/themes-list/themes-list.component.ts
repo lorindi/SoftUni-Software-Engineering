@@ -17,7 +17,7 @@ export class ThemesListComponent implements OnInit {
       this.themes = themes;
       setTimeout(() => {
         this.isLoading = false;
-      }, 4000);
+      }, 1000);
     });
   }
 }
