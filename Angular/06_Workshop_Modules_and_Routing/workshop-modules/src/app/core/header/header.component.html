@@ -1,4 +1,19 @@
 <header>
+    <div *ngIf="isLoggedIn" class="mini-navbar-wrap">
+        <div class="logo-wrap">
+            <p class="logo"><span class="logo">SoftUni Forum</span></p>
+        </div>
+        <div class="mini-navbar">
+            <ul>
+                <li>
+                    <a routerLink="/profile">{{ firstName }}'s Profile</a>
+                </li>
+                <li>
+                    <a routerLink="/logout" (click)="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
     <div *ngIf="!isLoggedIn" class="mini-navbar-wrap">
         <div class="logo-wrap">
             <p class="logo"><span class="logo">SoftUni Forum</span></p>
@@ -14,6 +29,7 @@
             </ul>
         </div>
     </div>
+
     <nav>
         <ul>
             <li>
@@ -27,5 +43,4 @@
             </li>
         </ul>
     </nav>
-
 </header>
