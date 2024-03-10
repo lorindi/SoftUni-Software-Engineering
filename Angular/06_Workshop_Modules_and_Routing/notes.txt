@@ -14,3 +14,4 @@ C:\Program Files\MongoDB\Tools\100\bin>mongorestore --uri "mongodb://localhost:2
 *ng g c user/register
 *ng g s user/user
 *ng g c error
+*ng g c shared/welcome-msg
