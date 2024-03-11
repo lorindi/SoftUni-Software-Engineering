@@ -1,13 +1,13 @@
- <!-- homepage -->
- <div class="container">
+<!-- homepage -->
+<div class="container">
     <div class="new-theme-border">
         <div class="header-background">
             <span>New Theme</span>
         </div>
-        <form>
+        <form method="post">
             <div class="new-theme-title">
                 <label for="themeName">Title <span class="red">*</span></label>
-                <input type="text" name="themeName" id="themeName">
+                <input type="text" name="themeName" id="themeName" #inputThemeName>
                 <p class="error">
                     Theme name is required.
                 </p>
@@ -17,7 +17,8 @@
             </div>
             <div class="new-theme-content">
                 <label for="postText">Post <span class="red">*</span></label>
-                <textarea type="text" name="postText" id="postText" rows="8" class="height"></textarea>
+                <textarea type="text" name="postText" id="postText" rows="8" class="height"
+                    #textareaPostText></textarea>
                 <p class="error">
                     The field with your post is required.
                 </p>
@@ -27,7 +28,7 @@
             </div>
             <div class="new-theme-buttons">
                 <button class="cancel">Cancel</button>
-                <button class="public">Post</button>
+                <button class="public" (click)="addTheme($event, inputThemeName.value, textareaPostText.value)">Post</button>
             </div>
 
         </form>

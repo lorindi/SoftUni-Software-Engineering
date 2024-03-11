@@ -9,7 +9,7 @@
         </h2>
         <div>
             <div *ngFor="let post of posts" class="aside-theme">
-                <a href="#">
+                <a [routerLink]="post._id">
                     <h3>{{ post.themeId.themeName }}</h3>
                     <p>{{ post.userId.username }}</p>
                     <p>

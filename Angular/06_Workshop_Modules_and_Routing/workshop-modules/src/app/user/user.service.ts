@@ -14,6 +14,7 @@ export class UserService {
     return !!this.user;
   }
 
+
   constructor() {
     try {
       const lsUser = localStorage.getItem(this.USER_KEY) || '';
@@ -24,6 +25,7 @@ export class UserService {
   }
   login() {
     this.user = {
+      id: '5fa64c1f2183ce1728ff3723',
       firstName: 'Petko',
       email: 'petkoivanov@abv.bg',
       password: '123123',
