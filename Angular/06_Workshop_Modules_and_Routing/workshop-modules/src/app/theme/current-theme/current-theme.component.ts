@@ -10,21 +10,18 @@ import { Theme } from 'src/app/types/theme';
 })
 export class CurrentThemeComponent implements OnInit {
   theme = {} as Theme;
-  constructor(private apiService: ApiService, private activeRoute: ActivatedRoute) {}
+  constructor(
+    private apiService: ApiService,
+    private activeRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-     console.log(this.activeRoute.params);
-     this.activeRoute.params.subscribe(data => {
-      const id = data['themeId']
-      console.log(data['themeId']);
+    this.activeRoute.params.subscribe((data) => {
+      const id = data['themeId'];
+
       this.apiService.getTheme(id).subscribe((theme) => {
-        console.log(theme);
-        this.theme = this.theme;
-        console.log(theme);
-        
+        this.theme = theme;
       });
-      
-     })
-    
+    });
   }
 }
