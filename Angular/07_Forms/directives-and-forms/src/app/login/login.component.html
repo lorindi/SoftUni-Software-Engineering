@@ -1,0 +1,50 @@
+<div routerLink="/home">Go back home</div>
+<h1>Login</h1>
+
+<!-- TEMPLATE DRIVEN! -->
+<form #loginForm="ngForm" (ngSubmit)="formSubmitHandler()">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="text"
+      id="email"
+      name="email"
+      ngModel
+      required
+      email
+      #emailInput="ngModel"
+    />
+  </div>
+
+  <div *ngIf="emailInput.touched">
+    <div *ngIf="emailInput.errors?.['required']" style="color: red">
+      Email is required!
+    </div>
+
+    <div *ngIf="emailInput.errors?.['email']" style="color: red">
+      Email is not VALID!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="text"
+      id="password"
+      name="password"
+      ngModel
+      [appMaxCount]="4"
+      #passwordInput="ngModel"
+    />
+  </div>
+
+  <div *ngIf="passwordInput.errors?.['appMaxCount']" style="color: orangered">
+    Password is longer than {{passwordInput.errors?.['appMaxCount']}}
+  </div>
+
+  <button>Login</button>
+</form>
+
+<br />
+<br />
+{{ loginForm.value | json }}
