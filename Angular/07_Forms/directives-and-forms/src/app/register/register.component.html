@@ -1,0 +1,53 @@
+<div routerLink="/home">Go back home</div>
+<h1>Register</h1>
+
+<form [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="text"
+      id="email"
+      name="email"
+      formControlName="email"
+      placeholder="email"
+    />
+  </div>
+
+  <div *ngIf="registerForm.get('email')?.touched">
+    <div
+      *ngIf="registerForm.get('email')?.errors?.['required']"
+      style="color: red"
+    >
+      Email is required!
+    </div>
+
+    <div
+      *ngIf="registerForm.get('email')?.errors?.['email']"
+      style="color: red"
+    >
+      Email is not VALID!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="text"
+      id="password"
+      name="password"
+      formControlName="password"
+    />
+  </div>
+
+  <div
+    *ngIf="registerForm.get('password')?.errors?.['maxlength']"
+    style="color: orangered"
+  >
+    Password is longer than
+    {{registerForm.get('password')?.errors?.['maxlength']?.requiredLength}}
+  </div>
+
+  <button>Register</button>
+</form>
+
+{{registerForm.get('password')?.errors?.['maxlength'] | json}}
