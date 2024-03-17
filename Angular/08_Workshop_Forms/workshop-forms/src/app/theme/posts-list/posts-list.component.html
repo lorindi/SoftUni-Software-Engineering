@@ -1,0 +1,19 @@
+<aside>
+  <div *ngIf="isLoading">
+    <app-loader />
+  </div>
+  <div *ngIf="!isLoading" class="aside">
+    <h2 class="title">Recent posts</h2>
+    <div>
+      <div class="aside-theme" *ngFor="let post of posts">
+        <a href="#">
+          <h3>{{ post.themeId.themeName }}</h3>
+          <p>{{ post.userId.username }}</p>
+          <p>
+            <span>{{ post.created_at }}</span>
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+</aside>
