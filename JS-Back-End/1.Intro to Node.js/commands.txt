@@ -1,0 +1,11 @@
+DEMO
+npm i express
+npm i is
+
+shelter
+npm init --y => Създава package.json
+npm i nodemon -D
+  "scripts": {
+    "start": "nodemon ./index.js"}
+
+
