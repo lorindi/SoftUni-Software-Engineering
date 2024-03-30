@@ -1,0 +1,32 @@
+<div>{{ user | json | uppercase }}</div>
+<!-- user.json().uppercase() -->
+<hr />
+<div>{{ user.list | reduce : sum : 0 }}</div>
+<button (click)="addProperty()">Add Property</button>
+
+<div>Promise: {{ p | async }}</div>
+
+<div>Clock: {{ time$ | async | date : "hh:mm:ss" }}</div>
+
+<hr />
+<div>
+  <a routerLink="/"> Home </a>
+</div>
+<div>
+  <a routerLink="/lazy"> Lazy </a>
+</div>
+
+<router-outlet />
+
+<hr />
+
+<div *ngIf="isLoading$ | async">Loading...</div>
+<div *ngIf="!(isLoading$ | async)">{{ users$ | async | json }}</div>
+
+<button *ngIf="(users$ | async) === null" (click)="loadUsers()">
+  Load Users
+</button>
+
+<button *ngIf="(users$ | async) !== null" (click)="reloadUsers()">
+  Reload Users
+</button>
