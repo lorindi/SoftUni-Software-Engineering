@@ -202,3 +202,51 @@ Save to grepper
 
 
 
+zlib е модул в Node.js, който предоставя функции за компресия и декомпресия на данни чрез алгоритми за сживане (компресия) и разширяване (декомпресия), 
+включително алгоритми като Deflate и Gzip.
+
+С помощта на модула zlib вие можете да компресирате и декомпресирате данни посредством следните функции:
+
+zlib.deflate() и zlib.deflateSync(): Компресира дадени данни, като резултата е също компресиран низ.
+
+zlib.inflate() и zlib.inflateSync(): Декомпресира даден компресиран низ, върнат от zlib.deflate().
+
+zlib.gzip() и zlib.gzipSync(): Компресира данни във формат Gzip.
+
+zlib.gunzip() и zlib.gunzipSync(): Декомпресира Gzip компресирани данни.
+
+zlib.deflateRaw() и zlib.deflateRawSync(): Компресира данни в "raw" формат (без Gzip header и footer).
+
+zlib.inflateRaw() и zlib.inflateRawSync(): Декомпресира данни в "raw" формат.
+
+Тези функции могат да бъдат използвани за работа с данни в различни сценарии, като компресиране на HTTP отговори, оптимизиране на преноса на данни по мрежата и други.
+
+Ето пример как можете да използвате zlib модула за компресия и декомпресия на данни:
+
+javascript
+Copy code
+const zlib = require('zlib');
+const fs = require('fs');
+
+// Компресиране на данни
+const input = fs.createReadStream('input.txt');
+const output = fs.createWriteStream('input.txt.gz');
+const gzip = zlib.createGzip();
+
+input.pipe(gzip).pipe(output);
+
+// Декомпресиране на данни
+const inputGzip = fs.createReadStream('input.txt.gz');
+const outputDecompressed = fs.createWriteStream('output.txt');
+const gunzip = zlib.createGunzip();
+
+inputGzip.pipe(gunzip).pipe(outputDecompressed);
+Save to grepper
+Този код компресира файл с име "input.txt" в Gzip формат и го записва във файл с име "input.txt.gz". След това декомпресира Gzip файлът "input.txt.gz" и 
+записва резултата във файл с име "output.txt".
+
+
+
+
+
+
