@@ -24,7 +24,12 @@ const cats = [
     description: "Fat cat",
   },
 ];
-
+const replaceData = (html, data) => {
+  return Object.keys(data).reduce((result, key) => {
+    result = result.replace(`{{${key}}}`, data[key]);
+    return result;
+  }, html);
+};
 const server = http.createServer(async (req, res) => {
   console.log(req.url);
 
@@ -32,13 +37,8 @@ const server = http.createServer(async (req, res) => {
     const homeHtml = await fs.readFile("./views/home/index.html", "utf-8");
     const catHtml = await fs.readFile("./views/cat.html", "utf-8");
 
-    const catsHtml = cats.map((cat) =>
-      Object.keys(cat).reduce((result, key) => {
-        result = result.replace(`{{${key}}}`, cat[key]);
-        return result;
-      }, catHtml)
-    );
-    const homeHtmlResult = homeHtml.replace("{{cats}}", catsHtml);
+    const catsHtml = cats.map((cat) => replaceData(catHtml, cat));
+    const homeHtmlResult = replaceData(homeHtml, { cats: catsHtml });
 
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write(homeHtmlResult);
