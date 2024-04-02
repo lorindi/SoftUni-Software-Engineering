@@ -1,0 +1,25 @@
+npm init --yes / npm init -y
+npm install express/ npm i express
+create = > index.js
+
+#index.js:
+const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Hello from Express!");
+  // res.end();
+});
+
+app.listen(5000, () => console.log('Server is listening on port 5000...'))
+
+Run Server => *node .\index.js
+
+*npm i nodemon -D => Automatic server restart when changed.
+
+Create Script in package.json => 
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+*npm start
