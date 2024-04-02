@@ -1,0 +1,122 @@
+express - introduction, router, static files
+
+Разбира се, нека започнем с обяснение на Express.
+
+Express е мощен уеб фреймуърк за Node.js, който улеснява създаването на уеб приложения и API-та. 
+Той предоставя прости и ефективни средства за обработка на заявки и управление на пътища (routes), както и за работа със статични файлове.
+
+Въведение (Introduction):
+Express ни позволява да създадем уеб сървър много лесно, като използваме JavaScript във Node.js. 
+С него можем да създадем HTTP сървър, да дефинираме пътища към различни URL адреси и да реагираме на заявки.
+
+Рутер (Router):
+В Express, рутерът (Router) е механизъм, който ни позволява да дефинираме обработчици за различни URL адреси. 
+Това ни позволява да разделим нашето приложение на по-малки части и да организираме по-лесно нашия код. Например, ако искаме да имаме обработчик за път "/users", 
+можем да използваме рутера, за да дефинираме какъв код да се изпълни, когато потребител поиска този път.
+
+Статични файлове (Static Files):
+Express предоставя средства за обслужване на статични файлове като HTML, CSS, JavaScript, изображения и други. 
+Това е полезно, когато искаме да върнем статични ресурси към клиента без да се налага да пишем отделен код за всеки от тях.
+ За това използваме вградената функционалност на Express, като например методът express.static, който указва директория, от която да се обслужват статичните файлове.
+
+В общи линии, Express е мощен инструмент, който прави създаването на уеб приложения и API-та с Node.js по-лесно и по-приятно. 
+С него можем да създадем динамични уеб приложения, да управляваме пътища към различни ресурси и да обслужваме статични файлове с минимално усилие.
+
+User
+view engines - templating concepts, handlebars
+
+Видове шаблонни двигатели (View Engines) играят важна роля във веб разработката, тъй като те ни позволяват да генерираме HTML страници динамично, 
+като използваме данни от сървъра. Ще обясня какво е това и ще се спра на Handlebars като пример за шаблонен двигател.
+
+Шаблонни концепции (Templating Concepts):
+
+Шаблони: Шаблонът е HTML файл със специални маркери или тагове, които се използват за вграждане на данни от сървъра.
+Вграждане на данни: Данните от сървъра, като например променливи или обекти, могат да се вградят динамично в шаблона.
+Логика за представяне: Шаблонните двигатели позволяват на разработчиците да включват логика за представяне, като например цикли и условни оператори, в техните шаблони.
+Handlebars:
+Handlebars е един от популярните шаблонни двигатели за Node.js. Той предоставя прост синтаксис за вграждане на данни в HTML шаблони.
+
+Променливи: Можем да вградим стойностите на променливи, предоставени от сървъра, чрез двойни фигурни скоби {{}}.
+Изрази: Handlebars поддържа изрази, които позволяват изпълнението на прости операции в шаблона, като например {{if}}, {{each}} и други.
+Парциали (Partials): Позволяват ни да създадем малки, повтарящи се компоненти, които можем да включим в различни шаблони.
+Примерен код с Handlebars:
+
+handlebars
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>{{heading}}</h1>
+    
+    <ul>
+        {{#each items}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+</body>
+</html>
+
+В този пример, {{title}}, {{heading}} и {{items}} са променливи, които ще бъдат заменени със съответните стойности от сървъра при генериране на страницата.
+
+Шаблонните двигатели като Handlebars правят генерирането на HTML динамично и улесняват преизползването на кода, като предоставят инструменти за лесно 
+манипулиране на данни в шаблоните.
+
+
+
+100 Continue
+101 Switching Protocols
+103 Early Hints
+200 OK
+201 Created
+202 Accepted
+203 Non-Authoritative Information
+204 No Content
+205 Reset Content
+206 Partial Content
+300 Multiple Choices
+301 Moved Permanently
+302 Found
+303 See Other
+304 Not Modified
+307 Temporary Redirect
+308 Permanent Redirect
+400 Bad Request
+401 Unauthorized
+402 Payment Required
+403 Forbidden
+404 Not Found
+405 Method Not Allowed
+406 Not Acceptable
+407 Proxy Authentication Required
+408 Request Timeout
+409 Conflict
+410 Gone
+411 Length Required
+412 Precondition Failed
+413 Payload Too Large
+414 URI Too Long
+415 Unsupported Media Type
+416 Range Not Satisfiable
+417 Expectation Failed
+418 I'm a teapot
+422 Unprocessable Entity
+425 Too Early
+426 Upgrade Required
+428 Precondition Required
+429 Too Many Requests
+431 Request Header Fields Too Large
+451 Unavailable For Legal Reasons
+500 Internal Server Error
+501 Not Implemented
+502 Bad Gateway
+503 Service Unavailable
+504 Gateway Timeout
+505 HTTP Version Not Supported
+506 Variant Also Negotiates
+507 Insufficient Storage
+508 Loop Detected
+510 Not Extended
+511 Network Authentication Required
