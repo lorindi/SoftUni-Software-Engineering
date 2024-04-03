@@ -1,0 +1,21 @@
+{{#if cats}}
+  {{#each cats}}
+    <article>
+      <h2>{{name}}</h2>
+      <p>Cat {{name}} is {{age}} years old.</p>
+    </article>
+  {{/each}}
+{{else}}
+  <strong>There are no cats</strong>
+{{/if}}
+<form method="post">
+  <div>
+    <label htmlFor="name">Name</label>
+    <input type="text" name="name" id="name" />
+  </div>
+  <div>
+    <label htmlFor="age">Age</label>
+    <input type="number" id="age" name="age" />
+  </div>
+  <input type="submit" value="Create" />
+</form>
