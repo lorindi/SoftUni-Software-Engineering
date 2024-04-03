@@ -23,3 +23,5 @@ Create Script in package.json =>
     "start": "nodemon index.js"
   },
 *npm start
+
+*npm i express-handlebars
