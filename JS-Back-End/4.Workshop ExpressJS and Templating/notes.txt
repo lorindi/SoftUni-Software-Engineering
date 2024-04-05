@@ -22,3 +22,7 @@ app.engine('hbs', handlebars.engine({
 app.set('view engine', 'hbs')
 app.set('views', 'src/views')
 
+
+Create a folder in src => public: styles, images
+//Express config
+app.use(express.static("public"));
