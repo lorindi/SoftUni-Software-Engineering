@@ -10,3 +10,4 @@ Edit scripts in package.json:
   },
 
 *npm i express
+*npm start
