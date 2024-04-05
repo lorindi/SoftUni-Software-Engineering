@@ -25,4 +25,5 @@ app.set('views', 'src/views')
 
 Create a folder in src => public: styles, images
 //Express config
-app.use(express.static("public"));
+// app.use(express.static(path.resolve(__dirname, "public")));
+app.use(express.static("src/public"));
