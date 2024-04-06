@@ -1,13 +1,12 @@
 <main>
-  <h1>{{cube.name}}</h1>
-  <img
-    class="cube"
-    src="{{ cube.imageUrl }}"
-  />
-  <div class="details">
-    <p><span>Description:</span>
-      {{cube.description}}</p>
-    <p><span>Difficulty level:</span>{{ cube.difficultyLevel }}</p>
-    <a class="btn" href="/">Back</a>
-  </div>
+  {{#with cube}}
+    <h1>{{name}}</h1>
+    <img class="cube" src="{{imageUrl}}" />
+    <div class="details">
+      <p><span>Description:</span>
+        {{description}}</p>
+      <p><span>Difficulty level:</span>{{difficultyLevel}}</p>
+      <a class="btn" href="/">Back</a>
+    </div>
+  {{/with}}
 </main>
