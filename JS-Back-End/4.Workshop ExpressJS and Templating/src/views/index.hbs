@@ -1,20 +1,26 @@
+<main>
+  <h1>Browser</h1>
+  <form action="" method="">
+    <input type="text" class="search" name="search" placeholder="Search..." />
+    <input
+      type="number"
+      name="from"
+      class="difficulty"
+      placeholder="Difficulty from..."
+    />
+    <span>-</span>
+    <input
+      type="number"
+      name="to"
+      class="difficulty"
+      placeholder="Difficulty to..."
+    />
+    <input type="submit" value="search" />
+  </form>
+  {{#each cubes}}
+    {{>cube}}
+  {{else}}
+    <p>There are no cubes yet!</p>
+  {{/each}}
 
-    <main>
-      <h1>Browser</h1>
-      <form action="" method="">
-        <input type="text" class="search" name="search" placeholder="Search...">
-        <input type="number" name="from" class="difficulty" placeholder="Difficulty from...">
-        <span>-</span>
-        <input type="number" name="to" class="difficulty" placeholder="Difficulty to...">
-        <input type="submit" value="search">
-      </form>
-      {{#each cubes}}
-      <div class="cube">
-        <img class="cube" src="{{imageUrl}}">
-        <p class="name">{{name}}</p>
-        <p><span>Difficulty level:</span>{{difficultyLevel}}</p>
-        <a class="btn" href="/details/5c39f1851ab3b24f5c03e182">Details</a>
-      </div>
-      {{/each}}
-
-    </main>
+</main>
