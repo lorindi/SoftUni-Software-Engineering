@@ -1,0 +1,103 @@
+<!-- homepage -->
+<div class="container">
+  <div class="profile">
+    <img src="./../../../assets/profile.png" alt="default user" />
+    <h3>User Info:</h3>
+
+    <!-- READONLY MODE -->
+    <ng-container *ngIf="!showEditMode">
+      <div class="flex">
+        <p>Username:</p>
+        <p>{{ profileDetails.username }}</p>
+      </div>
+      <div class="flex">
+        <p>Email:</p>
+        <p>{{ profileDetails.email }}</p>
+      </div>
+      <div class="flex">
+        <p>Phone:</p>
+        <p>+359 {{ profileDetails.tel }}</p>
+      </div>
+      <button class="edit-button" (click)="onToggle()">Edit</button>
+    </ng-container>
+
+    <!-- EDIT MODE -->
+    <ng-container *ngIf="showEditMode">
+      <form [formGroup]="form" (ngSubmit)="saveProfileHandle()">
+        <!-- username -->
+        <div class="flex">
+          <p>Username:</p>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            [value]="profileDetails.username"
+            formControlName="username"
+          />
+        </div>
+
+        <!-- username validations -->
+        <ng-container *ngIf="form.get('username')?.touched">
+          <p class="error" *ngIf="form.get('username')?.errors?.['required']">
+            Username is required!
+          </p>
+          <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">
+            Username must have at least 5 characters!
+          </p>
+        </ng-container>
+
+        <!-- email -->
+        <div class="flex">
+          <p>Email:</p>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            [value]="profileDetails.email"
+            formControlName="email"
+          />
+        </div>
+
+        <!-- email validations -->
+        <ng-container *ngIf="form.get('email')?.touched">
+          <p class="error" *ngIf="form.get('email')?.errors?.['required']">
+            Email is required!
+          </p>
+          <p
+            class="error"
+            *ngIf="form.get('email')?.errors?.['emailValidator']"
+          >
+            Email is not valid!
+          </p>
+        </ng-container>
+
+        <!-- tel -->
+        <div class="flex">
+          <p>Phone:</p>
+          <div>
+            <select name="select-tel" id="select-tel" class="tel">
+              <option value="00359">+359</option>
+            </select>
+            <input
+              type="text"
+              name="tel"
+              id="tel"
+              [value]="profileDetails.tel"
+              formControlName="tel"
+            />
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <button class="red-button" (click)="onCancel($event)">Cancel</button>
+        <button
+          class="green-button"
+          [disabled]="form.invalid"
+          [style]="{ backgroundColor: form.invalid ? 'grey' : 'green' }"
+        >
+          Save
+        </button>
+      </form>
+    </ng-container>
+  </div>
+</div>
