@@ -1,4 +1,4 @@
-function sumOfNumbers() {
+function sumOfNumbers(): number {
   const [firstNumber, secondNumber]: number[] = ["1", "5"].map((e) =>
     Number(e)
   );
