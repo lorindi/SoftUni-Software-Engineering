@@ -1,0 +1,4 @@
+mongosh
+show databases
+use catShelter
+show collections
