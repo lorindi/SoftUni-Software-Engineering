@@ -1,0 +1,3 @@
+*npm init --yes
+*npm i mongoose
+*npm i nodemon
