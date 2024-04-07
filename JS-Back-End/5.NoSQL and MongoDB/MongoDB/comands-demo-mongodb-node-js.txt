@@ -1,0 +1,2 @@
+*npm init --yes
+*npm i mongodb
