@@ -1,0 +1,31 @@
+Create 'src' folder
+Create .gitignore
+*npm init -y
+*npm i nodemon -D
+
+Edit scripts in package.json:
+ "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+
+*npm i express
+*npm start
+
+Create a folder in src => views => layouts => main.hbs
+
+*npm i express-handlebars
+//Handlebars config
+app.engine('hbs', handlebars.engine({
+    extname: 'hbs', 
+}))
+app.set('view engine', 'hbs')
+app.set('views', 'src/views')
+
+
+Create a folder in src => public: styles, images
+//Express config
+// app.use(express.static(path.resolve(__dirname, "public")));
+app.use(express.static("src/public"));
+
+*npm i uniqid

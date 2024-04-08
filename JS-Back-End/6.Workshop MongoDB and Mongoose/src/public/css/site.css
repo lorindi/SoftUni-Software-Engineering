@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header ul {
+    margin: 0;
+}
+
+img {
+    height: 200px;
+    width: auto;
+}
+
+img.cube {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+img.logo {
+    width: 80px;
+    height: 80px;
+    padding: 1em;
+    float: left;
+}
+
+header {
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    background-color: #607588;
+}
+
+header ul li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    margin: 0 1em;
+}
+
+header ul li a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+main {
+    margin: 0 4em;
+    border-radius: 15px;
+    padding: 2em;
+}
+
+div.container {
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+div.cube {
+    display: inline-block;
+    border: 1px solid #2b415433;
+    background: white;
+    width: 23%;
+    vertical-align: top;
+}
+
+div.cube:hover p.name {
+    background: #607588;
+    color: white;
+}
+
+p.name {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 10px;
+    border-bottom: 1px solid #2b415433;
+}
+
+button, main a.btn {
+    border: none;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    width: 43%;
+    margin: 12px;
+    margin-left: 6%;
+    border-radius: 4px;
+    background: #607588;
+    color: white;
+}
+
+button:hover {
+    background-color: #0B2133;
+    color: white;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: underline;
+    color: white;
+    text-transform: uppercase;
+}
+
+div.details {
+    display: block;
+    margin: auto;
+    width: 50%;
+    background-color: #f3f3f2;
+    padding: 1em;
+}
+
+span {
+    font-weight: bolder;
+    font-size: 17px;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+}
+
+div.about {
+    display: block;
+    margin: auto;
+    background-color: #f3f3f2;
+    padding: 3em;
+}
+
+
+div.about a {
+    text-decoration: none;
+    color: #0B2133;
+    font-weight: bold;
+}
+
+form label {
+    background: #607588;
+    color: white;
+    padding: 12px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+input[type=text],
+input[type=number],
+select,
+textarea {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 12px 20px 12px 12px;
+    border-radius: 0 4px 4px 4px;
+    margin: 8px 0 2em;
+}
+
+input.difficulty {
+    width: 20%;
+}
+
+input.search {
+    width: 50%;
+}
+
+input[type=submit] {
+    background-color: #545775;
+    border: none;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    width: 50%;
+    margin: 5px 5px 5px 25%;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+input[type=submit]:hover {
+    background-color: #718F94;
+    cursor: pointer;
+}
+
+div.form {
+    border-radius: 5px;
+    padding: 20px;
+    width: 36%;
+    margin: auto;
+}
+
+span.error {
+    animation: fadeOut 1s forwards;
+    animation-delay: 2s;
+    background: #EF5542;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: normal;
+    position: relative;
+    float: right;
+    margin-top: 20px;
+    overflow: hidden;
+    display: block;
+}
+
+img#sadFaceImg{
+    display: block;
+    margin: 0 auto;
+}
+
+h2{
+    text-align: center;
+}
+
+footer {
+    background: #607588;
+    padding: 1em;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+/*Animations & Transitions
+*/
+
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
