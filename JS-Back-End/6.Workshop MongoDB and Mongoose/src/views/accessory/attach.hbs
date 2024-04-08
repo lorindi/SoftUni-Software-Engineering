@@ -3,6 +3,7 @@
     <div class="form">
         <h2>{{cube.name}}</h2>
         <img class="cube" src="{{cube.imageUrl}}">
+        {{#if hasAccessories}}
         <form method="POST">
             <label for="accessory">Accessories</label>
             <select id="accessory" name="accessory" />
@@ -12,8 +13,10 @@
             </select>
             <input type="submit" value="Attach">
         </form>
+        {{else}}
         <h3 class="italic">This cube has all available accessories so far or there is no available at all...
         </h3>
+        {{/if}}
         <a class="btn" href="#">Back</a>
     </div>
 </main>
