@@ -4,19 +4,19 @@
 
 ## React
 - [React and JSX](https://github.com/lorindi/SoftUni-Software-Engineering/tree/main/ReactJS/1.Intro%20to%20React%20and%20JSX/create-react-app)
-- [Components: Basic Idea](#)
-- [Components: Deep Dive](#)
-- [Workshop: Components](#)
-- [Forms](#)
-- [Routing](#)
+- [Components: Basic Idea](https://github.com/lorindi/SoftUni-Software-Engineering/tree/main/ReactJS/2.Components%20Basic%20Idea/create-react-app)
+- [Components: Deep Dive](https://github.com/lorindi/SoftUni-Software-Engineering/tree/main/ReactJS/3.Components%20Deep%20Dive/create-react-app)
+- [Workshop: Components](https://github.com/lorindi/SoftUni-Software-Engineering/tree/main/ReactJS/4.Workshop%20Components/create-react-app/Workshop1)
+- [Forms](https://github.com/lorindi/SoftUni-Software-Engineering/tree/main/ReactJS/5.Forms/create-react-app)
+- [Routing](https://github.com/lorindi/SoftUni-Software-Engineering/tree/main/ReactJS/6.Routing/create-react-app)
 - [React Hooks](#)
 - [Advanced Techniques](#)
 
 ## Angular
-- [Angular and TypeScript](#)
+- [Angular and TypeScript](https://github.com/lorindi/SoftUni-Software-Engineering/tree/main/Angular/01_Intro%20to%20Angular%20and%20TypeScript)
 - [Components](#)
-- [DI](#)
-- [RxJS](#)
+- [DI](https://github.com/lorindi/SoftUni-Software-Engineering/tree/main/Angular/02_Components)
+- [RxJS](https://github.com/lorindi/SoftUni-Software-Engineering/tree/main/Angular/03_DI_Intro%20to%20RxJS_Services)
 - [Services](#)
 - [Modules and Routing](#)
 - [Forms](#)
