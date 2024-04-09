@@ -1,7 +1,6 @@
 // bussines logic, domain logic
 const Cube = require("../models/Cube");
 
-
 // exports.getAll = () => cubes.slice();
 exports.getAll = async (search, from, to) => {
   let result = await Cube.find().lean();
@@ -26,4 +25,11 @@ exports.create = async (cubeData) => {
   const cube = new Cube(cubeData);
   await cube.save();
   return cube;
+};
+
+exports.attachAccessory = async (cubeId, accessoryId) => {
+  // return Cube.findByIdAndUpdate(cubeId, { $push: { accessories: accessoryId } });
+  const cube = await Cube.findById(cubeId);
+  cube.accessories.push(accessoryId);
+  return cube.save();
 };

@@ -16,6 +16,12 @@ function matchOperations(
       "/": () => {
         return firstNumber / secondNumber;
       },
+      "%": () => {
+        return firstNumber % secondNumber;
+      },
+      "**": () => {
+        return firstNumber ** secondNumber;
+      },
     };
   
     if (sign in operations) {
