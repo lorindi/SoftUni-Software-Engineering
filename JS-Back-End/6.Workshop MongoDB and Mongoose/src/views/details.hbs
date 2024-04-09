@@ -12,31 +12,15 @@
     </div>
     <h2>Accessories</h2>
     <div class="accessories">
-      <div class="accessory">
-        <img
-          src="https://images-na.ssl-images-amazon.com/images/I/61J8UP8pySL._SX425_.jpg"
-          alt="stickerName"
-        />
-        <h3>Accessory Name</h3>
-        <p>Accessory Description</p>
-      </div>
-      <div class="accessory">
-        <img
-          src="https://images-na.ssl-images-amazon.com/images/I/61J8UP8pySL._SX425_.jpg"
-          alt="stickerName"
-        />
-        <h3>Accessory Name</h3>
-        <p>Accessory Description</p>
-      </div>
-      <div class="accessory">
-        <img
-          src="https://images-na.ssl-images-amazon.com/images/I/61J8UP8pySL._SX425_.jpg"
-          alt="stickerName"
-        />
-        <h3>Accessory Name</h3>
-        <p>Accessory Description</p>
-      </div>
-      <h3 class="italic">This cube has no accessories yet...</h3>
+      {{#each accessories}}
+        <div class="accessory">
+          <img src="{{imageUrl}}" alt="{{name}}" />
+          <h3>{{name}}</h3>
+          <p>{{description}}</p>
+        </div>
+      {{else}}
+        <h3 class="italic">This cube has no accessories yet...</h3>
+      {{/each}}
     </div>
   {{/with}}
 </main>
