@@ -1,0 +1,7 @@
+*npm init -y
+*npm i express
+*npm i nodemon -D
+*npm start
+*npm install uniqi
+*npm i uuid
+*npm install cookie-parser
