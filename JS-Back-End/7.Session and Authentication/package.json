@@ -12,6 +12,7 @@
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "express": "^4.19.2",
+    "express-session": "^1.18.0",
     "uniqid": "^5.4.0",
     "uuid": "^9.0.1"
   },
