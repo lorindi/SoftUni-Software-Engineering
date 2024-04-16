@@ -7,3 +7,4 @@
 *npm install cookie-parser
 *npm i express-session
 *npm i bcrypt
+*npm install jsonwebtoken
