@@ -30,3 +30,13 @@ app.use(express.static("src/public"));
 
 *npm i uniqid
 *npm i mongoose
+
+*npm i bcrypt
+*npm install cookie-parser
+*npm install jsonwebtoken
+
+
+
+*npm install uniqi
+*npm i uuid
+*npm i express-session
