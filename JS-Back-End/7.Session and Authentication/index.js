@@ -80,6 +80,9 @@ app.get("/profile", async (req, res) => {
       res.status(401).send("Unauthorized1");
     }
   }
-  return res.redirect("/login");
+  else {
+    return res.redirect("/login");
+
+  }
 });
 app.listen(5000, () => console.log("Server is listening port 5000..."));
