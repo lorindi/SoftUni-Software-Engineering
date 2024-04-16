@@ -2,7 +2,8 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const { v4: uuid } = require("uuid");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const jwt = require("./lib/jwt");
+
 const app = express();
 // const session = {};
 const secret = "alabalasecretstochadura";
@@ -13,23 +14,8 @@ app.use(express.urlencoded({ extended: false }));
 const users = {};
 
 app.get("/", (req, res) => {
-  //   console.log(users);
-  //   const payloads = { _id: uuid(), username: "Lora" };
-  //   const option = { expiresIn: "2d" };
-  //   const secret = "MySuperPrivateSecret";
-  //   const token = jwt.sign(payloads, secret, option);
-  //   //   https://jwt.io/
-  //   res.send(token);
-
   res.send("Hello");
 });
-
-// app.get("/verify/:token", (req, res) => {
-//   const token = req.params.token;
-//   const payload = jwt.verify(token, "MySuperPrivateSecret");
-//   console.log(payload);
-//   res.send("ok");
-// });
 
 app.get("/register", (req, res) => {
   res.send(`
@@ -69,41 +55,31 @@ app.post("/login", async (req, res) => {
   const { username, password } = req.body;
   const hash = users[username]?.password;
   const isValid = await bcrypt.compare(password, hash);
-  //   if (isValid) {
-  //     res.send("Successfully logged in");
-  //   } else {
-  //     res.send("Unauthorized");
-  //   }
+
   if (isValid) {
-    //generate jwt token
-    const payload = { username };
-    jwt.sign(payload, secret, { expiresIn: "2d" }, (err, token) => {
-      if (err) {
-        return res.redirect("/404");
-      }
-      //ser jwt token as cookie
+    try {
+      const payload = { username };
+      const token = await jwt.sign(payload, secret, { expiresIn: "2d" });
+
       res.cookie("token", token);
       res.redirect("profile");
-    });
-  } else {
-    res.status(401).send("Unauthorized");
+    } catch (err) {
+      console.log(err);
+      res.redirect("/404");
+    }
   }
 });
-app.get("/profile", (req, res) => {
-  //get token from cookie
+
+app.get("/profile", async (req, res) => {
   const token = req.cookies["token"];
   if (token) {
-    jwt.verify(token, secret, (err, payload) => {
-      if (err) {
-        return res.status(401).send("Unauthorized1");
-      }
-      return res.send(`Profile: ${payload.username}`);
-    });
+    try {
+      const payload = await jwt.verify(token, secret);
+      res.send(`Profile: ${payload.username}`);
+    } catch (err) {
+      res.status(401).send("Unauthorized1");
+    }
   }
-  return res.redirect('/login');
-
-  //verify token
-
-  //allow request if calid
+  return res.redirect("/login");
 });
 app.listen(5000, () => console.log("Server is listening port 5000..."));
