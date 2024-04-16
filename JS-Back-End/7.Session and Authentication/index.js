@@ -2,7 +2,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const { v4: uuid } = require("uuid");
 const bcrypt = require("bcrypt");
-
+const jwt = require("jsonwebtoken");
 const app = express();
 const session = {};
 
@@ -12,9 +12,23 @@ app.use(express.urlencoded({ extended: false }));
 const users = {};
 
 app.get("/", (req, res) => {
-    console.log(users);
-    res.send('OK')
+  console.log(users);
+
+  const payloads = { _id: uuid(), username: "Lora" };
+  const option = { expiresIn: "2d" };
+  const secret = "MySuperPrivateSecret";
+  const token = jwt.sign(payloads, secret, option);
+  //   https://jwt.io/
+  res.send(token);
 });
+
+app.get("/verify/:token", (req, res) => {
+  const token = req.params.token;
+  const payload = jwt.verify(token, "MySuperPrivateSecret");
+  console.log(payload);
+  res.send('ok')
+});
+
 app.get("/register", (req, res) => {
   res.send(`
       <form method="POST">
