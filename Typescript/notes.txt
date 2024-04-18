@@ -1,0 +1,28 @@
+TypeScript is superset of JavaScript?
+ES6 is superset of ES5.
+tsc name.file
+JavaScript: a dynamic, loosely typed language widely used for web development.
+TypeScript е статично типизиран, който надгражда js, но лежи изцяло на него, 
+който ни дава допълнително функционалности, тулинги.
+*tsc app.ts /tsc && node app.js 
+
+*node -v
+*npm install -g typescript (latest stable build)
+*tsc -v/ tsc --version => Should return a message 'Version'
+ 
+*tsc --init => This command will create a ne tsconfig.json file:
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",                               
+    "esModuleInterop": true,
+    "rootDir": "./src",        
+    "outDir":"./dist",                 
+    "skipLibCheck": true      
+  }
+}
+node .\dist\task1.js
+
+* ES6 -> ES5  => Transpile
+* TypeScript -> JavaScript => Transpile
+* TypeScript -> C++ => Compile
