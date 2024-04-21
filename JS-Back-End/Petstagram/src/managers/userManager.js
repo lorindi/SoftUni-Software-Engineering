@@ -1,10 +1,9 @@
 const User = require("../models/User");
 const jwt = require("../lib/jwt");
 const bcrypt = require("bcrypt");
-const SECRET = "09ad1d6b-23b0-4399-a112-f2187ac607c5";
-
+const { SECRET} = require("../config/config");
 exports.login = async (username, password) => {
-  const user = await User.findOne({username});
+  const user = await User.findOne({ username });
   if (!user) {
     throw new Error("Invalid user or password");
   }
