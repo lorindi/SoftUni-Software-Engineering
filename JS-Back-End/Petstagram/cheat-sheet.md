@@ -52,3 +52,23 @@
     * install cookie parser => *npm i cookie-parser
     * config cookie parser
     * set cookie with token
+18. Logout
+19. Authentication middleware
+    * create base middleware
+    * use middleware
+    * implement auth middleware
+    * attach decoded token to request
+    * handle invalid token
+20. Authorization middleware
+21. Dynamic navigation
+    * add conditional in main layout
+    * add res locals
+22. Error handling
+    * add 404 page
+    * redirect missing route to 404
+    * add global error handler (optional)
+    * add error message extractor
+23. Show error notifications
+    * add error container to main layout
+    * show error container conditionaly
+    * pass error to render
