@@ -4,16 +4,16 @@ const bcrypt = require("bcrypt");
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
-    required: true,
+    required: [true, "Username is required"],
     unique: true,
   },
   email: {
     type: String,
-    required: true,
+    required: [true, "Email is required"],
   },
   password: {
     type: String,
-    required: true,
+    required: [true, "Password is required"],
   },
 });
 
@@ -24,7 +24,7 @@ userSchema.virtual("repeatPassword").set(function (value) {
 });
 userSchema.pre("save", async function () {
   const hash = await bcrypt.hash(this.password, 10);
-  this.password = hash
+  this.password = hash;
 });
 const User = mongoose.model("User", userSchema);
 module.exports = User;
