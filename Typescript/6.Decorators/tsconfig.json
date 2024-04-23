@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    /** Decorators Stage 2 */
+    // "target": "ES5",
+    // "experimentalDecorators": true,
+    // "emitDecoratorMetadata": true
+
+    /** Decorators Stage 3 - TypeScript version 5 and above */
+    "target": "ES2022"
+  }
+}
