@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log(123);const o=new class{name;constructor(o){this.name=o}}("Mitko");console.log(o.name)})();
