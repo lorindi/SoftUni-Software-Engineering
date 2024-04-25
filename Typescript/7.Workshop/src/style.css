@@ -1,0 +1,43 @@
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: beige;
+  height: 100%;
+}
+
+#root {
+  flex-grow: 1;
+}
+
+#wrapper {
+  height: 100%;
+  display: flex;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-right: 1px solid lightgray;
+  background-color: rgb(216, 216, 200);
+}
+
+.sidebar > a {
+  padding: 10px;
+  margin: 5px 0;
+}
+
+a:hover {
+  cursor: pointer;
+  background-color: gray;
+}
