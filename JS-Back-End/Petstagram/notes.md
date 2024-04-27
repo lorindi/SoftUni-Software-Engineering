@@ -83,10 +83,6 @@
 
     * fix navigation to home:
         <a href="/">
-        <a href="/users/logout">
-        <a href="/users/login">
-        <a href="/users/register">
-    
 
     * render home page
     #routes.js
@@ -147,24 +143,113 @@
 9. Authentication
     * add user controller
     In controllers folder, create userController.js
+    #userController.js
+        const router = require("express").Router();
+        
 
     * add controller to routes
+    Create a user folder, in the views folder and put login, register in it
+
+    #routes.js
+        const userController = require("./controllers/userController");
+        router.use("/users", userController);
+
+    
+
     * fix header navigation to login, register and logout
+    #main.hbs
+        <a href="/users/logout">
+        <a href="/users/login">
+        <a href="/users/register">
+
     * render login page
+    #userController.js
+
+    router.get("/login", (req, res) => {
+            res.render("users/login");
+            });
+
     * render register page
 
+    #userController.js
+    router.get("/register", (req, res) => {
+    res.render("users/register");
+});
+
 10. Add user model
+    Create a models folder in the src folder and in it create a User.js
+    #User.js
+
+    const mongoose = require("mongoose");
+
+    const userSchema = new mongoose.Schema({
+     username: {
+    type: String,
+    required: [true, "Username is required"],
+     },
+     email: {
+    type: String,
+    required: [true, "Email is required"],
+    },
+     password: {
+    type: String,
+    required: [true, "Password is required"],
+     },
+    });
+
+    const User = mongoose.model("User", userSchema);
+    module.exports = User;
+
     * add unique index for username
+    #User.js
+    username: {
+    type: String,
+    required: [true, "Username is required"],
+    unique: true,
+     },
+
+
     * validate repeat password
 
 11. Modify login and register forms
+    #login.hbs
+    method="POST"
+    name="username"
+    name="password"
+    <p>Don't have account? <a href="/users/register">Register</a></p>
+
+    #register.hbs
+    method="POST"
+    name="username"
+    name="email"
+    name="password"
+    name="repeatPassword"
+    <p>Have an account? <a href="/users/login">LogIn</a></p>
+
 
 12. Add login and register post actions
+    router.post("/login", async (req, res, 
+    ) => {});
 
 13. Add user manager
+    Create a managers folder in the src folder and in it create a userManager.js
+    #userManager.js
+
+    const User = require("../models/User");
+
     * require in user controller
+    #userController.js
+    const userManager = require("../managers/userManager");
+
+
     * add register method
+        exports.register = async () => {
+        };
+
     * add login method
+        exports.login = async () => {
+        };
+
     * validate if user already exists
 
 14. Hash password
