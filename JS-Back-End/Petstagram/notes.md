@@ -215,8 +215,11 @@
     userSchema.virtual("repeatPassword").set(function (value) {
     if (this.password !== value) {
         throw new Error("Password missmatch!");
-    }
-    });
+    }});
+    <!-- userSchema.pre("save", async function () {
+    const hash = await bcrypt.hash(this.password, 10);
+    this.password = hash;
+    }); -->
 
 11. Modify login and register forms
     #login.hbs
@@ -260,14 +263,27 @@
 
 
     * add register method
+    #userManager.js
+
         exports.register = async () => {
         };
 
     * add login method
+    #userManager.js
+
         exports.login = async () => {
         };
 
     * validate if user already exists
+    #userManager.js
+ 
+     exports.register = async (userData) => {
+        const user = await User.findOne({ username: userData.username });
+        if (user) {
+            throw new Error("Username already exists");
+        }
+        return User.create(userData);
+        }
 
 14. Hash password
     * install bcrypt => *npm i bcrypt
