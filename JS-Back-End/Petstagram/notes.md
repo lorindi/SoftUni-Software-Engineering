@@ -210,6 +210,13 @@
 
 
     * validate repeat password
+    #User.js
+
+    userSchema.virtual("repeatPassword").set(function (value) {
+    if (this.password !== value) {
+        throw new Error("Password missmatch!");
+    }
+    });
 
 11. Modify login and register forms
     #login.hbs
@@ -228,8 +235,18 @@
 
 
 12. Add login and register post actions
-    router.post("/login", async (req, res, 
-    ) => {});
+        router.post("/login", async (req, res) => {
+        const { username, password } = req.body;
+        await userManager.login(username, password);
+        res.send('Logged in')
+    });
+
+    router.post("/register", async (req, res) => {
+        const { username, email, password, repeatPassword } = req.body;
+        await userManager.register({ username, email, password, repeatPassword });
+        res.send('Registered')
+
+    });
 
 13. Add user manager
     Create a managers folder in the src folder and in it create a userManager.js
