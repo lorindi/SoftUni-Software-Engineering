@@ -328,7 +328,20 @@
 
 16. Generate jwt token
     * install jsonwebtoken => *npm i jsonwebtoken
+
+        Create a lib folder in the src folder and in it create a jwt.js
+
     * promisify jsonwebtoken (optional)
+        #jwt.js
+        const util = require("util");
+        const jsonwebtoken = require("jsonwebtoken");
+
+        const jwt = {
+            sign: util.promisify(jsonwebtoken.sign),
+            verify: util.promisify(jsonwebtoken.verify),
+        };
+        module.exports = jwt;
+
     * create SECRET => 09ad1d6b-23b0-4399-a112-f2187ac607c5
     * generate token in manager.login
 
