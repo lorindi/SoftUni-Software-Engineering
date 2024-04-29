@@ -311,6 +311,8 @@
     };
      
     * Validate password with hash
+    #userManager.js
+
     const bcrypt = require("bcrypt");
     exports.login = async (username, password) => {
     const user = await User.findOne({ username });
@@ -343,12 +345,75 @@
         module.exports = jwt;
 
     * create SECRET => 09ad1d6b-23b0-4399-a112-f2187ac607c5
+        Create a config folder in the src folder and in it create a config.js
+
+        #userManager.js
+        const { SECRET } = require("../config/config");
+
+        #config.js
+        exports.SECRET = "09ad1d6b-23b0-4399-a112-f2187ac607c5"
+         exports.TOKEN_KEY = 'token'
+
+
     * generate token in manager.login
+
+        #userManager.js
+        const jwt = require("../lib/jwt");
+
+        exports.login = async (username, password) => {
+        const user = await User.findOne({ username });
+        if (!user) {
+            throw new Error("Invalid user or password");
+        }
+        await bcrypt.compare(password, user.password);
+
+        const isValid = await bcrypt.compare(password, user.password);
+        if (!isValid) {
+            throw new Error("Invalid user or password");
+        }
+        const token = generateToken(user);
+        return token;
+        };
+
+        async function generateToken(user) {
+        const payload = {
+            _id: user._id,
+            username: user.username,
+            email: user.email,
+        };
+        const token = await jwt.sign(payload, SECRET, { expiresIn: "2d" });
+        return token;
+        }
+
 
 17. Return token in cookie
     * install cookie parser => *npm i cookie-parser
     * config cookie parser
+    #index.js
+        const cookieParser = require("cookie-parser");
+        app.use(cookieParser());
+
     * set cookie with token
+    #userController.js
+        router.post("/login", async (req, res, 
+        ) => {
+            const { username, password } = req.body;
+            const token = await userManager.login(username, password);
+            res.cookie('token', token);
+            res.redirect("/");
+        });
+
+
+        router.post("/register", async (req, res) => {
+        const { username, email, password, repeatPassword } = req.body;
+        try {
+            const token = await userManager.register({ username, email, password, repeatPassword });
+            res.cookie(TOKEN_KEY, token)
+            res.redirect("/");
+        } catch (err) {
+            res.render("users/register", { error: getErrorMessage(err),  username, email, });
+        }
+        });
 
 18. Logout
 
