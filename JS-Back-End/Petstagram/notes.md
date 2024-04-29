@@ -238,18 +238,20 @@
 
 
 12. Add login and register post actions
+    #userController.js
+
         router.post("/login", async (req, res) => {
         const { username, password } = req.body;
         await userManager.login(username, password);
         res.send('Logged in')
-    });
+        });
 
-    router.post("/register", async (req, res) => {
+        router.post("/register", async (req, res) => {
         const { username, email, password, repeatPassword } = req.body;
         await userManager.register({ username, email, password, repeatPassword });
         res.send('Registered')
 
-    });
+        });
 
 13. Add user manager
     Create a managers folder in the src folder and in it create a userManager.js
@@ -287,11 +289,42 @@
 
 14. Hash password
     * install bcrypt => *npm i bcrypt
+
     * hash password
+    #User.js
+    userSchema.pre("save", async function () {
+    const hash = await bcrypt.hash(this.password, 10);
+    this.password = hash;
+    });
 
 15. Login
+
     * Find user by username
+
+    #userManager.js
+
+    exports.login = async (username, password) => {
+    const user = await User.findOne({ username });
+    if (!user) {
+        throw new Error("Invalid user or password");
+    }
+    };
+     
     * Validate password with hash
+    const bcrypt = require("bcrypt");
+    exports.login = async (username, password) => {
+    const user = await User.findOne({ username });
+    if (!user) {
+        throw new Error("Invalid user or password");
+    }
+    await bcrypt.compare(password, user.password);
+
+    const isValid = await bcrypt.compare(password, user.password);
+        if (!isValid) {
+            throw new Error("Invalid user or password");
+        }
+    };
+
 
 16. Generate jwt token
     * install jsonwebtoken => *npm i jsonwebtoken
