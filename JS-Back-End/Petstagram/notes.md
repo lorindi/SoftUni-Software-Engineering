@@ -394,11 +394,13 @@
 
     * set cookie with token
     #userController.js
+    const { TOKEN_KEY } = require("../config/config");
+
         router.post("/login", async (req, res, 
         ) => {
             const { username, password } = req.body;
             const token = await userManager.login(username, password);
-            res.cookie('token', token);
+            res.cookie(TOKEN_KEY, token);
             res.redirect("/");
         });
 
@@ -415,11 +417,11 @@
         });
 
 18. Logout
-    #userController.js
-    router.get("/logout", (req, res) => {
-    res.clearCookie('token');
-    res.redirect("/");
-    });
+        #userController.js
+        router.get("/logout", (req, res) => {
+        res.clearCookie('token');
+        res.redirect("/");
+        });
 
 
 19. Authentication middleware
@@ -443,12 +445,8 @@
     if (token) {
         try {
         const decodedToken = await jwt.verify(token, SECRET);
-        req.user = decodedToken;
-        res.locals.user = decodedToken
-        res.locals.isAuthenticated = true
         next();
         } catch (err) {
-        res.clearCookie(TOKEN_KEY);
         res.redirect("/users/login");
         }
     } else {
@@ -458,25 +456,148 @@
 
 
     * attach decoded token to request
+        #authMiddleware.js
+           try {
+            const decodedToken = await jwt.verify(token, SECRET);
+            req.user = decodedToken;
+            next();
+    }
     * handle invalid token
+        catch (err) {
+        res.clearCookie(TOKEN_KEY);
+        res.redirect("/users/login");
+        }
+
 
 20. Authorization middleware
+    #authMiddleware.js
+    exports.isAuth = (req, res, next) => {
+    if (!req.user) {
+        return res.redirect("/users/login");
+    }
+    next();
+    };
 
 21. Dynamic navigation
     * add conditional in main layout
+        {{#if isAuthenticated}}
+        <li class="nav-item">
+            <!-- Link to Add Photo Page -->
+            <a href="#">
+            <i>Add Photo</i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <!-- Link to Profile Page -->
+            <a href="#">
+            <i>Profile</i>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <!-- Link to Logout Page -->
+            <a href="/users/logout">
+            <i>Logout</i>
+            </a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+            <!-- Link to Login Page -->
+            <a href="/users/login">
+            <i>Login</i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <!-- Link to Register Page -->
+            <a href="/users/register">
+            <i>Register</i>
+            </a>
+        </li>
+        {{/if}}
+
     * add res locals
+        #authMiddleware.js
+
+       try {
+        const decodedToken = await jwt.verify(token, SECRET);
+
+        req.user = decodedToken;
+        res.locals.user = decodedToken
+        res.locals.isAuthenticated = true
+        next();
+        } 
 
 22. Error handling
-    * add 404 page
+    In src create an errorHandlerMiddleware.js
+
+
+    * add 404 page => 404.hbs
     * redirect missing route to 404
+        #homeController.js
+            router.get('/404', (req, res) => {
+            res.render('404')
+            })
+
+        #routes.js
+            router.get("*", (req, res) => {
+            res.redirect('/404');
+            });
+
     * add global error handler (optional)
+        #errorHandlerMiddleware.js
+
+        exports.errorHandler = (err, req, res) => {
+        res.render("/404");
+        };
+
+    
     * use global error handler after routes (optional)
     * add error message extractor
 
 23. Show error notifications
     * add error container to main layout
+      <div>
+        <div class="errorContainer">
+          <p>{{error}}</p>
+        </div>
+      </div>
+
     * show error container conditionaly
+     <!--Error Container-->
+    {{#if error}}
+      <div>
+        <div class="errorContainer">
+          <p>{{error}}</p>
+        </div>
+      </div>
+    {{/if}}
+
     * pass error to render
+     #errorHandlerMiddleware.js
+       const { getErrorMessage } = require("../utils/errorHelpers");
+
+        exports.errorHandler = (err, req, res) => {
+        res.render("/404", { error: getErrorMessage(err) });
+        };
+
+
+
+    Create a utils folder in the src folder and in it create an errorHelpers.js
+
+
+    #errorHelpers.js
+        const { MongooseError } = require("mongoose");
+
+        exports.getErrorMessage = (err) => {
+        if (err instanceof MongooseError) {
+            return Object.values(err.errors).at(0).message;
+        } else if (err instanceof ValidationError) {
+            console.log(err);
+            return err.message;
+        } else {
+            return err.message;
+        }
+        };
     * add local error handler
 
 24. Automatically login after register
