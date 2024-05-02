@@ -3,16 +3,17 @@
 2. Setup dev environment - *npm i nodemon -D  =>   "scripts": {"start": "nodemon src/index.js"},
 
 3. Install and setup express => *npm install express
+
     #index.js
-    const express = require("express");
+        const express = require("express");
 
-    const app = express();
+        const app = express();
 
-    app.get("/", (req, res) => {
-        res.send('First action')
-    });
-    
-    app.listen(5000, console.log(`Server is listening on port 5000...`));
+        app.get("/", (req, res) => {
+            res.send('First action')
+        });
+        
+        app.listen(5000, console.log(`Server is listening on port 5000...`));
 
     * add static middleware
         Create a public folder in the src folder.
@@ -259,7 +260,7 @@
 
     * require in user controller
     #userController.js
-    const userManager = require("../managers/userManager");
+        const userManager = require("../managers/userManager");
 
 
     * add register method
