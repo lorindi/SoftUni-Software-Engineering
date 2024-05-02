@@ -180,27 +180,27 @@
 
 10. Add user model
     Create a models folder in the src folder and in it create a User.js
-    #User.js
+        #User.js
 
-    const mongoose = require("mongoose");
+        const mongoose = require("mongoose");
 
-    const userSchema = new mongoose.Schema({
-     username: {
-    type: String,
-    required: [true, "Username is required"],
-     },
-     email: {
-    type: String,
-    required: [true, "Email is required"],
-    },
-     password: {
-    type: String,
-    required: [true, "Password is required"],
-     },
-    });
+        const userSchema = new mongoose.Schema({
+        username: {
+        type: String,
+        required: [true, "Username is required"],
+        },
+        email: {
+        type: String,
+        required: [true, "Email is required"],
+        },
+        password: {
+        type: String,
+        required: [true, "Password is required"],
+        },
+        });
 
-    const User = mongoose.model("User", userSchema);
-    module.exports = User;
+        const User = mongoose.model("User", userSchema);
+        module.exports = User;
 
     * add unique index for username
     #User.js
@@ -208,35 +208,31 @@
     type: String,
     required: [true, "Username is required"],
     unique: true,
-     },
+    },
 
 
     * validate repeat password
-    #User.js
-
-    userSchema.virtual("repeatPassword").set(function (value) {
-    if (this.password !== value) {
-        throw new Error("Password missmatch!");
-    }});
-    <!-- userSchema.pre("save", async function () {
-    const hash = await bcrypt.hash(this.password, 10);
-    this.password = hash;
-    }); -->
+        #User.js
+        userSchema.virtual("repeatPassword").set(function (value) {
+        if (this.password !== value) {
+            throw new Error("Password missmatch!");
+        }});
+      
 
 11. Modify login and register forms
-    #login.hbs
-    method="POST"
-    name="username"
-    name="password"
-    <p>Don't have account? <a href="/users/register">Register</a></p>
+        #login.hbs
+        method="POST"
+        name="username"
+        name="password"
+        <p>Don't have account <a href="/users/register">Register</a></p>
 
-    #register.hbs
-    method="POST"
-    name="username"
-    name="email"
-    name="password"
-    name="repeatPassword"
-    <p>Have an account? <a href="/users/login">LogIn</a></p>
+        #register.hbs
+        method="POST"
+        name="username"
+        name="email"
+        name="password"
+        name="repeatPassword"
+        <p>Have an account <a href="/users/login">LogIn</a></p>
 
 
 12. Add login and register post actions
@@ -294,6 +290,7 @@
 
     * hash password
     #User.js
+    const bcrypt = require("bcrypt");
     userSchema.pre("save", async function () {
     const hash = await bcrypt.hash(this.password, 10);
     this.password = hash;
