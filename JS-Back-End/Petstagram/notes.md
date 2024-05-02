@@ -187,15 +187,15 @@
         const userSchema = new mongoose.Schema({
         username: {
         type: String,
-        required: [true, "Username is required"],
+        required: true,
         },
         email: {
         type: String,
-        required: [true, "Email is required"],
+        required: true,
         },
         password: {
         type: String,
-        required: [true, "Password is required"],
+        required: true,
         },
         });
 
@@ -407,13 +407,9 @@
 
         router.post("/register", async (req, res) => {
         const { username, email, password, repeatPassword } = req.body;
-        try {
             const token = await userManager.register({ username, email, password, repeatPassword });
             res.cookie(TOKEN_KEY, token)
             res.redirect("/");
-        } catch (err) {
-            res.render("users/register", { error: getErrorMessage(err),  username, email, });
-        }
         });
 
 18. Logout
@@ -598,6 +594,49 @@
             return err.message;
         }
         };
+
+
     * add local error handler
+    #userController.js
+        router.post("/login", async (req, res, 
+        // next
+        ) => {
+        const { username, password } = req.body;
+
+        try {
+            const token = await userManager.login(username, password);
+            res.cookie(TOKEN_KEY, token);
+            res.redirect("/");
+        } catch (err) {
+            res.render("users/login", { error: getErrorMessage(err) });
+        }
+        });
+
+        router.post("/register", async (req, res) => {
+        const { username, email, password, repeatPassword } = req.body;
+        try {
+            const token = await userManager.register({ username, email, password, repeatPassword });
+            res.cookie(TOKEN_KEY, token)
+            res.redirect("/");
+        } catch (err) {
+            res.render("users/register", { error: getErrorMessage(err),  username, email, });
+        }
+        });
+
+        const userSchema = new mongoose.Schema({
+        username: {
+            type: String,
+            required: [true, "Username is required"],
+            unique: true,
+        },
+        email: {
+            type: String,
+            required: [true, "Email is required"],
+        },
+        password: {
+            type: String,
+            required: [true, "Password is required"],
+        },
+        });
 
 24. Automatically login after register
