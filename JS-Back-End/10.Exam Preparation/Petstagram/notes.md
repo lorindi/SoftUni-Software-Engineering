@@ -147,7 +147,7 @@
 
 9. Authentication
     * add user controller
-    In controllers folder, create userController.js
+    - In controllers folder, create userController.js
 
     #### userController.js
         const router = require("express").Router();
@@ -224,23 +224,26 @@
       
 
 11. Modify login and register forms
-        #### login.hbs
+
+        login.hbs
             method="POST"
             name="username"
             name="password"
             < p>Don't have account < a href="/users/register">Register</ a></ p >
 
-        #register.hbs
-        method="POST"
-        name="username"
-        name="email"
-        name="password"
-        name="repeatPassword"
-        <p>Have an account <a href="/users/login">LogIn</a></p>
+         register.hbs
+
+            method="POST"
+            name="username"
+            name="email"
+            name="password"
+            name="repeatPassword"
+            <p>Have an account <a href="/users/login">LogIn</a></p>
 
 
 12. Add login and register post actions
-    #userController.js
+
+    #### userController.js
 
         router.post("/login", async (req, res) => {
         const { username, password } = req.body;
@@ -257,29 +260,29 @@
 
 13. Add user manager
    - Create a managers folder in the src folder and in it create a userManager.js
-    #userManager.js
+    #### userManager.js
 
     const User = require("../models/User");
 
     * require in user controller
-    #userController.js
+    #### userController.js
         const userManager = require("../managers/userManager");
 
 
     * add register method
-    #userManager.js
+    #### userManager.js
 
         exports.register = async () => {
         };
 
     * add login method
-    #userManager.js
+    #### userManager.js
 
         exports.login = async () => {
         };
 
     * validate if user already exists
-    #userManager.js
+    #### userManager.js
  
      exports.register = async (userData) => {
         const user = await User.findOne({ username: userData.username });
@@ -293,7 +296,7 @@
     * install bcrypt => *npm i bcrypt
 
     * hash password
-    #User.js
+    #### User.js
     const bcrypt = require("bcrypt");
     userSchema.pre("save", async function () {
     const hash = await bcrypt.hash(this.password, 10);
@@ -304,7 +307,7 @@
 
     * Find user by username
 
-    #userManager.js
+    #### userManager.js
 
     exports.login = async (username, password) => {
     const user = await User.findOne({ username });
@@ -389,7 +392,7 @@
 17. Return token in cookie
     * install cookie parser => *npm i cookie-parser
     * config cookie parser
-    #index.js
+    #### index.js
         const cookieParser = require("cookie-parser");
         app.use(cookieParser());
 
@@ -423,16 +426,16 @@
 19. Authentication middleware
     * create base middleware
        - Create a middleware folder in the src folder and in it create an authMiddleware.js
-        #authMiddleware.js
+        #### authMiddleware.js
         exports.auth = async (req, res, next) => {}
 
     * use middleware
-    #index.js
+    #### index.js
         const { auth } = require("./middlewares/authMiddleware");
         app.use(auth); //after th cookie
 
     * implement auth middleware
-    #authMiddleware.js
+    #### authMiddleware.js
     const jwt = require("../lib/jwt");
     const { SECRET, TOKEN_KEY } = require("../config/config");
 
@@ -452,7 +455,7 @@
 
 
     * attach decoded token to request
-        #authMiddleware.js
+        #### authMiddleware.js
            try {
             const decodedToken = await jwt.verify(token, SECRET);
             req.user = decodedToken;
@@ -466,7 +469,7 @@
 
 
 20. Authorization middleware
-    #authMiddleware.js
+    #### authMiddleware.js
     exports.isAuth = (req, res, next) => {
     if (!req.user) {
         return res.redirect("/users/login");
