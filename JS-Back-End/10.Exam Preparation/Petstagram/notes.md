@@ -260,9 +260,9 @@
 
 13. Add user manager
    - Create a managers folder in the src folder and in it create a userManager.js
-    #### userManager.js
 
-    const User = require("../models/User");
+    #### userManager.js
+        const User = require("../models/User");
 
     * require in user controller
     #### userController.js
@@ -284,13 +284,13 @@
     * validate if user already exists
     #### userManager.js
  
-     exports.register = async (userData) => {
-        const user = await User.findOne({ username: userData.username });
-        if (user) {
-            throw new Error("Username already exists");
-        }
-        return User.create(userData);
-        }
+        exports.register = async (userData) => {
+            const user = await User.findOne({ username: userData.username });
+            if (user) {
+                throw new Error("Username already exists");
+            }
+            return User.create(userData);
+            }
 
 14. Hash password
     * install bcrypt => *npm i bcrypt
@@ -390,6 +390,7 @@
 17. Return token in cookie
     * install cookie parser => *npm i cookie-parser
     * config cookie parser
+
     #### index.js
         const cookieParser = require("cookie-parser");
         app.use(cookieParser());
@@ -414,18 +415,19 @@
         });
 
 18. Logout
-        #### userController.js
-            router.get("/logout", (req, res) => {
-            res.clearCookie('token');
-            res.redirect("/");
-            });
+
+    #### userController.js
+        router.get("/logout", (req, res) => {
+        res.clearCookie('token');
+        res.redirect("/");
+        });
 
 
 19. Authentication middleware
     * create base middleware
        - Create a middleware folder in the src folder and in it create an authMiddleware.js
         #### authMiddleware.js
-        exports.auth = async (req, res, next) => {}
+            exports.auth = async (req, res, next) => {}
 
     * use middleware
     #### index.js
@@ -467,57 +469,58 @@
 
 
 20. Authorization middleware
+
     #### authMiddleware.js
-    exports.isAuth = (req, res, next) => {
-    if (!req.user) {
-        return res.redirect("/users/login");
-    }
-    next();
-    };
+        exports.isAuth = (req, res, next) => {
+        if (!req.user) {
+            return res.redirect("/users/login");
+        }
+        next();
+        };
 
 21. Dynamic navigation
     * add conditional in main layout
-        {{#if isAuthenticated}}
-        < li class="nav-item">
-            < a href="#">
-            < i>Add Photo</ i>
-            </>
-        </ li>
-        <li class="nav-item">
-            <a href="#">
-            <i>Profile</i>
-            </a>
-        </li>
+        #### main.hbs
 
-        <li class="nav-item">
-            <a href="/users/logout">
-            <i>Logout</i>
-            </a>
-        </li>
-        {{else}}
-        <li class="nav-item">
-            <a href="/users/login">
-            <i>Login</i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="/users/register">
-            <i>Register</i>
-            </a>
-        </li>
-        {{/if}}
+            {{#if isAuthenticated}}
+            < li class="nav-item">
+                < a href="#">
+                < i>Add Photo</ i>
+                </ a>
+            </ li>
+            < li class="nav-item">
+                < a href="#">
+                < i>Profile</ i>
+                </ a>
+            </ li>
+
+            < li class="nav-item">
+                < a href="/users/logout">
+                < i>Logout</ i>
+                </ a>
+            </ li>
+            {{else}}
+            < li class="nav-item">
+                < a href="/users/login">
+                < i>Login</ i>
+                </ a>
+            </ li>
+            < li class="nav-item">
+                < a href="/users/register">
+                < i>Register</ i>
+                </ a>
+            </ li>
+            {{/if}}
 
     * add res locals
         #### authMiddleware.js
-
-        try {
-            const decodedToken = await jwt.verify(token, SECRET);
-
-            req.user = decodedToken;
-            res.locals.user = decodedToken
-            res.locals.isAuthenticated = true
-            next();
-            } 
+            try {
+                const decodedToken = await jwt.verify(token, SECRET);
+                req.user = decodedToken;
+                res.locals.user = decodedToken
+                res.locals.isAuthenticated = true
+                next();
+                } 
 
 22. Error handling
     In src- create an errorHandlerMiddleware.js
@@ -525,22 +528,21 @@
 
     * add 404 page => 404.hbs
     * redirect missing route to 404
-        #homeController.js
+        #### homeController.js
             router.get('/404', (req, res) => {
             res.render('404')
             })
 
-        #routes.js
+        #### routes.js
             router.get("*", (req, res) => {
             res.redirect('/404');
             });
 
     * add global error handler (optional)
-        #errorHandlerMiddleware.js
-
-        exports.errorHandler = (err, req, res) => {
-        res.render("/404");
-        };
+        #### errorHandlerMiddleware.js
+            exports.errorHandler = (err, req, res) => {
+            res.render("/404");
+            };
 
     
     * use global error handler after routes (optional)
