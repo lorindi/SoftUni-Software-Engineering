@@ -370,11 +370,6 @@
         if (!isValid) {
             throw new Error("Invalid user or password");
         }
-        const token = generateToken(user);
-        return token;
-        };
-
-        async function generateToken(user) {
         const payload = {
             _id: user._id,
             username: user.username,
@@ -382,7 +377,9 @@
         };
         const token = await jwt.sign(payload, SECRET, { expiresIn: "2d" });
         return token;
-        }
+        };
+
+        
 
 
 17. Return token in cookie
@@ -399,7 +396,7 @@
         router.post("/login", async (req, res, 
         ) => {
             const { username, password } = req.body;
-            const token = await userManager.login(username, password);
+            await userManager.login(username, password);
             res.cookie(TOKEN_KEY, token);
             res.redirect("/");
         });
@@ -407,8 +404,7 @@
 
         router.post("/register", async (req, res) => {
         const { username, email, password, repeatPassword } = req.body;
-            const token = await userManager.register({ username, email, password, repeatPassword });
-            res.cookie(TOKEN_KEY, token)
+            await userManager.register({ username, email, password, repeatPassword });
             res.redirect("/");
         });
 
@@ -604,8 +600,7 @@
         const { username, password } = req.body;
 
         try {
-            const token = await userManager.login(username, password);
-            res.cookie(TOKEN_KEY, token);
+            await userManager.login(username, password);
             res.redirect("/");
         } catch (err) {
             res.render("users/login", { error: getErrorMessage(err) });
@@ -615,8 +610,7 @@
         router.post("/register", async (req, res) => {
         const { username, email, password, repeatPassword } = req.body;
         try {
-            const token = await userManager.register({ username, email, password, repeatPassword });
-            res.cookie(TOKEN_KEY, token)
+            await userManager.register({ username, email, password, repeatPassword });
             res.redirect("/");
         } catch (err) {
             res.render("users/register", { error: getErrorMessage(err),  username, email, });
@@ -640,3 +634,90 @@
         });
 
 24. Automatically login after register
+    #userManager
+        const User = require("../models/User");
+        const jwt = require("../lib/jwt");
+        const bcrypt = require("bcrypt");
+        const { SECRET } = require("../config/config");
+
+        exports.login = async (username, password) => {
+        const user = await User.findOne({ username });
+        if (!user) {
+            throw new Error("Invalid user or password");
+        }
+        await bcrypt.compare(password, user.password);
+
+        const isValid = await bcrypt.compare(password, user.password);
+        if (!isValid) {
+            throw new Error("Invalid user or password");
+        }
+        const token = generateToken(user);
+        return token;
+        };
+
+        exports.register = async (userData) => {
+        const user = await User.findOne({ username: userData.username });
+        if (user) {
+            throw new Error("Username already exists");
+        }
+        const createdUser = await User.create(userData);
+        const token = await generateToken(createdUser);
+        return token;
+
+        };
+        async function generateToken(user) {
+        const payload = {
+            _id: user._id,
+            username: user.username,
+            email: user.email,
+        };
+        const token = await jwt.sign(payload, SECRET, { expiresIn: "2d" });
+        return token;
+        }
+
+
+        #userController
+        const router = require("express").Router();
+        const userManager = require("../managers/userManager");
+        const { TOKEN_KEY } = require("../config/config");
+        const { getErrorMessage } = require("../utils/errorHelpers");
+
+        router.get("/login", (req, res) => {
+        res.render("users/login");
+        });
+
+        router.post("/login", async (req, res, 
+        // next
+        ) => {
+        const { username, password } = req.body;
+
+        try {
+            const token = await userManager.login(username, password);
+            res.cookie(TOKEN_KEY, token);
+            res.redirect("/");
+        } catch (err) {
+            res.render("users/login", { error: getErrorMessage(err) });
+        }
+        });
+
+        router.get("/register", (req, res) => {
+        res.render("users/register");
+        });
+
+        router.post("/register", async (req, res) => {
+        const { username, email, password, repeatPassword } = req.body;
+        try {
+            const token = await userManager.register({ username, email, password, repeatPassword });
+            res.cookie(TOKEN_KEY, token)
+            res.redirect("/");
+        } catch (err) {
+            res.render("users/register", { error: getErrorMessage(err),  username, email, });
+        }
+        });
+
+        router.get("/logout", (req, res) => {
+        res.clearCookie(TOKEN_KEY);
+        res.redirect("/");
+        });
+        module.exports = router;
+
