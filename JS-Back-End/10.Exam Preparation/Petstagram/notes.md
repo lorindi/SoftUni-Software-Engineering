@@ -17,31 +17,33 @@
 
     * add static middleware
         Create a public folder in the src folder.
+
         #index.js
-        const path = require('path')
-        app.use(express.static(path.resolve(__dirname, "public")));
+            const path = require('path')
+            app.use(express.static(path.resolve(__dirname, "public")));
 
     * add body parser
+
         #index.js
-        app.use(express.urlencoded({ extended: false }));
+            app.use(express.urlencoded({ extended: false }));
 
     * add routes
      Create routes.js in src.
 
         #routes.js
-        const router = require("express").Router();
-        router.get("/", (req, res) => {
-            res.send('First action')
-        });
-        module.exports = router;
+            const router = require("express").Router();
+            router.get("/", (req, res) => {
+                res.send('First action')
+            });
+            module.exports = router;
 
         #index.js
-        const routes = require('./routes')
-        app.use(routes);
+            const routes = require('./routes')
+            app.use(routes);
 
-        Delete: app.get("/", (req, res) => {
-            res.send('First action')
-        });
+            Delete: app.get("/", (req, res) => {
+                res.send('First action')
+            });
 
 
 4. Add static resources in public folder => css,images
@@ -58,18 +60,20 @@
     * install => *npm i express-handlebars
 
     * add to express
+
         #index.js
-        const handlebars = require("express-handlebars");
+            const handlebars = require("express-handlebars");
 
     * config extension
+
         #index.js
-        app.engine(
-        "hbs",
-        handlebars.engine({
-            extname: "hbs",
-        })
-        );
-        app.set("view engine", "hbs");
+            app.engine(
+            "hbs",
+            handlebars.engine({
+                extname: "hbs",
+            })
+            );
+            app.set("view engine", "hbs");
     
     * config views folder (only for src)
         app.set("views", "src/views");
@@ -87,44 +91,45 @@
         <a href="/">
 
     * render home page
-    #routes.js
-     const router = require("express").Router();
-     router.get("/", (req, res) => {
-        res.render('home')
-    });
-     module.exports = router;
 
-     home.hbs
+    #routes.js
+        const router = require("express").Router();
+        router.get("/", (req, res) => {
+            res.render('home')
+        });
+        module.exports = router;
+
+        home.hbs
 
     * fix static paths
+
         #index.js
-        <!-- app.use('/static', express.static("public")); -->
-        const path = require('path')
-        app.use(express.static(path.resolve(__dirname, "public")));
+            <!-- app.use('/static', express.static("public")); -->
+            const path = require('path')
+            app.use(express.static(path.resolve(__dirname, "public")));
 
 
 7. Add controllers folder with home controller
     Create a controllers folder in the src folder and in it create a homeController.js
 
     #homeController.js
-    const router = require("express").Router();
-    router.get("/", (req, res) => {
-        res.render('home')
-    });
+        const router = require("express").Router();
+        router.get("/", (req, res) => {
+            res.render('home')
+        });
 
-    module.exports = router;
-
-
-    #routes.js
-
-    Delete:
-     router.get("/", (req, res) => {
-        res.render('home')
-    });
+        module.exports = router;
 
 
     #routes.js
-    const router = require("express").Router();
+        Delete:
+        router.get("/", (req, res) => {
+            res.render('home')
+        });
+
+
+    #routes.js
+        const router = require("express").Router();
 
     const homeController = require("./controllers/homeController");
     router.use(homeController);
