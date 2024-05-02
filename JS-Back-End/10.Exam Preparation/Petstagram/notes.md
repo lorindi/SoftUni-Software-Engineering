@@ -477,34 +477,29 @@
 21. Dynamic navigation
     * add conditional in main layout
         {{#if isAuthenticated}}
+        < li class="nav-item">
+            < a href="#">
+            < i>Add Photo</ i>
+            </>
+        </ li>
         <li class="nav-item">
-            <!-- Link to Add Photo Page -->
-            <a href="#">
-            <i>Add Photo</i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <!-- Link to Profile Page -->
             <a href="#">
             <i>Profile</i>
             </a>
         </li>
 
         <li class="nav-item">
-            <!-- Link to Logout Page -->
             <a href="/users/logout">
             <i>Logout</i>
             </a>
         </li>
         {{else}}
         <li class="nav-item">
-            <!-- Link to Login Page -->
             <a href="/users/login">
             <i>Login</i>
             </a>
         </li>
         <li class="nav-item">
-            <!-- Link to Register Page -->
             <a href="/users/register">
             <i>Register</i>
             </a>
@@ -512,16 +507,16 @@
         {{/if}}
 
     * add res locals
-        #authMiddleware.js
+        #### authMiddleware.js
 
-       try {
-        const decodedToken = await jwt.verify(token, SECRET);
+        try {
+            const decodedToken = await jwt.verify(token, SECRET);
 
-        req.user = decodedToken;
-        res.locals.user = decodedToken
-        res.locals.isAuthenticated = true
-        next();
-        } 
+            req.user = decodedToken;
+            res.locals.user = decodedToken
+            res.locals.isAuthenticated = true
+            next();
+            } 
 
 22. Error handling
     In src- create an errorHandlerMiddleware.js
@@ -551,6 +546,8 @@
     * add error message extractor
 
 23. Show error notifications
+   - Create a utils folder in the src folder and in it create an errorHelpers.js
+
     * add error container to main layout
       <div>
         <div class="errorContainer">
@@ -569,76 +566,72 @@
     {{/if}}
 
     * pass error to render
-     #errorHandlerMiddleware.js
-       const { getErrorMessage } = require("../utils/errorHelpers");
+        #### errorHandlerMiddleware.js
+            const { getErrorMessage } = require("../utils/errorHelpers");
 
-        exports.errorHandler = (err, req, res) => {
-        res.render("/404", { error: getErrorMessage(err) });
-        };
+                exports.errorHandler = (err, req, res) => {
+                res.render("/404", { error: getErrorMessage(err) });
+                };
 
+        #### errorHelpers.js
+            const { MongooseError } = require("mongoose");
 
-
-   - Create a utils folder in the src folder and in it create an errorHelpers.js
-
-
-    #errorHelpers.js
-        const { MongooseError } = require("mongoose");
-
-        exports.getErrorMessage = (err) => {
-        if (err instanceof MongooseError) {
-            return Object.values(err.errors).at(0).message;
-        } else if (err instanceof ValidationError) {
-            console.log(err);
-            return err.message;
-        } else {
-            return err.message;
-        }
-        };
+            exports.getErrorMessage = (err) => {
+            if (err instanceof MongooseError) {
+                return Object.values(err.errors).at(0).message;
+            } else if (err instanceof ValidationError) {
+                console.log(err);
+                return err.message;
+            } else {
+                return err.message;
+            }
+            };
 
 
     * add local error handler
-    #userController.js
-        router.post("/login", async (req, res, 
-        // next
-        ) => {
-        const { username, password } = req.body;
 
-        try {
-            await userManager.login(username, password);
-            res.redirect("/");
-        } catch (err) {
-            res.render("users/login", { error: getErrorMessage(err) });
-        }
-        });
+        #### userController.js
+            router.post("/login", async (req, res, 
+            // next
+            ) => {
+            const { username, password } = req.body;
 
-        router.post("/register", async (req, res) => {
-        const { username, email, password, repeatPassword } = req.body;
-        try {
-            await userManager.register({ username, email, password, repeatPassword });
-            res.redirect("/");
-        } catch (err) {
-            res.render("users/register", { error: getErrorMessage(err),  username, email, });
-        }
-        });
+            try {
+                await userManager.login(username, password);
+                res.redirect("/");
+            } catch (err) {
+                res.render("users/login", { error: getErrorMessage(err) });
+            }
+            });
 
-        const userSchema = new mongoose.Schema({
-        username: {
-            type: String,
-            required: [true, "Username is required"],
-            unique: true,
-        },
-        email: {
-            type: String,
-            required: [true, "Email is required"],
-        },
-        password: {
-            type: String,
-            required: [true, "Password is required"],
-        },
-        });
+            router.post("/register", async (req, res) => {
+            const { username, email, password, repeatPassword } = req.body;
+            try {
+                await userManager.register({ username, email, password, repeatPassword });
+                res.redirect("/");
+            } catch (err) {
+                res.render("users/register", { error: getErrorMessage(err),  username, email, });
+            }
+            });
+
+            const userSchema = new mongoose.Schema({
+            username: {
+                type: String,
+                required: [true, "Username is required"],
+                unique: true,
+            },
+            email: {
+                type: String,
+                required: [true, "Email is required"],
+            },
+            password: {
+                type: String,
+                required: [true, "Password is required"],
+            },
+            });
 
 24. Automatically login after register
-    #userManager
+    #### userManager.js
         const User = require("../models/User");
         const jwt = require("../lib/jwt");
         const bcrypt = require("bcrypt");
@@ -680,7 +673,7 @@
         }
 
 
-        #userController
+    #### userController.js
         const router = require("express").Router();
         const userManager = require("../managers/userManager");
         const { TOKEN_KEY } = require("../config/config");
