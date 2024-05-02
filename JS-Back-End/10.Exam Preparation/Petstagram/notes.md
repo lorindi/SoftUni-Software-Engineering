@@ -1,10 +1,13 @@
 # Cheat Sheet
-1. Initialize project - *npm init --yes and structure:- Create a src folder and inside it create index.js
-2. Setup dev environment - *npm i nodemon -D  =>   "scripts": {"start": "nodemon src/index.js"},
+1. Initialize project 
+    - *npm init --yes and structure:
+    - Create a src folder and inside it create index.js
+2. Setup dev environment 
+    - *npm i nodemon -D  =>   "scripts": {"start": "nodemon src/index.js"},
 
 3. Install and setup express => *npm install express
 
-    #index.js
+    #### index.js
         const express = require("express");
         const app = express();
         app.get("/", (req, res) => {
@@ -44,8 +47,8 @@
 
 
 4. Add static resources in public folder => css,images
-     <!--- Create a public folder in the src folder -->
-     .... and in it we put all the styling and images
+     - Create a public folder in the src folder
+      and in it we put all the styling and images
 
 
 5. Add views folder with ready html's: 
@@ -83,11 +86,11 @@
     * add partials template folder =>- Create a folder with partial names in the folder views
 
     * fix styles and images
-        <link rel="stylesheet" href="/css/styles.css" />
-        <img width="50px" src="/images/free-30-instagram-stories-icons23_122570.png" alt="img1"/>
+        < link rel="stylesheet" href="/css/styles.css" />
+        < img width="50px" src="/images/free-30-instagram-stories-icons23_122570.png" alt="img1"/>
 
     * fix navigation to home:
-        <a href="/">
+        < a href="/">
 
     * render home page
         #### routes.js
@@ -96,11 +99,11 @@
                 res.render('home')
             });
             module.exports = router;
-            <!-- home.hbs -->
+            home.hbs
 
     * fix static paths
         #### index.js
-            <!-- app.use('/static', express.static("public")); -->
+            //app.use('/static', express.static("public"));
             const path = require('path')
             app.use(express.static(path.resolve(__dirname, "public")));
 
@@ -152,25 +155,25 @@
         
 
     * add controller to routes
-   - Create a user folder, in the views folder and put login, register in it
+    - Create a user folder, in the views folder and put login, register in it
 
-    #routes.js
-        const userController = require("./controllers/userController");
-        router.use("/users", userController);
+        #### routes.js
+            const userController = require("./controllers/userController");
+            router.use("/users", userController);
 
 
     * fix header navigation to login, register and logout
 
-        #main.hbs
-            <a href="/users/logout">
-            <a href="/users/login">
-            <a href="/users/register">
+        #### main.hbs
+            < a href="/users/logout">
+            < a href="/users/login">
+            < a href="/users/register">
 
     * render login page
-        #userController.js
-        router.get("/login", (req, res) => {
-                res.render("users/login");
-                });
+        #### userController.js
+            router.get("/login", (req, res) => {
+                    res.render("users/login");
+                    });
 
     * render register page
         #userController.js
@@ -213,19 +216,19 @@
 
 
     * validate repeat password
-        #User.js
-        userSchema.virtual("repeatPassword").set(function (value) {
-        if (this.password !== value) {
-            throw new Error("Password missmatch!");
-        }});
+        #### User.js
+            userSchema.virtual("repeatPassword").set(function (value) {
+            if (this.password !== value) {
+                throw new Error("Password missmatch!");
+            }});
       
 
 11. Modify login and register forms
-        #login.hbs
-        method="POST"
-        name="username"
-        name="password"
-        <p>Don't have account <a href="/users/register">Register</a></p>
+        #### login.hbs
+            method="POST"
+            name="username"
+            name="password"
+            < p>Don't have account < a href="/users/register">Register</ a></ p >
 
         #register.hbs
         method="POST"
