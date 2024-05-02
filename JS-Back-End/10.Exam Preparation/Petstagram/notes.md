@@ -176,7 +176,7 @@
                     });
 
     * render register page
-        #userController.js
+        #### userController.js
         router.get("/register", (req, res) => {
         res.render("users/register");
 });
@@ -296,42 +296,42 @@
     * install bcrypt => *npm i bcrypt
 
     * hash password
+
     #### User.js
-    const bcrypt = require("bcrypt");
-    userSchema.pre("save", async function () {
-    const hash = await bcrypt.hash(this.password, 10);
-    this.password = hash;
-    });
+        const bcrypt = require("bcrypt");
+        userSchema.pre("save", async function () {
+        const hash = await bcrypt.hash(this.password, 10);
+        this.password = hash;
+        });
 
 15. Login
 
     * Find user by username
 
     #### userManager.js
-
-    exports.login = async (username, password) => {
-    const user = await User.findOne({ username });
-    if (!user) {
-        throw new Error("Invalid user or password");
-    }
-    };
-     
-    * Validate password with hash
-    #userManager.js
-
-    const bcrypt = require("bcrypt");
-    exports.login = async (username, password) => {
-    const user = await User.findOne({ username });
-    if (!user) {
-        throw new Error("Invalid user or password");
-    }
-    await bcrypt.compare(password, user.password);
-
-    const isValid = await bcrypt.compare(password, user.password);
-        if (!isValid) {
+        exports.login = async (username, password) => {
+        const user = await User.findOne({ username });
+        if (!user) {
             throw new Error("Invalid user or password");
         }
-    };
+        };
+     
+    * Validate password with hash
+    #### userManager.js
+
+        const bcrypt = require("bcrypt");
+        exports.login = async (username, password) => {
+        const user = await User.findOne({ username });
+        if (!user) {
+            throw new Error("Invalid user or password");
+        }
+        await bcrypt.compare(password, user.password);
+
+        const isValid = await bcrypt.compare(password, user.password);
+            if (!isValid) {
+                throw new Error("Invalid user or password");
+            }
+        };
 
 
 16. Generate jwt token
@@ -353,40 +353,38 @@
     * create SECRET => 09ad1d6b-23b0-4399-a112-f2187ac607c5
        - Create a config folder in the src folder and in it- create a config.js
 
-        #userManager.js
-        const { SECRET } = require("../config/config");
+        #### userManager.js
+            const { SECRET } = require("../config/config");
 
-        #config.js
-        exports.SECRET = "09ad1d6b-23b0-4399-a112-f2187ac607c5"
-         exports.TOKEN_KEY = 'token'
+            #config.js
+            exports.SECRET = "09ad1d6b-23b0-4399-a112-f2187ac607c5"
+            exports.TOKEN_KEY = 'token'
 
 
     * generate token in manager.login
 
-        #userManager.js
-        const jwt = require("../lib/jwt");
+        #### userManager.js
+            const jwt = require("../lib/jwt");
 
-        exports.login = async (username, password) => {
-        const user = await User.findOne({ username });
-        if (!user) {
-            throw new Error("Invalid user or password");
-        }
-        await bcrypt.compare(password, user.password);
+            exports.login = async (username, password) => {
+            const user = await User.findOne({ username });
+            if (!user) {
+                throw new Error("Invalid user or password");
+            }
+            await bcrypt.compare(password, user.password);
 
-        const isValid = await bcrypt.compare(password, user.password);
-        if (!isValid) {
-            throw new Error("Invalid user or password");
-        }
-        const payload = {
-            _id: user._id,
-            username: user.username,
-            email: user.email,
-        };
-        const token = await jwt.sign(payload, SECRET, { expiresIn: "2d" });
-        return token;
-        };
-
-        
+            const isValid = await bcrypt.compare(password, user.password);
+            if (!isValid) {
+                throw new Error("Invalid user or password");
+            }
+            const payload = {
+                _id: user._id,
+                username: user.username,
+                email: user.email,
+            };
+            const token = await jwt.sign(payload, SECRET, { expiresIn: "2d" });
+            return token;
+            };
 
 
 17. Return token in cookie
@@ -397,8 +395,8 @@
         app.use(cookieParser());
 
     * set cookie with token
-    #userController.js
-    const { TOKEN_KEY } = require("../config/config");
+    #### userController.js
+        const { TOKEN_KEY } = require("../config/config");
 
         router.post("/login", async (req, res, 
         ) => {
@@ -416,11 +414,11 @@
         });
 
 18. Logout
-        #userController.js
-        router.get("/logout", (req, res) => {
-        res.clearCookie('token');
-        res.redirect("/");
-        });
+        #### userController.js
+            router.get("/logout", (req, res) => {
+            res.clearCookie('token');
+            res.redirect("/");
+            });
 
 
 19. Authentication middleware
@@ -436,22 +434,22 @@
 
     * implement auth middleware
     #### authMiddleware.js
-    const jwt = require("../lib/jwt");
-    const { SECRET, TOKEN_KEY } = require("../config/config");
+        const jwt = require("../lib/jwt");
+        const { SECRET, TOKEN_KEY } = require("../config/config");
 
-    exports.auth = async (req, res, next) => {
-    const token = req.cookies[TOKEN_KEY];
-    if (token) {
-        try {
-        const decodedToken = await jwt.verify(token, SECRET);
-        next();
-        } catch (err) {
-        res.redirect("/users/login");
+        exports.auth = async (req, res, next) => {
+        const token = req.cookies[TOKEN_KEY];
+        if (token) {
+            try {
+            const decodedToken = await jwt.verify(token, SECRET);
+            next();
+            } catch (err) {
+            res.redirect("/users/login");
+            }
+        } else {
+            next();
         }
-    } else {
-        next();
-    }
-    };
+        };
 
 
     * attach decoded token to request
