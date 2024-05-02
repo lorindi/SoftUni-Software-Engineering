@@ -2,7 +2,7 @@
 1. Initialize project - *npm init --yes and structure: Create a src folder and inside it create index.js
 2. Setup dev environment - *npm i nodemon -D  =>   "scripts": {"start": "nodemon src/index.js"},
 
-3. Install and setup express => *npm install express:
+3. Install and setup express => *npm install express
     #index.js
     const express = require("express");
 
@@ -15,36 +15,37 @@
     app.listen(5000, console.log(`Server is listening on port 5000...`));
 
     * add static middleware
-    #index.js
-    Create folder: public
-    const path = require('path')
-    app.use(express.static(path.resolve(__dirname, "public")));
+        Create a public folder in the src folder.
+        #index.js
+        const path = require('path')
+        app.use(express.static(path.resolve(__dirname, "public")));
 
     * add body parser
-    #index.js
-    app.use(express.urlencoded({ extended: false }));
+        #index.js
+        app.use(express.urlencoded({ extended: false }));
 
     * add routes
-     Create routes.js
+     Create routes.js in src.
 
-     #routes.js
-     const router = require("express").Router();
-     router.get("/", (req, res) => {
-        res.send('First action')
-    });
-     module.exports = router;
+        #routes.js
+        const router = require("express").Router();
+        router.get("/", (req, res) => {
+            res.send('First action')
+        });
+        module.exports = router;
 
-     #index.js
-     const routes = require('./routes')
-     app.use(routes);
+        #index.js
+        const routes = require('./routes')
+        app.use(routes);
 
-     Delete: app.get("/", (req, res) => {
-        res.send('First action')
-     });
+        Delete: app.get("/", (req, res) => {
+            res.send('First action')
+        });
 
 
 4. Add static resources in public folder => css,images
-    Create a public folder in the src folder, and in it we put all the styling and images
+     <!-- Create a public folder in the src folder -->
+     .... and in it we put all the styling and images
 
 
 5. Add views folder with ready html's: 
@@ -56,21 +57,21 @@
     * install => *npm i express-handlebars
 
     * add to express
-    #index.js
-    const handlebars = require("express-handlebars");
+        #index.js
+        const handlebars = require("express-handlebars");
 
     * config extension
-    #index.js
-    app.engine(
-    "hbs",
-    handlebars.engine({
-        extname: "hbs",
-    })
-    );
-    app.set("view engine", "hbs");
+        #index.js
+        app.engine(
+        "hbs",
+        handlebars.engine({
+            extname: "hbs",
+        })
+        );
+        app.set("view engine", "hbs");
     
     * config views folder (only for src)
-    app.set("views", "src/views");
+        app.set("views", "src/views");
 
     * add main layout => Create a folder named layout and inside it main.hbs
     In main.hbs we put a header, {{{body}}} and a footer
@@ -95,6 +96,10 @@
      home.hbs
 
     * fix static paths
+        #index.js
+        <!-- app.use('/static', express.static("public")); -->
+        const path = require('path')
+        app.use(express.static(path.resolve(__dirname, "public")));
 
 
 7. Add controllers folder with home controller
@@ -416,11 +421,48 @@
         });
 
 18. Logout
+    #userController.js
+    router.get("/logout", (req, res) => {
+    res.clearCookie('token');
+    res.redirect("/");
+    });
+
 
 19. Authentication middleware
     * create base middleware
+        Create a middleware folder in the src folder and in it create an authMiddleware.js
+        #authMiddleware.js
+        exports.auth = async (req, res, next) => {}
+
     * use middleware
+    #index.js
+        const { auth } = require("./middlewares/authMiddleware");
+        app.use(auth); //after th cookie
+
     * implement auth middleware
+    #authMiddleware.js
+    const jwt = require("../lib/jwt");
+    const { SECRET, TOKEN_KEY } = require("../config/config");
+
+    exports.auth = async (req, res, next) => {
+    const token = req.cookies[TOKEN_KEY];
+    if (token) {
+        try {
+        const decodedToken = await jwt.verify(token, SECRET);
+        req.user = decodedToken;
+        res.locals.user = decodedToken
+        res.locals.isAuthenticated = true
+        next();
+        } catch (err) {
+        res.clearCookie(TOKEN_KEY);
+        res.redirect("/users/login");
+        }
+    } else {
+        next();
+    }
+    };
+
+
     * attach decoded token to request
     * handle invalid token
 
@@ -429,6 +471,7 @@
 21. Dynamic navigation
     * add conditional in main layout
     * add res locals
+
 22. Error handling
     * add 404 page
     * redirect missing route to 404
