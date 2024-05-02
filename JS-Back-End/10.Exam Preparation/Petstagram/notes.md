@@ -98,8 +98,7 @@
             res.render('home')
         });
         module.exports = router;
-
-        home.hbs
+        <!-- home.hbs -->
 
     * fix static paths
 
@@ -154,6 +153,7 @@
 9. Authentication
     * add user controller
     In controllers folder, create userController.js
+
     #userController.js
         const router = require("express").Router();
         module.exports = router
@@ -161,12 +161,14 @@
 
     * add controller to routes
     Create a user folder, in the views folder and put login, register in it
+
     #routes.js
         const userController = require("./controllers/userController");
         router.use("/users", userController);
 
 
     * fix header navigation to login, register and logout
+
         #main.hbs
             <a href="/users/logout">
             <a href="/users/login">
@@ -186,27 +188,28 @@
 
 10. Add user model
     Create a models folder in the src folder and in it create a User.js
+    
         #User.js
 
-        const mongoose = require("mongoose");
+            const mongoose = require("mongoose");
 
-        const userSchema = new mongoose.Schema({
-        username: {
-        type: String,
-        required: true,
-        },
-        email: {
-        type: String,
-        required: true,
-        },
-        password: {
-        type: String,
-        required: true,
-        },
-        });
+            const userSchema = new mongoose.Schema({
+            username: {
+            type: String,
+            required: true,
+            },
+            email: {
+            type: String,
+            required: true,
+            },
+            password: {
+            type: String,
+            required: true,
+            },
+            });
 
-        const User = mongoose.model("User", userSchema);
-        module.exports = User;
+            const User = mongoose.model("User", userSchema);
+            module.exports = User;
 
     * add unique index for username
     #User.js
