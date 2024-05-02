@@ -1,8 +1,8 @@
 # Cheat Sheet
-1. Initialize project -*** npm init --yes and structure:- Create a src folder and inside it create index.js
-2. Setup dev environment -*** npm i nodemon -D  =>   "scripts": {"start": "nodemon src/index.js"},
+1. Initialize project - *npm init --yes and structure:- Create a src folder and inside it create index.js
+2. Setup dev environment - *npm i nodemon -D  =>   "scripts": {"start": "nodemon src/index.js"},
 
-3. Install and setup express =>*** npm install express
+3. Install and setup express => *npm install express
 
     #index.js
         const express = require("express");
@@ -16,10 +16,8 @@
         - Create a public folder in the src folder.
 
             #### index.js
-            ```
                 const path = require('path')
                 app.use(express.static(path.resolve(__dirname, "public")));
-            ```
 
     * add body parser
 
@@ -56,7 +54,7 @@
 
 6. Add express-handlebars view engine
 
-    * install => *** npm i express-handlebars
+    * install => *npm i express-handlebars
 
     * add to express
 
@@ -131,7 +129,7 @@
 
 8. Add database
 
-    * install mongoose => *** npm i mongoose
+    * install mongoose => *npm i mongoose
 
     * connect database
         #### index.js
@@ -289,7 +287,7 @@
         }
 
 14. Hash password
-    * install bcrypt => *** npm i bcrypt
+    * install bcrypt => *npm i bcrypt
 
     * hash password
     #User.js
@@ -331,7 +329,7 @@
 
 
 16. Generate jwt token
-    * install jsonwebtoken => *** npm i jsonwebtoken
+    * install jsonwebtoken => *npm i jsonwebtoken
 
        - Create a lib folder in the src folder and in it create a jwt.js
 
@@ -386,7 +384,7 @@
 
 
 17. Return token in cookie
-    * install cookie parser => *** npm i cookie-parser
+    * install cookie parser => *npm i cookie-parser
     * config cookie parser
     #index.js
         const cookieParser = require("cookie-parser");
