@@ -135,14 +135,14 @@
     * install mongoose => *npm i mongoose
 
     * connect database
-    #index.js
-    const mongoose = require("mongoose");
-    mongoose
-    .connect(`mongodb://127.0.0.1:27017/petstagram`)
-    .then(() => {
-        console.log("DB Connected successfully");
-    })
-    .catch((err) => console.log(`Db Error`, err));
+        #index.js
+        const mongoose = require("mongoose");
+        mongoose
+        .connect(`mongodb://127.0.0.1:27017/petstagram`)
+        .then(() => {
+            console.log("DB Connected successfully");
+        })
+        .catch((err) => console.log(`Db Error`, err));
 
 
 9. Authentication
@@ -150,35 +150,32 @@
     In controllers folder, create userController.js
     #userController.js
         const router = require("express").Router();
+        module.exports = router
         
 
     * add controller to routes
     Create a user folder, in the views folder and put login, register in it
-
     #routes.js
         const userController = require("./controllers/userController");
         router.use("/users", userController);
 
-    
 
     * fix header navigation to login, register and logout
-    #main.hbs
-        <a href="/users/logout">
-        <a href="/users/login">
-        <a href="/users/register">
+        #main.hbs
+            <a href="/users/logout">
+            <a href="/users/login">
+            <a href="/users/register">
 
     * render login page
-    #userController.js
-
-    router.get("/login", (req, res) => {
-            res.render("users/login");
-            });
+        #userController.js
+        router.get("/login", (req, res) => {
+                res.render("users/login");
+                });
 
     * render register page
-
-    #userController.js
-    router.get("/register", (req, res) => {
-    res.render("users/register");
+        #userController.js
+        router.get("/register", (req, res) => {
+        res.render("users/register");
 });
 
 10. Add user model
