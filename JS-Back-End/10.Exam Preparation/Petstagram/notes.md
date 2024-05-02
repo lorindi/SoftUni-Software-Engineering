@@ -1,72 +1,71 @@
 # Cheat Sheet
-1. Initialize project - *npm init --yes and structure: Create a src folder and inside it create index.js
-2. Setup dev environment - *npm i nodemon -D  =>   "scripts": {"start": "nodemon src/index.js"},
+1. Initialize project -*** npm init --yes and structure:- Create a src folder and inside it create index.js
+2. Setup dev environment -*** npm i nodemon -D  =>   "scripts": {"start": "nodemon src/index.js"},
 
-3. Install and setup express => *npm install express
+3. Install and setup express =>*** npm install express
 
     #index.js
         const express = require("express");
-
         const app = express();
-
         app.get("/", (req, res) => {
             res.send('First action')
         });
-        
         app.listen(5000, console.log(`Server is listening on port 5000...`));
 
     * add static middleware
-        Create a public folder in the src folder.
+        - Create a public folder in the src folder.
 
-        #index.js
-            const path = require('path')
-            app.use(express.static(path.resolve(__dirname, "public")));
+            #### index.js
+            ```
+                const path = require('path')
+                app.use(express.static(path.resolve(__dirname, "public")));
+            ```
 
     * add body parser
 
-        #index.js
+        #### index.js
             app.use(express.urlencoded({ extended: false }));
 
     * add routes
-     Create routes.js in src.
+        - Create routes.js in src.
 
-        #routes.js
-            const router = require("express").Router();
-            router.get("/", (req, res) => {
-                res.send('First action')
-            });
-            module.exports = router;
+            #### routes.js
+                const router = require("express").Router();
+                router.get("/", (req, res) => {
+                    res.send('First action')
+                });
+                module.exports = router;
 
-        #index.js
-            const routes = require('./routes')
-            app.use(routes);
+            #### index.js
+                const routes = require('./routes')
+                app.use(routes);
 
-            Delete: app.get("/", (req, res) => {
-                res.send('First action')
-            });
+                Delete: app.get("/", (req, res) => {
+                    res.send('First action')
+                });
 
 
 4. Add static resources in public folder => css,images
-     <!-- Create a public folder in the src folder -->
+     <!--- Create a public folder in the src folder -->
      .... and in it we put all the styling and images
 
 
 5. Add views folder with ready html's: 
-    Create a views folder in the src folder, and in it we put all the templates
+   - Create a views folder in the src folder, and in it we put all the templates
 
 
 6. Add express-handlebars view engine
 
-    * install => *npm i express-handlebars
+    * install => *** npm i express-handlebars
 
     * add to express
 
-        #index.js
+        #### index.js
             const handlebars = require("express-handlebars");
 
     * config extension
 
-        #index.js
+        #### index.js
             app.engine(
             "hbs",
             handlebars.engine({
@@ -76,12 +75,14 @@
             app.set("view engine", "hbs");
     
     * config views folder (only for src)
-        app.set("views", "src/views");
+        #### index.js
+            app.set("views", "src/views");
 
-    * add main layout => Create a folder named layout and inside it main.hbs
-    In main.hbs we put a header, {{{body}}} and a footer
+    * add main layout
+        - Create a folder named layout and inside it main.hbs
+            In main.hbs we put a header, {{{body}}} and a footer
 
-    * add partials template folder => Create a folder with partial names in the folder views
+    * add partials template folder =>- Create a folder with partial names in the folder views
 
     * fix styles and images
         <link rel="stylesheet" href="/css/styles.css" />
@@ -91,76 +92,69 @@
         <a href="/">
 
     * render home page
-
-    #routes.js
-        const router = require("express").Router();
-        router.get("/", (req, res) => {
-            res.render('home')
-        });
-        module.exports = router;
-        <!-- home.hbs -->
+        #### routes.js
+            const router = require("express").Router();
+            router.get("/", (req, res) => {
+                res.render('home')
+            });
+            module.exports = router;
+            <!-- home.hbs -->
 
     * fix static paths
-
-        #index.js
+        #### index.js
             <!-- app.use('/static', express.static("public")); -->
             const path = require('path')
             app.use(express.static(path.resolve(__dirname, "public")));
 
 
 7. Add controllers folder with home controller
-    Create a controllers folder in the src folder and in it create a homeController.js
+   - Create a controllers folder in the src folder and in it create a homeController.js
+    #### homeController.js
+            const router = require("express").Router();
+            router.get("/", (req, res) => {
+                res.render('home')
+            });
 
-    #homeController.js
-        const router = require("express").Router();
-        router.get("/", (req, res) => {
-            res.render('home')
-        });
+            module.exports = router;
 
-        module.exports = router;
+    #### routes.js
+            Delete:
+            router.get("/", (req, res) => {
+                res.render('home')
+            });
 
-
-    #routes.js
-        Delete:
-        router.get("/", (req, res) => {
-            res.render('home')
-        });
-
-
-    #routes.js
-        const router = require("express").Router();
-
-    const homeController = require("./controllers/homeController");
-    router.use(homeController);
-
-    module.exports = router;
+    #### routes.js
+            const router = require("express").Router();
+            const homeController = require("./controllers/homeController");
+            router.use(homeController);
+            module.exports = router;
 
 8. Add database
 
-    * install mongoose => *npm i mongoose
+    * install mongoose => *** npm i mongoose
 
     * connect database
-        #index.js
-        const mongoose = require("mongoose");
-        mongoose
-        .connect(`mongodb://127.0.0.1:27017/petstagram`)
-        .then(() => {
-            console.log("DB Connected successfully");
-        })
-        .catch((err) => console.log(`Db Error`, err));
+        #### index.js
+            const mongoose = require("mongoose");
+            mongoose
+            .connect(`mongodb://127.0.0.1:27017/petstagram`)
+            .then(() => {
+                console.log("DB Connected successfully");
+            })
+            .catch((err) => console.log(`Db Error`, err));
 
 
 9. Authentication
     * add user controller
     In controllers folder, create userController.js
 
-    #userController.js
+    #### userController.js
         const router = require("express").Router();
         module.exports = router
         
 
     * add controller to routes
-    Create a user folder, in the views folder and put login, register in it
+   - Create a user folder, in the views folder and put login, register in it
 
     #routes.js
         const userController = require("./controllers/userController");
@@ -187,9 +181,9 @@
 });
 
 10. Add user model
-    Create a models folder in the src folder and in it create a User.js
-    
-        #User.js
+   - Create a models folder in the src folder and in it create a User.js
+
+        #### User.js
 
             const mongoose = require("mongoose");
 
@@ -212,12 +206,12 @@
             module.exports = User;
 
     * add unique index for username
-    #User.js
-    username: {
-    type: String,
-    required: [true, "Username is required"],
-    unique: true,
-    },
+        #### User.js
+            username: {
+            type: String,
+            required: [true, "Username is required"],
+            unique: true,
+            },
 
 
     * validate repeat password
@@ -261,7 +255,7 @@
         });
 
 13. Add user manager
-    Create a managers folder in the src folder and in it create a userManager.js
+   - Create a managers folder in the src folder and in it create a userManager.js
     #userManager.js
 
     const User = require("../models/User");
@@ -295,7 +289,7 @@
         }
 
 14. Hash password
-    * install bcrypt => *npm i bcrypt
+    * install bcrypt => *** npm i bcrypt
 
     * hash password
     #User.js
@@ -337,9 +331,9 @@
 
 
 16. Generate jwt token
-    * install jsonwebtoken => *npm i jsonwebtoken
+    * install jsonwebtoken => *** npm i jsonwebtoken
 
-        Create a lib folder in the src folder and in it create a jwt.js
+       - Create a lib folder in the src folder and in it create a jwt.js
 
     * promisify jsonwebtoken (optional)
         #jwt.js
@@ -353,7 +347,7 @@
         module.exports = jwt;
 
     * create SECRET => 09ad1d6b-23b0-4399-a112-f2187ac607c5
-        Create a config folder in the src folder and in it create a config.js
+       - Create a config folder in the src folder and in it- create a config.js
 
         #userManager.js
         const { SECRET } = require("../config/config");
@@ -392,7 +386,7 @@
 
 
 17. Return token in cookie
-    * install cookie parser => *npm i cookie-parser
+    * install cookie parser => *** npm i cookie-parser
     * config cookie parser
     #index.js
         const cookieParser = require("cookie-parser");
@@ -427,7 +421,7 @@
 
 19. Authentication middleware
     * create base middleware
-        Create a middleware folder in the src folder and in it create an authMiddleware.js
+       - Create a middleware folder in the src folder and in it create an authMiddleware.js
         #authMiddleware.js
         exports.auth = async (req, res, next) => {}
 
@@ -529,7 +523,7 @@
         } 
 
 22. Error handling
-    In src create an errorHandlerMiddleware.js
+    In src- create an errorHandlerMiddleware.js
 
 
     * add 404 page => 404.hbs
@@ -583,7 +577,7 @@
 
 
 
-    Create a utils folder in the src folder and in it create an errorHelpers.js
+   - Create a utils folder in the src folder and in it create an errorHelpers.js
 
 
     #errorHelpers.js
