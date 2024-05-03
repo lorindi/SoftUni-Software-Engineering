@@ -28,7 +28,7 @@ router.post("/create", async (req, res) => {
 router.get("/:photoId/details", async (req, res) => {
   const photoId = req.params.photoId;
   const photo = await photoManager.getOne(photoId).lean();
-  const isOwner = req.user._id == photo.owner._id;
+  const isOwner = req.user?._id == photo.owner._id;
   res.render("photos/details", { photo, isOwner });
 });
 module.exports = router;
