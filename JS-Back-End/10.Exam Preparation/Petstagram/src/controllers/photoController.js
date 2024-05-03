@@ -6,7 +6,7 @@ router.get("/create", (req, res) => {
   res.render("photos/create");
 });
 
-router.post("./create", async (req, res) => {
+router.post("/create", async (req, res) => {
   const photoData = req.body;
 
   try {
