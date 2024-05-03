@@ -1,0 +1,123 @@
+<main>
+  <div class="container">
+    <div class="col-9">
+
+      <!-- Start Pet Photo Post Section -->
+      <div class="card">
+        <div class="top">
+
+          <!-- Start User Details and Image Location Section -->
+          <div class="userDetails">
+
+            <!-- Link to User Profile Details Page-->
+            <div>
+              <div class="profilepic">
+                <div class="profile_img">
+                  <div class="image">
+                    <img src="/images/person.png" alt="img8" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3>
+
+              <p>
+                {{photo.owner.username}}
+              </p>
+              <span>{{photo.location}}</span>
+
+              {{#if isOwner}}
+                <div class="edit-delete-btns">
+
+                  <!-- Edit Pet Photo -->
+                  <a href="#">
+                    <img
+                      class="edit-img"
+                      src="/images/edit-pen-icon-6.jpg"
+                      alt="edit button"
+                    />
+                  </a>
+
+                  <!--Delete Pet Photo -->
+                  <a href="#">
+                    <img
+                      class="bin-img"
+                      src="/images/icon-remove-22.jpg"
+                      alt="bin button"
+                    />
+                  </a>
+                </div>
+              {{/if}}
+            </h3>
+          </div>
+
+        </div>
+
+        <div class="imgBx">
+          <img src="{{image}}" alt={{name}} class="cover" />
+        </div>
+
+        <div class="bottom">
+
+          <p class="message">
+            <b class="petDescription">{{photo.description}}</b>
+          </p>
+
+          <div class="pet-details">
+            <p class="petName">Name: {{photo.name}}</p>
+            <p class="petAge">Age: {{photo.age}}</p>
+          </div>
+          <div class="comments">
+            <div class="comments-top">
+              <div class="userDetails">
+                <div class="comment-data">
+                  <div class="profilepic">
+                    <div class="profile_img">
+                      <div class="image">
+                        <!-- User Profile Image -->
+                        <img src="/images/person.png" alt="img8" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--User's username-->
+                  <p><b>StevIvanov</b>- OMG where can i get one</p>
+                </div>
+              </div>
+              <div class="userDetails">
+                <div class="comment-data">
+                  <div class="profilepic">
+                    <div class="profile_img">
+                      <div class="image">
+                        <!-- User Profile Image -->
+                        <img src="/images/person.png" alt="img8" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--User's username-->
+                  <p><b>StevIvanov</b>- OMG where can i get one</p>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <div class="addComments">
+          <!-- Start Add Comments Form -->
+          <form method="#" action="#">
+            <textarea
+              id="comment-textarea"
+              name=""
+              cols="40"
+              rows="10"
+              placeholder="Add comment..."
+            ></textarea>
+            <!-- Post Comments Button -->
+            <button type="submit">Post</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
