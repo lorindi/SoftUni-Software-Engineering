@@ -24,7 +24,7 @@ const photoSchema = new mongoose.Schema({
   },
   owner: {
     type: mongoose.Types.ObjectId,
-    ref: User,
+    ref: 'User',
   },
 });
 const Photo = mongoose.model("Photo", photoSchema);
