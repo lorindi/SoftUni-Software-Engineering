@@ -99,24 +99,26 @@
                   <p><b>StevIvanov</b>- OMG where can i get one</p>
                 </div>
               </div>
-             
+
             </div>
           </div>
         </div>
-        <div class="addComments">
-          <!-- Start Add Comments Form -->
-          <form method="#" action="#">
-            <textarea
-              id="comment-textarea"
-              name=""
-              cols="40"
-              rows="10"
-              placeholder="Add comment..."
-            ></textarea>
-            <!-- Post Comments Button -->
-            <button type="submit">Post</button>
-          </form>
-        </div>
+        {{#unless isOwner}}
+          <div class="addComments">
+            <!-- Start Add Comments Form -->
+            <form method="#" action="#">
+              <textarea
+                id="comment-textarea"
+                name=""
+                cols="40"
+                rows="10"
+                placeholder="Add comment..."
+              ></textarea>
+              <!-- Post Comments Button -->
+              <button type="submit">Post</button>
+            </form>
+          </div>
+        {{/unless}}
       </div>
     </div>
   </div>
