@@ -6,16 +6,16 @@
         <div class="profilepic">
           <div class="profile_img">
             <div class="image">
-              <img src="{{image}}" />
+              <img src="/images/person.png" />
             </div>
           </div>
         </div>
       </a>
       <h3>
         <p>
-          MayaB
+          {{owner.username}}
         </p>
-        <span>Bansko, Bulgaria</span>
+        <span>{{location}}</span>
       </h3>
     </div>
   </div>
@@ -25,7 +25,7 @@
   </div>
   <h5 class="petName">Name: {{name}}</h5>
   <h5 class="petAge">Age: {{age}}</h5>
-  <a href="#" id="see-details">
+  <a href="/photos/{{_id}}" id="see-details">
     <h4 class="details">See details</h4>
   </a>
 </div>
