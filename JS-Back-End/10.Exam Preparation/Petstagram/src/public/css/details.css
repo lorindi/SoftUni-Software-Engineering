@@ -67,10 +67,11 @@
   position: absolute;
   top: 20px;
   right: 10px;
+  z-index: 5;
 }
 
 .edit-delete-btns img {
-  width: 20px;
+  width: 25px;
   margin-left: 5px;
 }
 
