@@ -2,14 +2,11 @@
   <div class="container">
     <div class="col-9">
 
-      <!-- Start Pet Photo Post Section -->
       <div class="card">
         <div class="top">
 
-          <!-- Start User Details and Image Location Section -->
           <div class="userDetails">
 
-            <!-- Link to User Profile Details Page-->
             <div>
               <div class="profilepic">
                 <div class="profile_img">
@@ -25,12 +22,10 @@
                 {{photo.owner.username}}
               </p>
               <span>{{photo.location}}</span>
-
               {{#if isOwner}}
                 <div class="edit-delete-btns">
 
-                  <!-- Edit Pet Photo -->
-                  <a href="#">
+                  <a href="/photos/{{photo._id}}/edit">
                     <img
                       class="edit-img"
                       src="/images/edit-pen-icon-6.jpg"
@@ -38,8 +33,7 @@
                     />
                   </a>
 
-                  <!--Delete Pet Photo -->
-                  <a href="#">
+                  <a href="/photos/{{photo._id}}/delete">
                     <img
                       class="bin-img"
                       src="/images/icon-remove-22.jpg"
@@ -49,12 +43,13 @@
                 </div>
               {{/if}}
             </h3>
+
           </div>
 
         </div>
 
         <div class="imgBx">
-          <img src="{{image}}" alt={{name}} class="cover" />
+          <img src="{{photo.image}}" alt={{photo.name}} class="cover" />
         </div>
 
         <div class="bottom">
@@ -74,13 +69,11 @@
                   <div class="profilepic">
                     <div class="profile_img">
                       <div class="image">
-                        <!-- User Profile Image -->
                         <img src="/images/person.png" alt="img8" />
                       </div>
                     </div>
                   </div>
 
-                  <!--User's username-->
                   <p><b>StevIvanov</b>- OMG where can i get one</p>
                 </div>
               </div>
@@ -89,13 +82,11 @@
                   <div class="profilepic">
                     <div class="profile_img">
                       <div class="image">
-                        <!-- User Profile Image -->
                         <img src="/images/person.png" alt="img8" />
                       </div>
                     </div>
                   </div>
 
-                  <!--User's username-->
                   <p><b>StevIvanov</b>- OMG where can i get one</p>
                 </div>
               </div>
@@ -103,22 +94,22 @@
             </div>
           </div>
         </div>
-        {{#unless isOwner}}
-          <div class="addComments">
-            <!-- Start Add Comments Form -->
-            <form method="#" action="#">
-              <textarea
-                id="comment-textarea"
-                name=""
-                cols="40"
-                rows="10"
-                placeholder="Add comment..."
-              ></textarea>
-              <!-- Post Comments Button -->
-              <button type="submit">Post</button>
-            </form>
-          </div>
-        {{/unless}}
+        {{#if isAuthenticated}}
+          {{#unless isOwner}}
+            <div class="addComments">
+              <form method="#" action="#">
+                <textarea
+                  id="comment-textarea"
+                  name=""
+                  cols="40"
+                  rows="10"
+                  placeholder="Add comment..."
+                ></textarea>
+                <button type="submit">Post</button>
+              </form>
+            </div>
+          {{/unless}}
+        {{/if}}
       </div>
     </div>
   </div>
