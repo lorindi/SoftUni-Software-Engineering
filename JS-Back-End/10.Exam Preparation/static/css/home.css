@@ -1,0 +1,111 @@
+.welcome-content {
+  display: flex;
+  justify-content: flex-start;
+  height: 500px;
+  border-radius: 50%/ 0 0 40px 40px;
+  margin-top: 5%;
+  width: 100%;
+  background-color: #ffdeefd2;
+}
+
+.welcome-content-text {
+  display: flex;
+  width: 600px;
+  margin-left: 10%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  left: 50px;
+}
+
+.welcome-content-text h1 {
+  font-size: 60px;
+  margin: 0px;
+  color: black;
+  font-weight: 400;
+}
+
+.welcome-content-text p {
+  color: black;
+}
+
+h1.bold-welcome {
+  font-weight: 800;
+}
+
+.welcome-content-image {
+  width: 600px;
+  position: relative;
+  top: 64px;
+  right: 40px;
+}
+
+.welcome-content-image img {
+  width: 100%;
+}
+
+.footer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer .footer-section {
+  position: relative;
+  width: 100%;
+  font-size: 12px;
+  font-family: sans-serif;
+  z-index: -2;
+}
+
+.errorContainer {
+  position: fixed;
+  right: 100px;
+  min-width: 100px;
+  display: block;
+  z-index: 11111;
+  top: 100px;
+  text-align: center;
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  height: auto;
+  width: 320px;
+  box-shadow: 0 5px 10px black;
+}
+
+.errorContainer > p {
+  background: gray;
+  font-size: 20px;
+  padding: 20px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.errorContainer {
+  -moz-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 2s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+/* @keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    padding: 0;
+  }
+} */
