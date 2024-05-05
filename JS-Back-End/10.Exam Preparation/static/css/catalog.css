@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #fafafa;
+  min-height: 100vh;
+}
+
+.error {
+  color: red;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  width: 100%;
+  border: 1px solid rgb(218, 217, 217);
+}
+
+.container {
+  padding: 15px 0;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container a {
+  color: white;
+}
+
+.nav-item a i{
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.errorlist li {
+  width: 200px;
+  color: red;
+  list-style-type: none;
+}
+
+.container .logo {
+  display: flex;
+  cursor: pointer;
+}
+
+.home {
+  font-size: 25px;
+  margin: 10px 0 0 3px;
+  color: white;
+  font-family: "Indie Flower", cursive;
+}
+
+.nav-links {
+  font-weight: lighter;
+  color: rgb(172, 172, 172);
+  /* background: #333 ; */
+}
+
+.nav-group .nav-item {
+  list-style-type: none;
+  margin: 0 8px;
+}
+
+.nav-group .nav-item a {
+  font-size: 22px;
+  display: block;
+  color: black;
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action .profile {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action .profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .container {
+  position: relative;
+  margin-top: 60px;
+  width: 75%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.col-9 {
+  width: 65%;
+  margin: 5% auto;
+  margin-bottom: -20px;
+}
+
+.col-9 .card {
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  /* min-height: 400px; */
+  display: inline-block;
+  border: 1px solid rgba(7, 7, 7, 0.24);
+}
+
+.col-9 .card .top {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-9 .card .top .userDetails {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.profilepic {
+  display: inline-block;
+}
+
+.profilepic .profile_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to right, red, orange);
+  padding: 2px;
+  margin-right: 8px;
+}
+
+.profilepic .profile_img .image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin-top: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+.profilepic .profile_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 0 !important;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.col-9 .card .top .userDetails h3 {
+  font-size: 16px;
+  color: #4d4d4f;
+  font-weight: 500;
+  line-height: 1em;
+  white-space: nowrap;
+}
+
+.col-9 .card .top .userDetails h3 span {
+  font-size: 0.75em;
+}
+
+.col-9 .card .top .userDetails h3 span {
+  font-size: 0.75em;
+}
+
+.dot {
+  transform: scale(0.6);
+  cursor: pointer;
+}
+
+.imgBx {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  margin: 10px 0 15px;
+}
+
+.details {
+  margin-top: 10px;
+  font-weight: 400;
+  color: #999;
+}
+
+.petName {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.petAge {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.postTime {
+  margin-top: 8px;
+  font-weight: lighter;
+  cursor: default;
+  color: rgb(163, 163, 163);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+#see-details {
+  text-decoration: none;
+}
+
+#see-details h4 {
+  font-weight: bold;
+  margin: 10px;
+}
+
+#see-details h4:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer .footer-section {
+  position: relative;
+  width: 100%;
+  font-size: 12px;
+  font-family: sans-serif;
+  z-index: -2;
+}
+
+.not-available-photo {
+  text-align: center;
+  font-size: 24px;
+  margin: 100px;
+  background-color: #ffdeefd2;
+}
+
+.not-available-photo h1 {
+  border: 1px solid black;
+  padding: 30px;
+}
+
