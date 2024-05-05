@@ -13,6 +13,6 @@ exports.edit = (photoId, photoData) =>
 
 exports.addComment = async (photoId, commentData) => {
   const photo = await Photo.findById(photoId);
-  photo.comments.push({ commentData });
+  photo.comments.push(commentData);
   return photo.save();
 };
