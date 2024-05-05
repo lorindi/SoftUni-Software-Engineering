@@ -1,0 +1,81 @@
+.createPage {
+    margin-top: 130px;
+}
+
+.createPage {
+	display: block;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(156, 152, 152);
+	padding: 40px;
+	margin-bottom: 15px;
+	border-radius: 3px;
+	border: 1px solid;
+	box-shadow: 1px 2px 3px #888888;
+	width: 400px;
+}
+
+.createPage h2 {
+	text-align: center;
+	margin-top: -10px;
+	text-shadow: 1px 1px rgb(65, 63, 63);
+}
+
+.createPage label {
+	display: none;
+}
+
+.createPage input {
+	background-color: rgb(240, 230, 230);
+	border: 0.1px solid rgb(186, 184, 184);
+	border-radius: 3px;
+	height: 30px;
+	padding-left: 2px;
+	margin-top: 30px;
+	width: 320px;
+	font-size: 16px;
+}
+
+.createPage textarea {
+	background-color: rgb(240, 230, 230);
+	border: 0.1px solid rgb(186, 184, 184);
+	border-radius: 3px;
+	height: 100px;
+	padding-left: 2px;
+	margin-top: 30px;
+	width: 320px;
+	font-size: 16px;
+	resize: none;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.createPage button {
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+	border: none;
+	width: 100%;
+	border-radius: 3px;
+	margin-top: 30px;
+	height: 30px;
+    box-shadow: 2px 3px #888888;
+    cursor: pointer;
+}
+
+.createPage a {
+	color: white;
+}
+
+.createPage label {
+	display: initial !important;
+	margin-top: 12px;
+	margin-right: 5px;
+	white-space: nowrap;
+}
+
+.add-btn {
+	background-color: rgb(67, 185, 12);
+}
+
+.edit-delete button:hover {
+    box-shadow: none;
+}
