@@ -64,43 +64,23 @@
           </div>
           <div class="comments">
             <div class="comments-top">
-              <div class="userDetails">
-                <div class="comment-data">
-                  <div class="profilepic">
-                    <div class="profile_img">
-                      <div class="image">
-                        <img src="/images/person.png" alt="img8" />
-                      </div>
-                    </div>
-                  </div>
 
-                  <p><b>StevIvanov</b>- OMG where can i get one</p>
-                </div>
-              </div>
-              <div class="userDetails">
-                <div class="comment-data">
-                  <div class="profilepic">
-                    <div class="profile_img">
-                      <div class="image">
-                        <img src="/images/person.png" alt="img8" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <p><b>StevIvanov</b>- OMG where can i get one</p>
-                </div>
-              </div>
+              {{#each photo.comments}}
+                {{>comment}}
+              {{/each}}
+             
 
             </div>
           </div>
         </div>
+        
         {{#if isAuthenticated}}
           {{#unless isOwner}}
             <div class="addComments">
-              <form method="#" action="#">
+              <form method="POST" action="/photos/{{photo._id}}/comments">
                 <textarea
                   id="comment-textarea"
-                  name=""
+                  name="message"
                   cols="40"
                   rows="10"
                   placeholder="Add comment..."
