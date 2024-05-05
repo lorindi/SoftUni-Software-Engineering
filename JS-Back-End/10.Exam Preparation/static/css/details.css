@@ -1,0 +1,139 @@
+.userDetails a {
+  color: initial;
+}
+
+.petDescription {
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.pet-details {
+  margin: 5px 0 5px -1px;
+}
+
+.comments {
+  display: flex;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.comments .userDetails {
+  display: block !important;
+  margin-top: 10px;
+  margin-left: 10px;;
+}
+
+.comments span {
+  color: gray;
+  font-size: 10px;
+}
+
+.comments h3 {
+  display: flex;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.comments .top {
+  padding: 10px !important;
+}
+
+.comment-data {
+  display: flex;
+  font-size: 10px;
+  word-break: break-all;
+  white-space: normal;
+  font-weight: bold;
+  color: rgb(70, 65, 65);
+}
+
+.comment-data h3 {
+  margin-top: 5px;
+}
+
+.comment-data p {
+  margin-top: 4px;
+  font-size: 13px;
+  word-wrap: break-word;
+  white-space: normal;
+  font-weight: lighter;
+}
+
+.add-comment-details .addComments {
+  margin-top: 0 !important;
+}
+
+.edit-delete-btns {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+.edit-delete-btns img {
+  width: 20px;
+  margin-left: 5px;
+}
+
+.message {
+  font-weight: 400;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.5em;
+}
+
+.message b {
+  color: #262626;
+}
+
+.message span {
+  cursor: pointer;
+  color: #1d92ff;
+}
+
+.addComments {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.addComments button {
+  position: absolute;
+  right: 30px;
+  color: #1d92ffcb;
+  font-weight: 500;
+  font-size: 15px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+#comment-textarea {
+  position: absolute;
+  left: 30px;
+  width: 85%;
+  resize: none;
+  overflow: hidden;
+  height: 20px;
+  border: none;
+  outline: none;
+  font-weight: 400;
+  font-size: 14px;
+  color: #262626;
+  background: none;
+}
+
+textarea.text::placeholder {
+  color: #777;
+}
+
+.addComments form label {
+  display: none;
+}
+
+.addComments form {
+  display: flex;
+  margin-bottom: 15px;
+}
