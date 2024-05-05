@@ -27,7 +27,7 @@ router.post("/create", async (req, res) => {
 
 router.get("/:photoId/details", async (req, res) => {
   const photoId = req.params.photoId;
-  const photo = await photoManager.getOne(photoId).lean();
+  const photo = await photoManager.getOne(photoId).populate('comments.user').lean();
   const isOwner = req.user?._id == photo.owner._id;
   res.render("photos/details", { photo, isOwner });
 });
@@ -61,5 +61,13 @@ router.post("/:photoId/edit", async (req, res) => {
       ...photoData,
     });
   }
+});
+router.post("/:photoId/comments", async (req, res) => {
+  const photoId = req.params.photoId;
+  const { message } = req.body;
+  const user = req.user._id;
+
+  await photoManager.addComment(photoId, { user, message });
+  res.redirect(`/photos/${photoId}/details`)
 });
 module.exports = router;
