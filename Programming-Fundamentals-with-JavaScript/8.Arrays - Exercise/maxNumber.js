@@ -1,7 +1,8 @@
 function task(list) {
   let bigger = [];
   let number = 0;
-  for (let num of list.reverse()) {
+  let reverseList = list.reverse()
+  for (let num of reverseList) {
     number = num > number ? num : number;
     if (!bigger.includes(number)) {
       bigger.push(number);

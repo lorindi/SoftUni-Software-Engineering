@@ -1,5 +1,6 @@
 function task(array, list) {
-  for (let i = 0; i < array.length; i++) {
+  let arrayLength = array.length
+  for (let i = 0; i < arrayLength; i++) {
     if (list.includes(array[i])) {
       console.log(array[i]);
     }
