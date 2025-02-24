@@ -1,28 +1,12 @@
 function task(list) {
-  let sequence = 1;
-  let maxSequence = 0;
-  let maxSequenceNum = 0;
-  let listLength = list.length;
-
-  for (let i = 0; i < listLength; i++) {
-    if (i !== 0) {
-      let currentNumber = Number(list[i]);
-      let prevNumber = Number(list[i - 1]);
-
-      if (currentNumber === prevNumber) {
-        sequence++;
-
-        if (sequence > maxSequence) {
-          maxSequence = sequence;
-          maxSequenceNum = currentNumber;
-        }
-      } else {
-        sequence = 1;
-      }
+  let bigger = [];
+  let number = 0;
+  for (let num of list.reverse()) {
+    number = num > number ? num : number;
+    if (!bigger.includes(number)) {
+      bigger.push(number);
     }
   }
-  console.log(`${(maxSequenceNum + ' ').repeat(maxSequence)}`);
-  
+  console.log(bigger.reverse().join(' '));
 }
-task([2, 1, 1, 2, 3, 3, 2, 2, 2, 1]
-);
+task([14, 24, 3, 19, 15, 17]);
