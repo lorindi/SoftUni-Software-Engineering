@@ -8,13 +8,10 @@ public class ConcatenateData {
 
         String firstName = scanner.nextLine();
         String lastName = scanner.nextLine();
-        int age = 19;
+        int age = Integer.parseInt(scanner.nextLine());
+        String town = scanner.nextLine();
 
-//        System.out.print("Hello, ");
-//        System.out.print(name);
-//        System.out.print("!");
-
-//        System.out.println("Hello, " + name + "!");
+        System.out.printf("You are %s %s, a %d-years old person from %s.", firstName, lastName, age, town);
 
     }
 }
