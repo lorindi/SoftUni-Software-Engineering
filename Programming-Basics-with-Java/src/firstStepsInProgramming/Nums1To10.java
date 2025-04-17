@@ -1,4 +1,4 @@
-package FirstStepsInProgramming;
+package firstStepsInProgramming;
 //psvm
 public class Nums1To10 {
     public static void main(String[] args) {

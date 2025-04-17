@@ -1,4 +1,4 @@
-package FirstStepsInProgramming;
+package firstStepsInProgramming;
 
 public class HelloSoftUni {
     public static void main(String[] args) {
