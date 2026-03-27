@@ -1,0 +1,17 @@
+#
+# Keep only the required deliverables for this exercise.
+#
+
+# Ignore everything by default
+*
+
+# But keep this .gitignore
+!.gitignore
+
+# Keep the notebook
+!Manga vs. Anime.ipynb
+
+# Keep the dataset archive
+!archive/
+!archive/**
+
